@@ -1,0 +1,32 @@
+#!/bin/sh
+
+alias vim="nvim"
+alias emacs='emacsclient'
+alias shutdown="shutdown -h now"
+alias open="xdg-open"
+alias alacritty="tabbed -c alacritty --embed"
+#alias magit="nvim -c MagitOnly"
+#alias lf="lfub"
+
+# Use lsd if it exists. But I always want to use lsd so notify if not installed
+if [ -x "$(command which lsd)" ]; then
+	alias ls="lsd"
+else
+	alias ls="ls -hN --color=auto --group-directories-first"
+fi
+
+# Verbosity and interactivity
+alias \
+	cp="cp -iv" \
+	mv="mv -iv" \
+	rm="rm -vI" \
+	bc="bc -ql" \
+	mkd="mkdir -pv" \
+	yt="youtube-dl --add-metadata -i" \
+	yta="yt -x -f bestaudio/best" \
+	ffmpeg="ffmpeg -hide_banner"
+
+# Colorize commands
+alias \
+	grep="grep --color=auto" \
+	diff="diff --color=auto"

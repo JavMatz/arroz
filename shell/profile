@@ -1,0 +1,21 @@
+#!/bin/zsh
+
+# User specific environment
+export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
+
+#XDG_DIRS
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+
+# QT look
+
+export QT_STYLE_OVERRIDE=kvantum
+
+# Enviroment vars
+export EDITOR='/usr/bin/nvim'
+export TERMINAL="/usr/bin/terminator"
+export BROWSER="/usr/bin/firefox"
+
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+  exec startx
+fi

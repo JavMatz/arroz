@@ -1,0 +1,7 @@
+configuration {
+	show-icons:	true;
+    	icon-theme:     "Papirus-Dark-nordic-green-folders";
+    	font:           "monospace 11";
+    	modi:           "run,drun";
+}
+@theme "nord"

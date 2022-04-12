@@ -68,7 +68,7 @@ bindkey -s '^o' 'lfcd\n'
 
 # bindkey -s '^a' 'bc -lq\n' # Math calculations
 
-# bindkey -s '^f' 'cd "$(dirname "$(fzf)")"\n'
+bindkey -s '^f' 'cd "$(dirname "$(fzf)")"\n'
 
 bindkey '^[[P' delete-char # del key deletes characters as expected
 

@@ -7,13 +7,9 @@ export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 
-# QT look
-
-export QT_STYLE_OVERRIDE=kvantum
-
 # Enviroment vars
 export EDITOR="/usr/bin/nvim"
-export TERMINAL="/usr/bin/st"
+export TERMINAL="/usr/local/bin/st"
 export BROWSER="/usr/bin/firefox"
 
 # This is the list for lf icons:

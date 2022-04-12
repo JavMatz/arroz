@@ -4,8 +4,9 @@
 !*/
 !.gitignore
 
-!nvim/**
 !shell/**
 !zsh/**
 !rofi/**
 !x11/**
+!bspwm/**
+!sxhkd/**

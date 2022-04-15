@@ -1,8 +1,7 @@
-#
-# Other hotkeys
-#
+##################
+# VOLUME CONTROL #
+##################
 
-# Volume control
 XF86AudioMute
 	pamixer -t
 
@@ -11,8 +10,11 @@ XF86AudioLowerVolume
 
 XF86AudioRaiseVolume 
 	pamixer -i 5 --allow-boost
+	
+#################
+# MEDIA CONTROL #
+#################
 
-# Media control
 XF86AudioPlay
 	playerctl play-pause
 XF86AudioNext
@@ -20,24 +22,47 @@ XF86AudioNext
 XF86AudioPrev
 	playerctl previous
 
-# Backlight control
+#####################
+# BACKLIGHT CONTROL #
+#####################
 
 XF86MonBrightnessDown
 	xbacklight -dec 10
 
 XF86MonBrightnessUp
 	xbacklight -inc 10
+	
+###############
+# SCREENSHOTS #
+###############
 
-# Screenshots
-
+# Standard screenshot
 Print
-	kbd-screenshot
+	kbd-screenshot 0 0 0
 
+# To clipboard
+alt + Print
+	kbd-screenshot 0 0 1
+
+# Region screenshot
 shift + Print
-	kbd-screenshot 1
+	kbd-screenshot 1 0 0
+
+# To clipboard
+alt + shift + Print
+	kbd-screenshot 1 0 1
+
+# Focused window screenshot
+ctrl + Print
+        kbd-screenshot 0 1 0
+
+# To clipboard
+alt + ctrl +Print
+	kbd-screenshot 0 1 1
+
 
 # Open file manager
-super + x ; f
+super + x ; super + f
 	st -e lfub
 #
 # wm independent hotkeys
@@ -51,8 +76,9 @@ super + Return
 super + x ; x
 	rofi -show drun
 
-# super + tab
-#       	rofi -show window
+# window switcher
+super + x ; b
+      	rofi -show window
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -67,8 +93,10 @@ super + alt + {q,r}
 	bspc {quit,wm -r}
 
 # close and kill
-super + {shift + }w
-	bspc node -{c,k}
+
+super +x ; super + c
+ 	bspc node -{c,k}
+# super + {shift + }w
 
 # alternate between the tiled and monocle layout
 super + m

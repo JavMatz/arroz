@@ -41,7 +41,7 @@ Print
 	kbd-screenshot 0 0 0
 
 # To clipboard
-alt + Print
+ctrl + Print
 	kbd-screenshot 0 0 1
 
 # Region screenshot
@@ -49,15 +49,15 @@ shift + Print
 	kbd-screenshot 1 0 0
 
 # To clipboard
-alt + shift + Print
+ctrl + shift + Print
 	kbd-screenshot 1 0 1
 
 # Focused window screenshot
-ctrl + Print
+alt + Print
         kbd-screenshot 0 1 0
 
 # To clipboard
-alt + ctrl +Print
+ctrl + alt +Print
 	kbd-screenshot 0 1 1
 
 

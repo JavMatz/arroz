@@ -8,9 +8,13 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 
 # Enviroment vars
-export EDITOR="/usr/bin/nvim"
-export TERMINAL="/usr/local/bin/st"
+export EDITOR="/usr/bin/emacsclient -t"
+export TERMINAL="/usr/bin/xfce4-terminal"
 export BROWSER="/usr/bin/firefox"
+
+# QT applications aspect
+
+export QT_STYLE_OVERRIDE=kvantum
 
 # This is the list for lf icons:
 

@@ -1,8 +1,48 @@
 /* st */
 ! FONT
-st.font: monospace:size=11	
+st.font: monospace:size=11
 
-! COLORS
+! Arc
+
+
+/* ! base16 */
+! st.color0:       #181818 
+! st.color1:       #ab4642 
+! st.color2:       #a1b56c 
+! st.color3:       #f7ca88 
+! st.color4:       #7cafc2 
+! st.color5:       #ba8baf 
+! st.color6:       #86c1b9 
+! st.color7:       #d8d8d8 
+! st.color8:       #585858 
+! st.color9:       #ab4642 
+! st.color10:      #a1b56c 
+! st.color11:      #f7ca88 
+! st.color12:      #7cafc2 
+! st.color13:      #ba8baf 
+! st.color14:      #86c1b9 
+! st.color15:      #f8f8f8 
+
+! xterm
+! *.color0:   #000000 
+! *.color1:   #cd0000 
+! *.color2:   #00cd00 
+! *.color3:   #cdcd00 
+! *.color4:   #0000cd 
+! *.color5:   #cd00cd 
+! *.color6:   #00cdcd 
+! *.color7:   #e5e5e5 
+! *.color8:   #4d4d4d 
+! *.color9:   #ff0000 
+! *.color10:  #00ff00 
+! *.color11:  #ffff00 
+! *.color12:  #0000ff 
+! *.color13:  #ff00ff 
+! *.color14:  #00ffff 
+! *.color15:  #aabac8 
+! *.background:   #000000
+
+! GNOME COLORS
 st.foreground:  #ffffff
 st.background:  #1e1e1e
 /* Brigth */
@@ -26,10 +66,3 @@ st.color15:     #D0CFCC
 
 ! TRANSPARENCY
 st.alpha: 0.95
-
-! dmenu
-dmenu.font: sans:size=11
-dmenu.selbgcolor: #15539E
-dmenu.normbgcolor: #2d2d2d
-dmenu.selfgcolor: #fffce0
-dmenu.normfgcolor: #fffce0

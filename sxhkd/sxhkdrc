@@ -60,7 +60,7 @@ alt + Print
 ctrl + alt +Print
 	kbd-screenshot 0 1 1
 
-
+	
 # Open file manager
 super + x ; super + f
 	st -e lfub
@@ -95,7 +95,7 @@ super + alt + {q,r}
 # close and kill
 
 super +x ; super + c
- 	bspc node -{c,k}
+ 	bspc node -c
 # super + {shift + }w
 
 # alternate between the tiled and monocle layout

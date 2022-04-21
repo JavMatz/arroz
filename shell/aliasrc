@@ -1,11 +1,9 @@
 #!/bin/sh
 
-alias vim='nvim'
-alias emacs='emacsclient'
+alias emacs='emacsclient -t'
 alias shutdown="shutdown -h now"
 alias open="xdg-open"
 alias ls="lsd"
-#alias magit="nvim -c MagitOnly"
 alias lf="lfub"
 
 # alias ls="ls -hN --color=auto --group-directories-first"

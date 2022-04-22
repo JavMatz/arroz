@@ -2,9 +2,6 @@
 ! FONT
 st.font: monospace:size=11
 
-! Arc
-
-
 /* ! base16 */
 ! st.color0:       #181818 
 ! st.color1:       #ab4642 
@@ -24,45 +21,45 @@ st.font: monospace:size=11
 ! st.color15:      #f8f8f8 
 
 ! xterm
-! *.color0:   #000000 
-! *.color1:   #cd0000 
-! *.color2:   #00cd00 
-! *.color3:   #cdcd00 
-! *.color4:   #0000cd 
-! *.color5:   #cd00cd 
-! *.color6:   #00cdcd 
-! *.color7:   #e5e5e5 
-! *.color8:   #4d4d4d 
-! *.color9:   #ff0000 
-! *.color10:  #00ff00 
-! *.color11:  #ffff00 
-! *.color12:  #0000ff 
-! *.color13:  #ff00ff 
-! *.color14:  #00ffff 
-! *.color15:  #aabac8 
-! *.background:   #000000
+st.color0:   #000000 
+st.color1:   #cd0000 
+st.color2:   #00cd00 
+st.color3:   #cdcd00 
+st.color4:   #0000cd 
+st.color5:   #cd00cd 
+st.color6:   #00cdcd 
+st.color7:   #e5e5e5 
+st.color8:   #4d4d4d 
+st.color9:   #ff0000 
+st.color10:  #00ff00 
+st.color11:  #ffff00 
+st.color12:  #0000ff 
+st.color13:  #ff00ff 
+st.color14:  #00ffff 
+st.color15:  #aabac8 
+st.background:   #000000
 
 ! GNOME COLORS
-st.foreground:  #ffffff
-st.background:  #1e1e1e
+! st.foreground:  #ffffff
+! st.background:  #1e1e1e
 /* Brigth */
-st.color0:      #5E5C64
-st.color1:      #F66151
-st.color2:      #33D17A
-st.color3:      #E9AD0C
-st.color4:      #2A7BDE
-st.color5:      #C061CB
-st.color6:      #33C7DE
-st.color7:      #FFFFFF
+! st.color0:      #5E5C64
+! st.color1:      #F66151
+! st.color2:      #33D17A
+! st.color3:      #E9AD0C
+! st.color4:      #2A7BDE
+! st.color5:      #C061CB
+! st.color6:      #33C7DE
+! st.color7:      #FFFFFF
 /* Dark */
-st.color8:      #171421
-st.color9:      #C01C28
-st.color10:     #26A269
-st.color11:     #A2734C
-st.color13:     #A347BA
-st.color12:     #12488B
-st.color14:     #2AA1B3
-st.color15:     #D0CFCC
+! st.color8:      #171421
+! st.color9:      #C01C28
+! st.color10:     #26A269
+! st.color11:     #A2734C
+! st.color13:     #A347BA
+! st.color12:     #12488B
+! st.color14:     #2AA1B3
+! st.color15:     #D0CFCC
 
 ! TRANSPARENCY
 st.alpha: 0.95

@@ -11,3 +11,5 @@
 !bspwm/**
 !sxhkd/**
 !polybar/**
+!gtk-3.0/**
+!systemd/**

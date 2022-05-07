@@ -9,7 +9,7 @@ export XDG_DATA_HOME="$HOME/.local/share"
 
 # Enviroment vars
 export EDITOR="/usr/bin/emacsclient -t"
-export TERMINAL="/usr/bin/xfce4-terminal"
+export TERMINAL="/usr/bin/gnome-terminal"
 export BROWSER="/usr/bin/firefox"
 
 # QT applications aspect
@@ -181,6 +181,6 @@ ex=:\
 *.nix=:\
 "
 
-if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-  exec startx
-fi
+# if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+#   exec startx
+# fi

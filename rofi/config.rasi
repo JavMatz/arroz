@@ -1,6 +1,4 @@
 configuration {
-	show-icons:	true;
-    	icon-theme:     "Papirus-Dark";
     	font:           "sans 11";
     	modi:           "run,drun";
 }

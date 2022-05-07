@@ -3,7 +3,8 @@
 
 # Color and prompt
 autoload -U colors && colors	# Load colors
-PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+# PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+PS1="%B%{$fg[blue]%}%~%{$reset_color%} $%b "
 stty stop undef		# Disable C-s to freeze terminal
 unsetopt beep
 
@@ -55,20 +56,21 @@ _comp_options+=(globdots)		# Include hidden files.
 # preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 # Use lf to switch directories and bind it to ctrl-o
-lfcd () {
-    tmp="$(mktemp)"
-    lf -last-dir-path="$tmp" "$@"
-    if [ -f "$tmp" ]; then
-        dir="$(cat "$tmp")"
-        rm -f "$tmp" >/dev/null
-        [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
-    fi
-}
-bindkey -s '^o' 'lfcd\n' 
+# lfcd () {
+#     tmp="$(mktemp)"
+#     lf -last-dir-path="$tmp" "$@"
+#     if [ -f "$tmp" ]; then
+#         dir="$(cat "$tmp")"
+#         rm -f "$tmp" >/dev/null
+#         [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
+#     fi
+# }
+
+# bindkey -s '^o' 'lfcd\n' 
 
 # bindkey -s '^a' 'bc -lq\n' # Math calculations
 
-bindkey -s '^s' 'cd "$(dirname "$(fzf)")"\n'
+# bindkey -s '^s' 'cd "$(dirname "$(fzf)")"\n'
 
 bindkey '^[[P' delete-char # del key deletes characters as expected
 

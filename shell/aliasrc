@@ -3,8 +3,8 @@
 alias emacs='emacsclient -t'
 alias shutdown="shutdown -h now"
 alias open="xdg-open"
-alias ls="lsd"
-alias lf="lfub"
+#alias ls="lsd"
+#alias lf="lfub"
 
 # alias ls="ls -hN --color=auto --group-directories-first"
 

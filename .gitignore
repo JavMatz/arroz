@@ -5,6 +5,7 @@
 !.gitignore
 
 !shell/**
+!nvim/**
 !zsh/**
 !rofi/**
 !x11/**

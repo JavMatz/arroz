@@ -8,8 +8,8 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 
 # Enviroment vars
-export EDITOR="/usr/bin/emacsclient -t"
-export TERMINAL="/usr/bin/gnome-terminal"
+export EDITOR="/usr/bin/nvim"
+export TERMINAL="/usr/bin/alacritty"
 export BROWSER="/usr/bin/firefox"
 
 # QT applications aspect

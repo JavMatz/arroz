@@ -1,10 +1,22 @@
 # Inspired and some stuff basically yanked and 
 # pasted from Luke Smith's voidrices repo
 
+# git information
+
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' enable git svn
+
+zstyle ':vcs_info:git*' formats "  %b "
+precmd() { vcs_info }
+
+setopt prompt_subst
+
+# prompt='%2/ ${vcs_info_msg_0_}> '
 # Color and prompt
 autoload -U colors && colors	# Load colors
-PROMPT="%B%{$bg[yellow]$fg[black]%} %{$bg[yellow]$fg[black]%}%~ %{$fg[yellow]$bg[black]%}%{$reset_color%} 
- %b "
+PROMPT='%B%{$bg[blue]$fg[black]%}  %{$bg[yellow]$fg[blue]%} %{$bg[yellow]$fg[black]%} %/ %{$fg[yellow]$bg[black]%}%{$reset_color%} 
+ %b '
+RPROMPT='%{$fg[black]$bg[red]%}${vcs_info_msg_0_}%{$reset_color%}'
 stty stop undef		# Disable C-s to freeze terminal
 unsetopt beep
 

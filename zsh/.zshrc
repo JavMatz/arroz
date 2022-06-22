@@ -3,8 +3,8 @@
 
 # Color and prompt
 autoload -U colors && colors	# Load colors
-PS1="%B%{$bg[yellow]$fg[black]%} %{$bg[yellow]$fg[black]%}%~ %{$fg[yellow]$bg[black]%}%{$reset_color%}
-$%b "
+PROMPT="%B%{$bg[yellow]$fg[black]%} %{$bg[yellow]$fg[black]%}%~ %{$fg[yellow]$bg[black]%}%{$reset_color%} 
+ %b "
 stty stop undef		# Disable C-s to freeze terminal
 unsetopt beep
 

@@ -4,7 +4,7 @@ alias emacs='emacsclient -t'
 alias vim='nvim'
 alias shutdown="shutdown -h now"
 alias open="xdg-open"
-alias ls="lsd"
+# alias ls="lsd"
 alias cat="bat"
 #alias lf="lfub"
 

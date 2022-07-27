@@ -1,6 +1,6 @@
 /* st */
 ! FONT
-st.font: monospace:size=11
+st.font: monospace:size=12
 
 /* ! base16 */
 ! st.color0:       #181818 

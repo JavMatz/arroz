@@ -1,7 +1,10 @@
 #!/bin/zsh
 
 # User specific environment
-export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
+# export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
+export PATH="$PATH:/home/erick/.local/bin"
+export PATH="$PATH:/home/erick/Dev/flutter/bin"
+export PATH="$PATH:/home/erick/Dev/android-studio/bin"
 
 #XDG_DIRS
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -11,10 +14,6 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export EDITOR="/usr/bin/nvim"
 export TERMINAL="/usr/bin/alacritty"
 export BROWSER="/usr/bin/firefox"
-
-# QT applications aspect
-
-export QT_STYLE_OVERRIDE=kvantum
 
 # This is the list for lf icons:
 

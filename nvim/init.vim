@@ -39,9 +39,20 @@ call plug#end()
 	" set mouse=a
 	set clipboard+=unnamedplus
 	set noshowmode
+  set guicursor=
+  set nohlsearch
+  set hidden
 	set noruler
 	set laststatus=0
 	set noshowcmd
+	set encoding=utf-8
+  set scrolloff=8
+	set number relativenumber
+  set smarttab
+  set cindent
+  set tabstop=2
+  set shiftwidth=2
+	set expandtab
 	colorscheme gruvbox
 	set bg=dark
 	noremap c "_c
@@ -49,13 +60,6 @@ call plug#end()
 	set nocompatible
 	filetype plugin on
 	syntax on
-	set encoding=utf-8
-	set number relativenumber
-  set smarttab
-  set cindent
-  set tabstop=2
-  set shiftwidth=2
-	set expandtab
 " Shortcutting split navigation, saving a keypress:
 	map <C-h> <C-w>h
 	map <C-j> <C-w>j

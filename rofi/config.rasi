@@ -1,5 +1,0 @@
-configuration {
-    	font:           "sans 11";
-    	modi:           "run,drun";
-}
-@theme "glue_pro_blue"		

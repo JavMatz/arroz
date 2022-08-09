@@ -4,14 +4,4 @@
 !*/
 !.gitignore
 
-!shell/**
-!alacritty/**
-!nvim/**
-!zsh/**
-!rofi/**
-!x11/**
-!bspwm/**
-!sxhkd/**
-!polybar/**
-!gtk-3.0/**
-!systemd/**
+!tmux/**

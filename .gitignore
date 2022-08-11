@@ -5,5 +5,5 @@
 !.gitignore
 
 !tmux/**
-!x11/**
 !sway/**
+!foot/**

@@ -88,6 +88,13 @@ input * {
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+
+#
+# Window
+#
+
+    default_border pixel 2
+
 #
 # Moving around:
 #
@@ -204,7 +211,7 @@ bindsym $mod+r mode "resize"
 #
 # Status Bar:
 #
-# Read `man 5 sway-bar` for more information about this section.
+# Read `man 5 sway-bar` fok more information about this section.
 bar {
     position top
 

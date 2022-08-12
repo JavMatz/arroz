@@ -1,0 +1,51 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+# Source aliases
+[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc"
+
+# Histfile
+HISTFILE=$HOME/.cache/bash/bash_history
+HISTSIZE=1000
+SAVEHIST=1000
+
+# Vi mode 
+set -o vi
+
+# Time (milisecods) delay after ESC key press (default is 500) 
+bind 'set keyseq-timeout 50'
+
+bind 'set show-mode-in-prompt on'
+bind 'set vi-ins-mode-string "(INS)"'
+bind 'set vi-cmd-mode-string "(CMD)"'
+
+# Prompt customization
+
+PS1="\[\e[01;35m\][\[\e[m\]\[\e[01;34m\]  \u\[\e[m\]\[\e[01;32m\]  \h\[\e[m\] \[\e[01;33m\] \w \[\e[m\]\[\e[01;35m\]]\[\e[m\]\n \\$ "
+
+# Keybindings
+
+# CTRL-o : Run lfcd function (by hack: See https://bbs.archlinux.org/viewtopic.php?id=104216)
+bind -x '"\201":lfcd'
+bind '"\C-o":"\201\C-m"'
+
+# Functions
+
+# Use lf to switch directories
+lfcd () {
+    tmp="$(mktemp)"
+    lf -last-dir-path="$tmp" "$@"
+    if [ -f "$tmp" ]; then
+        dir="$(cat "$tmp")"
+        rm -f "$tmp"
+        if [ -d "$dir" ]; then
+            if [ "$dir" != "$(pwd)" ]; then
+                cd "$dir"
+            fi
+        fi
+    fi
+}

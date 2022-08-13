@@ -1,0 +1,8 @@
+#!/bin/sh
+
+alias vim='nvim'
+alias ls='ls --color=auto'
+alias duh='du -h'
+alias ..='cd ..'
+alias shutdown='shutdown -h now'
+alias open='xdg-open'

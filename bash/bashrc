@@ -25,13 +25,19 @@ bind 'set vi-cmd-mode-string "(CMD)"'
 
 # Prompt customization
 
-PS1="\[\e[01;35m\][\[\e[m\]\[\e[01;34m\]  \u\[\e[m\]\[\e[01;32m\]  \h\[\e[m\] \[\e[01;33m\] \w \[\e[m\]\[\e[01;35m\]]\[\e[m\]\n \\$ "
+PS1="\[\e[01;35m\][\[\e[m\]\[\e[01;34m\]  \u\[\e[m\]\[\e[01;32m\]  \h\[\e[m\] \[\e[01;33m\] \w \[\e[m\]\[\e[01;35m\]]\[\e[m\]\n \$ "
 
 # Keybindings
 
-# CTRL-o : Run lfcd function (by hack: See https://bbs.archlinux.org/viewtopic.php?id=104216)
+# CTRL-o : Run lfcd function 
+# See https://bbs.archlinux.org/viewtopic.php?id=104216
+# This way, when you lfcd into a directory the prompt redraws
+# automatically
 bind -x '"\201":lfcd'
 bind '"\C-o":"\201\C-m"'
+
+bind -x '"\202": cd "$(dirname "$(fzf)")"'
+bind '"\C-a":"\202\C-m"'
 
 # Functions
 

@@ -1,30 +1,27 @@
-# Default config for sway
-#
-# Copy this to ~/.config/sway/config and edit it to your liking.
-#
-# Read `man 5 sway` for a complete reference.
-
 ### Variables
-#
+
 # Logo key. Use Mod1 for Alt.
-set $mod Mod4
+    set $mod Mod4
+
 # Home row direction keys, like vim
-set $left h
-set $down j
-set $up k
-set $right l
+    set $left h
+    set $down j
+    set $up k
+    set $right l
+
 # Your preferred terminal emulator
-set $term foot -e tmux
+    set $term foot
+
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu bemenu-run | xargs swaymsg exec --
+    set $menu bemenu-run | xargs swaymsg exec --
 
 ### Output configuration
-#
+
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/Imágenes/Wallpapers/skyline_night.jpg fill
-#
+    output eDP-1 bg ~/Imágenes/Wallpapers/gruvbox-wallpapers.png fill
+
 # Example configuration:
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
@@ -58,15 +55,20 @@ output * bg ~/Imágenes/Wallpapers/skyline_night.jpg fill
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
-input * {
-	xkb_layout "es"
-}
+    input * {
+    	xkb_layout "es"
+    }
 
 
-### Key bindings
-#
-# Basics:
-#
+### Window options ###
+##Window borders
+    default_border normal 2
+
+
+### Key bindings ###
+
+## Basics ##
+
     # Start a terminal
     bindsym $mod+Return exec $term
 
@@ -88,12 +90,6 @@ input * {
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
-
-#
-# Window
-#
-
-    default_border pixel 2
 
 #
 # Moving around:
@@ -119,6 +115,7 @@ input * {
 #    bindsym $mod+Shift+Down move down
 #    bindsym $mod+Shift+Up move up
 #    bindsym $mod+Shift+Right move right
+
 #
 # Workspaces:
 #
@@ -146,8 +143,9 @@ input * {
     bindsym $mod+Shift+0 move container to workspace number 10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
+
 #
-# Layout stuff:
+# Layout
 #
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
@@ -171,6 +169,7 @@ input * {
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
+
 #
 # Scratchpad:
 #
@@ -183,6 +182,7 @@ input * {
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
     bindsym $mod+minus scratchpad show
+
 #
 # Resizing containers:
 #
@@ -197,16 +197,27 @@ mode "resize" {
     bindsym $right resize grow width 10px
 
     # Ditto, with arrow keys
-    bindsym Left resize shrink width 10px
-    bindsym Down resize grow height 10px
-    bindsym Up resize shrink height 10px
-    bindsym Right resize grow width 10px
+#    bindsym Left resize shrink width 10px
+#    bindsym Down resize grow height 10px
+#    bindsym Up resize shrink height 10px
+#    bindsym Right resize grow width 10px
 
     # Return to default mode
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
+
+### Misc ###
+
+## Audio control ##
+bindsym XF86AudioMute exec "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+bindsym XF86AudioLowerVolume exec "pactl set-sink-volume @DEFAULT_SINK@ -10%"
+bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume @DEFAULT_SINK@ +10%"
+
+## Backlight control ##
+bindsym XF86MonBrightnessDown exec "xbacklight -dec 10"
+bindsym XF86MonBrightnessUp exec "xbacklight -inc 10"
 
 #
 # Status Bar:

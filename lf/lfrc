@@ -1,0 +1,6 @@
+set icons
+set promptfmt "\033[01;35m[ \033[01;33m %d\033[05;36m%f\033[0m \033[01;35m]"
+
+# Keybindings
+map D delete
+map t toggle

@@ -1,6 +1,23 @@
+#· Basic vars ·#
+set ifs "\n"
+set scrolloff 10
+set period 1
 set icons
 set promptfmt "\033[01;35m[ \033[01;33m %d\033[05;36m%f\033[0m \033[01;35m]"
 
-# Keybindings
-map D delete
-map t toggle
+#· Keybindings ·#
+map DD delete
+map au aunpack
+#map apz apackZip
+
+#· Functions ·#
+
+cmd aunpack ${{
+    aunpack $(echo $f | awk -F\/ '{ print $(NF) }')
+}}
+
+#cmd apackZip ${{
+#    ARCHIVENAME=$(ls $fx | head -n 1 | awk -F\/ '{ print $(NF) }' | awk -F. '{ print $1 }')
+#    apack $ARCHIVENAME.zip $fx
+#}}
+

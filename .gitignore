@@ -10,3 +10,4 @@
 !fontconfig/**
 !bash/**
 !shell/**
+!lf/**

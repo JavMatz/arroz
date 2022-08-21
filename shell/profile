@@ -3,7 +3,10 @@
 #
 
 #PATH
+NPM_PACKAGES="$HOME/.local/bin/.npm-packages"
 export PATH="$PATH:/home/erick/.local/bin"
+export PATH="$PATH:$NPM_PACKAGES/bin"
+export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
 
 #XDG_DIRS
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -20,9 +23,19 @@ export XDG_VIDEOS_DIR="$HOME/Vídeos"
 # Desktop portal
 export XDG_CURRENT_DESKTOP=sway
 
-# Enviroment vars
+# Qt apps theme
+export QT_STYLE_OVERRIDE=kvantum
+
+# GTK apps theme
+
+gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
+#gsettings set org.gnome.desktop.interface icon-theme 'breeze-icons'
+gsettings set org.gnome.desktop.interface font-name 'Sans 10'
+
+# ToolTools
 export EDITOR="/usr/bin/nvim"
-export TERMINAL="/usr/bin/foot"
+export VISUAL="/usr/bin/nvim"
+export TERMINAL="/usr/bin/kitty"
 export BROWSER="/usr/bin/firefox"
 
 # Source .bashrc

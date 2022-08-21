@@ -6,7 +6,7 @@
 
 !tmux/**
 !sway/**
-!foot/**
+!kitty/**
 !fontconfig/**
 !bash/**
 !shell/**

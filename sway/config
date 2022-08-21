@@ -1,5 +1,8 @@
 ### Variables
 
+font pango:sans 10
+# Wallpaper folder
+    set $wallpaper_folder ~/Imágenes/Wallpapers/
 # Logo key. Use Mod1 for Alt.
     set $mod Mod4
 
@@ -9,22 +12,33 @@
     set $up k
     set $right l
 
+# Preferred web browser
+    set $browser $BROWSER
+
 # Your preferred terminal emulator
-    set $term foot
+    set $term $TERMINAL
 
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-    set $menu bemenu-run | xargs swaymsg exec --
+    set $menu bemenu-run \
+            --prompt ">>" \
+            --list 30 \
+            --fn monospace 11 \
+            --width-factor 0.5 \
+            --no-overlap | xargs swaymsg exec --
 
 ### Output configuration
 
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-    output eDP-1 bg ~/Imágenes/Wallpapers/gruvbox-wallpapers.png fill
+    output eDP-1 {
+        background $wallpaper_folder"deja-vu.jpg" fill
+    }
 
 # Example configuration:
 #
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
+#    output HDMI-A-1 resolution 1360x768 position 0,0
+#    output eDP-1 resolution 1366x768 position 1360,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
@@ -38,7 +52,7 @@
 #          before-sleep 'swaylock -f -c 000000'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
+# your displays after another 300 seconds, and turn your screens back on when'
 # resumed. It will also lock your screen before your computer goes to sleep.
 
 ### Input configuration
@@ -61,6 +75,10 @@
 
 
 ### Window options ###
+## Window rules per app_id
+    for_window [app_id="calcurse"] floating enable
+    for_window [app_id="pavucontrol"] floating enable
+    for_window [app_id="htop"] floating enable
 ##Window borders
     default_border pixel 2
     gaps inner 8
@@ -77,6 +95,9 @@
 
     # Start your launcher
     bindsym $mod+d exec $menu
+
+    # Start your web browser
+    bindsym $mod+i exec $browser
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.

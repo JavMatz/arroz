@@ -8,6 +8,7 @@
 !sway/**
 !kitty/**
 !fontconfig/**
+!nvim/**
 !bash/**
 !shell/**
 !lf/**

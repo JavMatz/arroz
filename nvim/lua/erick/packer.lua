@@ -7,8 +7,7 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
   -- Colorscheme 
-  use 'marciomazza/vim-brogrammer-theme'
-  use 'tomasiser/vim-code-dark'
+  use 'NLKNguyen/papercolor-theme'
   -- Toggle comments
   use 'tpope/vim-commentary'
   -- lualine

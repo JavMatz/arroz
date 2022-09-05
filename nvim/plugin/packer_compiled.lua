@@ -79,15 +79,10 @@ _G.packer_plugins = {
     path = "/home/erick/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
-  ["vim-brogrammer-theme"] = {
+  ["papercolor-theme"] = {
     loaded = true,
-    path = "/home/erick/.local/share/nvim/site/pack/packer/start/vim-brogrammer-theme",
-    url = "https://github.com/marciomazza/vim-brogrammer-theme"
-  },
-  ["vim-code-dark"] = {
-    loaded = true,
-    path = "/home/erick/.local/share/nvim/site/pack/packer/start/vim-code-dark",
-    url = "https://github.com/tomasiser/vim-code-dark"
+    path = "/home/erick/.local/share/nvim/site/pack/packer/start/papercolor-theme",
+    url = "https://github.com/NLKNguyen/papercolor-theme"
   },
   ["vim-commentary"] = {
     loaded = true,

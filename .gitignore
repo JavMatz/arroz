@@ -9,6 +9,6 @@
 !kitty/**
 !fontconfig/**
 !nvim/**
-!bash/**
+!zsh/**
 !shell/**
 !lf/**

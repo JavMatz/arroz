@@ -1,7 +1,9 @@
-#!/bin/zsh
+#
+# ~/.bash_profile
+#
 
 #PATH
-export NPM_PACKAGES="$HOME/.local/bin/.npm-packages"
+NPM_PACKAGES="$HOME/.local/bin/.npm-packages"
 export PATH="$PATH:/home/erick/.local/bin"
 export PATH="$PATH:$NPM_PACKAGES/bin"
 export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
@@ -13,9 +15,6 @@ export PATH="$PATH:$ANDROID_SDK_ROOT/tools/bin/"
 export PATH="$PATH:$ANDROID_ROOT/emulator"
 export PATH="$PATH:$ANDROID_SDK_ROOT/tools/"
 
-unsetopt PROMPT_SP
-
-export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 #XDG_DIRS
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
@@ -39,6 +38,9 @@ export EDITOR="/usr/bin/nvim"
 export VISUAL="/usr/bin/nvim"
 export TERMINAL="/usr/bin/kitty"
 export BROWSER="/usr/bin/firefox"
+
+# Source .bashrc
+[[ -f "$XDG_CONFIG_HOME/bash/bashrc" ]] && . "$XDG_CONFIG_HOME/bash/bashrc"
 
 # lf file manager icons
 export LF_ICONS="\

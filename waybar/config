@@ -1,0 +1,48 @@
+[{
+    "name": "primary-output",
+    "layer": "top",
+    "output": "DP-1",
+    "height": 25,
+    "spacing": 4,
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["sway/window"],
+    "modules-right": ["cpu", "memory", "pulseaudio", "clock"],
+    "sway/window": {
+        "max-length": 50
+    },
+    "clock": {
+        "format": "{:%a, %d. %b  %H:%M}",
+            "on-click": "kitty --class calcurse --override remember_window_size=no --override initial_window_width=1000 --override initial_window_height=625 -e calcurse"
+   },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false,
+            "on-click": "kitty --class htop --override remember_window_size=no --override initial_window_width=1000 --override initial_window_height=625 -e htop"
+    },
+    "memory": {
+        "format": "{}% ",
+            "on-click": "kitty --class htop --override remember_window_size=no --override initial_window_width=1000 --override initial_window_height=625 -e htop"
+    },
+},
+{
+    "name": "secondary-output",
+    "output": "eDP-1",
+    "layer": "top",
+    "position": "bottom",
+    "height": 20,
+    "spacing": 4,
+    "modules-center": ["sway/workspaces"],
+}
+]

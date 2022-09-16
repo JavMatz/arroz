@@ -24,10 +24,17 @@
 # Preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
+    set $d_menu bemenu_drun \
+            --prompt ">>" \
+            --list 30 \
+            --fn sans 11 \
+            --width-factor 0.5 \
+            --no-overlap
+
     set $menu bemenu-run \
             --prompt ">>" \
             --list 30 \
-            --fn monospace 11 \
+            --fn sans 11 \
             --width-factor 0.5 \
             --no-overlap | xargs swaymsg exec --
 
@@ -134,6 +141,7 @@
 
     # Start your launcher
     bindsym $mod+d exec $menu
+    bindsym $mod+x exec $d_menu
 
     # Start your web browser
     bindsym $mod+i exec $browser

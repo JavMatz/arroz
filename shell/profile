@@ -15,7 +15,6 @@ export PATH="$PATH:$ANDROID_SDK_ROOT/tools/"
 
 unsetopt PROMPT_SP
 
-export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 #XDG_DIRS
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
@@ -27,18 +26,20 @@ export XDG_DOCUMENTS_DIR="$HOME/Documentos"
 export XDG_MUSIC_DIR="$HOME/Música"
 export XDG_PICTURES_DIR="$HOME/Imágenes"
 export XDG_VIDEOS_DIR="$HOME/Vídeos"
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 
 # Desktop portal
 export XDG_CURRENT_DESKTOP=sway
 
 # Qt apps theme
-export QT_STYLE_OVERRIDE=kvantum
+export QT_STYLE_OVERRIDE=adwaita-dark
 
 # Tool
 export EDITOR="/usr/bin/nvim"
 export VISUAL="/usr/bin/nvim"
 export TERMINAL="/usr/bin/kitty"
 export BROWSER="/usr/bin/firefox"
+export CHROME_EXECUTABLE="/usr/bin/google-chrome-stable"
 
 # lf file manager icons
 export LF_ICONS="\

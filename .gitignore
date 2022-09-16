@@ -5,10 +5,11 @@
 !.gitignore
 
 !tmux/**
-!sway/**
+!lf/**
 !kitty/**
-!fontconfig/**
 !nvim/**
+!sway/**
+!waybar/**
+!fontconfig/**
 !zsh/**
 !shell/**
-!lf/**

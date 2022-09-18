@@ -1,13 +1,22 @@
+@import "colors.css";
+
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: sans;
     font-size: 12px;
 }
 
+/* Secondary output */
+window#waybar.secondary-output {
+    background: transparent;
+    color: @Light1;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
 window#waybar {
-    background-color: rgba(0, 0, 0, 0.00); 
-    /* Text color */
-    color: #f6f5f4;
+    background-color: @Dark5; 
+    color: @Light1;
     transition-property: background-color;
     transition-duration: .5s;
 }

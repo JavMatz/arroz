@@ -41,6 +41,7 @@
     "output": "eDP-1",
     "layer": "top",
     "position": "bottom",
+    "mode": "overlay",
     "height": 20,
     "spacing": 4,
     "modules-center": ["sway/workspaces"],

@@ -2,8 +2,12 @@
 ### Variables ###
 #################
 
+exec_always {
+    inactive-windows-transparency.py
+}
+
 # Font
-    font pango:sans 10
+    font pango:sans 9
 # Wallpaper folder
     set $wallpaper_folder ~/Imágenes/Wallpapers/
 # Logo key. Use Mod1 for Alt.
@@ -24,19 +28,13 @@
 # Preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-    set $d_menu bemenu_drun \
-            --prompt ">>" \
-            --list 30 \
-            --fn sans 11 \
-            --width-factor 0.5 \
-            --no-overlap
-
-    set $menu bemenu-run \
-            --prompt ">>" \
-            --list 30 \
-            --fn sans 11 \
-            --width-factor 0.5 \
-            --no-overlap | xargs swaymsg exec --
+    # set $menu wofi --show drun
+    set $menu bemenu_drun $(echo $BEMENU_OPTS)
+            # --prompt ">>" \
+            # --list 40 \
+            # --fn sans 9 \
+            # --width-factor 0.5 \
+            # --no-overlap \
 
 ############################
 ### Output configuration ###
@@ -51,16 +49,17 @@
 
 ## External monitor (left)
     output DP-1 {
-        background $wallpaper_folder"anime_room.png" fill
+        background $wallpaper_folder"mazda-rx7.jpg" fill
         resolution 1920x1080
         position 0,0
     }
 
 ## Laptop screen (right)
     output eDP-1 {
-        background $wallpaper_folder"anime_sunset.jpg" fill
-            resolution 1366x768
-            position 1920,0
+        background $wallpaper_folder"mazda-rx7.jpg" fill
+        resolution 1366x768
+        position 1920,0
+        disable
     }
     
 ## Toggle laptop screen on and off
@@ -125,7 +124,11 @@
 
 ## Window borders
     default_border pixel 2
-    gaps inner 8
+    gaps inner 4 
+# client.<class> <border> <background> <text> [<indicator> [<child_border>]]
+    client.focused #C0BFBC #C0BFBC #FFFFFF #F9F06B
+    client.focused_inactive #C0BFBC #C0BFBC #FFFFFF
+    client.unfocused #C0BFBC #C0BFBC #FFFFFF
 
 ####################
 ### Key bindings ###
@@ -141,7 +144,6 @@
 
     # Start your launcher
     bindsym $mod+d exec $menu
-    bindsym $mod+x exec $d_menu
 
     # Start your web browser
     bindsym $mod+i exec $browser
@@ -173,7 +175,6 @@
     bindsym $mod+Shift+$down move down
     bindsym $mod+Shift+$up move up
     bindsym $mod+Shift+$right move right
-
 
 ## Workspaces ##
 
@@ -208,8 +209,8 @@
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+b splith
-    bindsym $mod+v splitv
+    bindsym $mod+b splith ; exec pkill -RTMIN+8 waybar
+    bindsym $mod+v splitv ; exec pkill -RTMIN+8 waybar
 
     # Switch the current container between different layout styles
     bindsym $mod+s layout stacking

@@ -4,22 +4,25 @@
     "output": "DP-1",
     "height": 25,
     "spacing": 4,
-    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-left": ["sway/workspaces"],
     "modules-center": ["sway/window"],
-    "modules-right": ["cpu", "memory", "pulseaudio", "clock"],
+    "modules-right": ["sway/mode", "custom/split-indicator", "cpu", "memory", "pulseaudio", "clock"],
     "sway/window": {
-        "max-length": 50
+        "max-length": 100
+    },
+    "sway/mode": {
+        "format": "  ",
     },
     "clock": {
-        "format": "{:%a, %d. %b  %H:%M}",
+        "format": "{:%a, %d. %b  %H:%M} ",
             "on-click": "kitty --class calcurse --override remember_window_size=no --override initial_window_width=1000 --override initial_window_height=625 -e calcurse"
-   },
+    },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon} {format_source}",
         "format-muted": " {format_source}",
         "format-source": "{volume}% ",
-        "format-source-muted": "",
+        "format-source-muted": " ",
         "format-icons": {
             "headphone": "",
             "default": ["", "", ""]
@@ -35,6 +38,13 @@
         "format": "{}% ",
             "on-click": "kitty --class htop --override remember_window_size=no --override initial_window_width=1000 --override initial_window_height=625 -e htop"
     },
+    /* "custom/split-indicator": { */
+    /*     "exec": "~/.local/bin/split-indicator.py", */
+    /*     "interval": "once", */
+    /*     "signal": 8, */
+    /*         "format": "{}", */
+    /*         "tooltip": false, */
+    /* }, */
 },
 {
     "name": "secondary-output",

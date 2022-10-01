@@ -32,7 +32,7 @@ export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export XDG_CURRENT_DESKTOP=sway
 
 # Qt apps theme
-export QT_STYLE_OVERRIDE=adwaita-dark
+export QT_STYLE_OVERRIDE=highcontrastinverse
 
 # Tool
 export EDITOR="/usr/bin/nvim"
@@ -40,6 +40,27 @@ export VISUAL="/usr/bin/nvim"
 export TERMINAL="/usr/bin/kitty"
 export BROWSER="/usr/bin/firefox"
 export CHROME_EXECUTABLE="/usr/bin/google-chrome-stable"
+
+# BEMENU
+export BEMENU_BACKEND="wayland"
+export BEMENU_OPTS="--prompt  --list 20 --fn sans 9 --width-factor 0.5 --no-overlap \
+       --tb #241F31 \
+       --tf #FFFFFF \
+       --fb #241F31 \
+       --ff #FFFFFF \
+       --ab #241F31 \
+       --af #FFFFFF \
+       --cb #241F31 \
+       --cf #FFFFFF \
+       --nb #241F31 \
+       --nf #FFFFFF \
+       --hb #26A269 \
+       --hf #241F31 \
+       --sb #26A269 \
+       --sf #241F31 \
+       --scb #26A269 \
+       --scf #241F31 \
+       " 
 
 # lf file manager icons
 export LF_ICONS="\

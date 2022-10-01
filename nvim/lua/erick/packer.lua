@@ -8,6 +8,7 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   -- Colorscheme 
   use 'NLKNguyen/papercolor-theme'
+  use 'folke/tokyonight.nvim'
   -- Toggle comments
   use 'tpope/vim-commentary'
   -- lualine

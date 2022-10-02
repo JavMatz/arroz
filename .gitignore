@@ -4,12 +4,9 @@
 !*/
 !.gitignore
 
-!tmux/**
 !lf/**
 !kitty/**
 !nvim/**
-!sway/**
-!waybar/**
 !fontconfig/**
 !zsh/**
 !shell/**

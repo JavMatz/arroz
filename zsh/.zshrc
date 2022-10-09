@@ -8,6 +8,8 @@ setopt autocd
 stty stop undef
 # setopt interactive_comments
 
+unsetopt PROMPT_SP
+
 # From Luke's config for the Zoomer Shell:
 # History in cache directory:
 HISTSIZE=10000000

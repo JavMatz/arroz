@@ -3,6 +3,7 @@
 alias vim='nvim'
 alias vimdiff="nvim -d"
 alias duh='du -h'
+alias yeet='pacman -Rsn'
 
 # sudo not required for some system commands
 for command in mount umount pacman su ; do
@@ -36,7 +37,6 @@ alias \
 	e="$EDITOR" \
 	v="$EDITOR" \
 	p="pacman" \
-	z="zathura" \
-    open='mimeopen -a' \
-    alias ..='cd ..'
-
+  y="yay" \
+  open='mimeopen -a' \
+  alias ..='cd ..' \

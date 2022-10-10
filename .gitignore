@@ -4,9 +4,8 @@
 !*/
 !.gitignore
 
-!lf/**
-!kitty/**
 !nvim/**
 !fontconfig/**
 !zsh/**
 !shell/**
+!gtk-3.0/**

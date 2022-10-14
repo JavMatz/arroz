@@ -6,11 +6,6 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
-  -- Colorscheme 
-  use 'NLKNguyen/papercolor-theme'
-  use 'folke/tokyonight.nvim'
   -- Toggle comments
   use 'tpope/vim-commentary'
-  -- lualine
-  use 'nvim-lualine/lualine.nvim'
 end)

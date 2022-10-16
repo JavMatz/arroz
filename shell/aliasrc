@@ -1,12 +1,20 @@
 #!/bin/sh
 
+# vim shorter than nvim
 alias vim='nvim'
 alias vimdiff="nvim -d"
-alias duh='du -h'
+# Always human readable
+alias du='du -h'
+# Shorter form to remove a package
 alias yeet='pacman -Rsn'
+# Shorter form
+alias ..='cd ..' 
+# Put current directory on clipboard
+alias ypwd='pwd | xclip -r'
+alias auracle-up='cd /tmp && auracle update'
 
 # sudo not required for some system commands
-for command in mount umount pacman su ; do
+for command in mount umount pacman su nethogs; do
 	alias $command="sudo $command"
 done; unset command
 
@@ -20,6 +28,23 @@ alias \
 	yt="yt-dlp --embed-metadata -i" \
 	yta="yt -x -f bestaudio/best" \
 	ffmpeg="ffmpeg -hide_banner"
+
+# git commands 
+alias \
+    gstat="git status" \
+    glog="git log -p"
+    
+# auracle commands 
+
+auracle() {
+
+    if test "$1" = "update" || test "$1" = "clone"; then
+        cd /tmp/
+        command auracle "$@"
+    else
+        command auracle "$@"
+    fi
+}
 
 # Colorize commands when possible.
 alias \
@@ -37,6 +62,4 @@ alias \
 	e="$EDITOR" \
 	v="$EDITOR" \
 	p="pacman" \
-  y="yay" \
-  open='mimeopen -a' \
-  alias ..='cd ..' \
+    o='mimeopen -a'

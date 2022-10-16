@@ -55,7 +55,7 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 bindkey -s '^o' '^umc\n'
 
-bindkey -s '^a' '^ubc -lq\n'
+bindkey -s '^a' '^uthunar &\n'
 
 bindkey -s '^f' '^ucd "$(dirname "$(fzf)")"\n'
 

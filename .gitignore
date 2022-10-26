@@ -5,7 +5,6 @@
 !.gitignore
 
 !nvim/**
-!fontconfig/**
 !zsh/**
+!rofi/**
 !shell/**
-!gtk-3.0/**

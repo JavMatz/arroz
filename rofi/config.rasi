@@ -1,0 +1,29 @@
+configuration {
+    font: "Noto Sans Display Regular 11";
+    show-icons: true;
+    icon-theme: "elementary-xfce";
+    terminal: "rofi-sensible-terminal";
+	kb-row-left: "Control+u";
+	kb-row-right: "Control+d";
+	kb-row-up: "Control+k,Up";
+	kb-row-down: "Control+j,Down";
+	kb-move-char-back: "Left,Control+h";
+	kb-move-char-forward: "Right,Control+l";
+	kb-remove-char-forward: "Control+s,Delete";
+	kb-remove-char-back: "BackSpace,Shift+BackSpace";
+	kb-accept-entry: "Return,Control+m,KP_Enter";
+	/* kb-clear-line: "Control+w"; */
+	/* kb-move-front: "Control+a"; */
+	/* kb-move-end: "Control+e"; */
+    timeout {
+        action: "kb-cancel";
+        delay:  0;
+    }
+    filebrowser {
+        directories-first: true;
+        sorting-method:    "name";
+    }
+	kb-remove-to-eol: "Control+E";
+	kb-remove-to-sol: "Control+B";
+	kb-mode-complete: "Control+L";
+}

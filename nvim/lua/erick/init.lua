@@ -1,4 +1,5 @@
-require('erick.set')
--- require('erick.statusline')
-require('erick.remap')
 require('erick.packer')
+require('erick.set')
+require('erick.remap')
+require('erick.lsp-zero')
+-- require('erick.statusline')

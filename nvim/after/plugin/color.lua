@@ -1,7 +1,5 @@
-if vim.fn.has("termguicolors") then 
+if vim.fn.has("termguicolors") then
     vim.opt.termguicolors = true
 end
 
-require('boo-colorscheme').use({
-    italic = true,
-})
+vim.cmd("colorscheme slate")

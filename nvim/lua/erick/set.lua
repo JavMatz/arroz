@@ -5,8 +5,13 @@ vim.opt.title = true
 vim.cmd("filetype plugin on")
 -- vim.cmd("syntax on")
 
--- -- " Disables automatic commenting on newline:
+-- " Disables automatic commenting on newline:
 vim.cmd("autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o")
+
+vim.opt.foldmethod = "syntax"
+vim.opt.foldminlines = 5
+vim.opt.foldnestmax = 5
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 
 vim.opt.autoindent = true
 vim.opt.expandtab = true
@@ -14,7 +19,7 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.shiftround = true
 
-vim.opt.display = "lastline"
+-- vim.opt.display = "lastline"
 
 vim.opt.hlsearch = false
 

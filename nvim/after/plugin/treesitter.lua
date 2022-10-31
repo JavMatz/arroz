@@ -5,8 +5,18 @@ require'nvim-treesitter.configs'.setup {
    highlight = {
        enable = true,
        additional_vim_regex_highlighting = false
+   },
+   incremental_selection = {
+       enable = true,
+       keymaps = {
+           init_selection = '<CR>',
+           scope_incremental = '<CR>',
+           node_incremental = '<TAB>',
+           node_decremental = '<S-TAB>',
+       }
    }
 }
+
 vim.api.nvim_create_autocmd({'BufEnter','BufAdd','BufNew','BufNewFile','BufWinEnter'}, {
   group = vim.api.nvim_create_augroup('TS_FOLD_WORKAROUND', {}),
   callback = function()

@@ -37,13 +37,18 @@ alias \
 # auracle commands 
 
 auracle() {
-
     if test "$1" = "update" || test "$1" = "clone"; then
         cd /tmp/
         command auracle "$@"
     else
         command auracle "$@"
     fi
+}
+
+# borg backup 
+
+borgBackup () {
+    borg create --exclude-from './.config/borg/excludeFile' --list /run/media/erick/ERICK1/erick_backup::archive-{hostname}-{now} .
 }
 
 # Colorize commands when possible.

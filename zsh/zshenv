@@ -35,6 +35,6 @@ export QT_LOGGING_RULES="qt.svg*.warning=false"
 # Tool
 export EDITOR="/usr/bin/nvim"
 export VISUAL="/usr/bin/nvim"
-export TERMINAL="/usr/bin/xfce4-terminal"
+export TERMINAL="/usr/local/bin/st"
 export BROWSER="/usr/bin/firefox"
 export CHROME_EXECUTABLE="/usr/bin/brave"

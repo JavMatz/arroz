@@ -7,8 +7,18 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
+    -- Theme 
+
+    use 'rockerBOO/boo-colorscheme-nvim'
+
     -- Toggle comments
     use 'tpope/vim-commentary'
+
+    -- Harpoon
+    use {
+        'ThePrimeagen/harpoon',
+        requires = { { 'nvim-lua/plenary.nvim'} }
+    }
 
     -- Tree Sitter
     use {
@@ -23,7 +33,6 @@ return require('packer').startup(function(use)
     }
 
     -- Fast LSP Setup
-
     use {
         'VonHeikemen/lsp-zero.nvim',
         requires = {

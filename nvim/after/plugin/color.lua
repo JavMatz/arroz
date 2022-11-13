@@ -2,4 +2,4 @@ if vim.fn.has("termguicolors") then
     vim.opt.termguicolors = true
 end
 
-vim.cmd("colorscheme slate")
+require("boo-colorscheme").use({})

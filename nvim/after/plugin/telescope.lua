@@ -1,3 +1,6 @@
+local nmap = require('erick.keymap').nmap
+local builtin = require('telescope.builtin')
+
 require('telescope').setup{
     defaults = {
         mappings = {
@@ -7,3 +10,9 @@ require('telescope').setup{
         }
     }
 }
+
+-- Keymaps
+nmap('ff', builtin.find_files, {})
+nmap('fg', builtin.live_grep, {})
+nmap('fb', builtin.buffers, {})
+nmap('fh', builtin.help_tags, {})

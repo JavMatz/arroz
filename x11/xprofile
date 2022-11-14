@@ -4,7 +4,7 @@
 
 xrandr --output DP-1 --auto --output eDP-1 --off
 setxkbmap -model pc104 -layout es
-xwallpaper --zoom "/home/erick/Imágenes/Wallpapers/better_botan.jpg"
+xwallpaper --zoom "/home/erick/Imágenes/Wallpapers/Graphite/better_botan.jpg"
 
 unclutter &
 dunst &

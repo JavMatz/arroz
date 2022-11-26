@@ -4,7 +4,7 @@ set drawbox
 set scrolloff 10
 set period 1
 set icons
-set promptfmt "\033[01;35m[ \033[01;33m %d\033[05;36m%f\033[0m \033[01;35m]"
+set promptfmt "\033[01;35m[ \033[01;33m %d\033[01;36m%f\033[0m \033[01;35m]"
 
 set previewer ctpv
 set cleaner ctpvclear

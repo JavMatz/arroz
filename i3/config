@@ -53,6 +53,7 @@ client.unfocused        #121212 #121212 #dde1e6 #3168a0   #121212
 # for_window [title="System Resources"] move scratchpad floating enable
 # bindsym $mod+ñ assign [title="System Resources"]
 assign [class="firefox"] 1
+for_window [class="Dragon"] border pixel 1
 for_window [class="Steam"] floating enable
 assign [class="Steam"] 8
 assign [class="Steam"] 8
@@ -165,22 +166,14 @@ bindsym $mod+Shift+r restart # exit i3 (logs you out of your X session) bindsym 
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
-
-        # same bindings, but for the arrow keys
-        # bindsym Left resize shrink width 10 px or 10 ppt
-        # bindsym Down resize grow height 10 px or 10 ppt
-        # bindsym Up resize shrink height 10 px or 10 ppt
-        # bindsym Right resize grow width 10 px or 10 ppt
+        # Pressing - will shrink the window’s width.
+        # Pressing + will grow the window’s width.
+        # Pressing Shift+- will shrink the window’s height.
+        # Pressing Shift++ will grow the window’s height.
+        bindcode 61 resize shrink width 10 px or 10 ppt 
+        bindcode Shift+35 resize grow height 10 px or 10 ppt
+        bindcode Shift+61 resize shrink height 10 px or 10 ppt
+        bindcode 35 resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"

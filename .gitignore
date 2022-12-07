@@ -8,6 +8,11 @@
 !gtk-2.0/**
 !nvim/**
 !lf/**
+!mpd/**
+!ncmpcpp/**
+!mpv/**
+!i3/**
+!sxhkd/**
 !x11/**
 !zsh/**
 !shell/**

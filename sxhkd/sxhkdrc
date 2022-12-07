@@ -1,0 +1,21 @@
+mod4 + shift + Return
+    kermit 
+
+mod4 + shift + i
+    firefox
+
+mod4 + p
+    j4-dmenu-desktop
+
+mod4 + ctrl + p
+    dmenu-power
+
+mod4 + F6
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
+mod4 + F7
+    pactl set-sink-volume @DEFAULT_SINK@ -5%
+mod4 + F8
+    pactl set-sink-volume @DEFAULT_SINK@ +5%
+
+Print 
+    flameshot gui

@@ -38,6 +38,6 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 # Tool
 export EDITOR="/usr/bin/nvim"
 export VISUAL="/usr/bin/nvim"
-export TERMINAL="/usr/local/bin/st"
+export TERMINAL="/usr/bin/kermit"
 export BROWSER="/usr/bin/firefox"
 export CHROME_EXECUTABLE="/usr/bin/brave"

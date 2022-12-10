@@ -67,7 +67,7 @@ lfcd () {
 }
 bindkey -s '^o' '^ulfcd\n'
 
-bindkey -s '^p' '^upcmanfm &\n'
+bindkey -s '^p' '^upcmanfm-qt &\n'
 
 bindkey -s '^g' '^ulazygit\n'
 

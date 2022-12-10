@@ -1,11 +1,11 @@
 mod4 + shift + Return
-    kermit 
+    kermit
 
 mod4 + shift + i
     firefox
 
 mod4 + p
-    j4-dmenu-desktop
+    j4-dmenu-desktop --no-generic
 
 mod4 + ctrl + p
     dmenu-power
@@ -17,5 +17,5 @@ mod4 + F7
 mod4 + F8
     pactl set-sink-volume @DEFAULT_SINK@ +5%
 
-Print 
+Print
     flameshot gui

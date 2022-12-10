@@ -14,12 +14,17 @@ set cleaner ctpvclear
 #· Keybindings ·#
 map DD delete
 map au aunpack
+map Drg dragNdrop
 #map apz apackZip
 
 #· Functions ·#
 
 cmd aunpack ${{
     aunpack $(echo $f | awk -F\/ '{ print $(NF) }')
+}}
+
+cmd dragNdrop ${{
+    dragon $f
 }}
 
 #cmd apackZip ${{

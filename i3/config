@@ -33,19 +33,28 @@ exec_always $XDG_CONFIG_HOME/polybar/launch.sh
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 # exec --no-startup-id nm-applet
 
-# Window title alignment
-title_align center
-default_border normal
-
 # Colors
-# #309fa0
-# #3168a0
-# #3130a0
+set_from_resource $normbordercolor i3wm.normbordercolor #282828
+set_from_resource $selbordercolor i3wm.selbordercolor #3168a0
+set_from_resource $urgbordercolor i3wm.urgbordercolor #ff0000
+set_from_resource $normfgcolor i3wm.normfgcolor #bbbbbb
+set_from_resource $normbgcolor i3wm.normbgcolor #222222
+set_from_resource $selfgcolor i3wm.selfgcolor #eeeeee
+set_from_resource $selbgcolor i3wm.selbgcolor #005577
 
-# class                 border  backgr. text    indicator child_border
-client.focused          #3168a0 #3168a0 #dde1e6 #309fa0   #3168a0
-client.focused_inactive #282828 #282828 #808080 #3168a0   #282828
-client.unfocused        #121212 #121212 #dde1e6 #3168a0   #121212
+# class                 t.border        t.backgr.       text            indicator         child_border
+client.focused          $selbgcolor     $selbgcolor     $selfgcolor     $selbordercolor   $selbgcolor
+client.focused_inactive $normbgcolor    $normbgcolor    $normfgcolor    $selbordercolor   $normbgcolor
+client.unfocused        $normbgcolor    $normbgcolor    $normfgcolor    $selbordercolor   $normbgcolor
+client.urgent           $urgbordercolor $urgbordercolor $selbordercolor $selbordercolor   $urgbordercolor
+client.placeholder      #000000         #0c0c0c         #ffffff         #000000           #0c0c0c
+
+client.background       $normbgcolor
+
+
+# Window title alignment
+title_align left
+default_border normal
 
 # Window rules
 

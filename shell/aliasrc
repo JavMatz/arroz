@@ -33,23 +33,28 @@ alias \
     gstat="git status" \
     glog="git log -p"
     
-# auracle commands 
-
-auracle() {
-    if test "$1" = "update" || test "$1" = "clone"; then
-        cd /tmp/
-        command auracle "$@"
-    else
-        command auracle "$@"
-    fi
+# Mounting drives without sudo
+dmount () {
+    udisksctl mount -b "$1"
+}
+dunmount () {
+    udisksctl unmount -b "$1"
 }
 
 # borg backup 
-
 borgBackup () {
     borg create --exclude-from './.config/borg/excludeFile' --list /run/media/erick/ERICK1/erick_backup::archive-{hostname}-{now} .
 }
 
+# ffmpeg convertion
+toMP3 () {
+    ffmpeg -i "$1" -acodec mp3 "$1.mp3"
+}
+
+# Turn off and on the wifi
+restartWlan () {
+    rfkill block wlan && sleep 3s && rfkill unblock wlan && print "Wifi reiniciado"
+}
 # Colorize commands when possible.
 alias \
 	ls="lsd -h --color=auto --group-directories-first" \
@@ -67,3 +72,8 @@ alias \
 	v="$EDITOR" \
 	p="pacman" \
     o='mimeopen -a'
+
+# Prettify stuff
+prettyJson () {
+    python -m json.tool "$1"
+}

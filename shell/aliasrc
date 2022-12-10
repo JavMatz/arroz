@@ -7,7 +7,7 @@ alias vimdiff="nvim -d"
 alias du='du -h'
 # Shorter form to remove a package
 alias yeet='pacman -Rsn'
-# Shorter form
+# Shorter form to move to previous directory
 alias ..='cd ..' 
 # Put current directory on clipboard
 alias ypwd='pwd | xclip -r'

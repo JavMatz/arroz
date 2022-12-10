@@ -12,6 +12,7 @@
 !ncmpcpp/**
 !mpv/**
 !i3/**
+!polybar/**
 !sxhkd/**
 !x11/**
 !zsh/**

@@ -8,8 +8,7 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     -- Theme 
-
-    use 'rockerBOO/boo-colorscheme-nvim'
+    use 'ishan9299/modus-theme-vim'
 
     -- Toggle comments
     use 'tpope/vim-commentary'

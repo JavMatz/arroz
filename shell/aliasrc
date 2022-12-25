@@ -55,6 +55,12 @@ toMP3 () {
 restartWlan () {
     rfkill block wlan && sleep 3s && rfkill unblock wlan && print "Wifi reiniciado"
 }
+
+# Restart sxhkd
+restart_sxhkd () {
+    pkill -usr1 -x sxhkd; notify-send 'sxhkd' 'Reloaded config'
+}
+
 # Colorize commands when possible.
 alias \
 	ls="lsd -h --color=auto --group-directories-first" \

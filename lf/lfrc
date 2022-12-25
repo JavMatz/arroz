@@ -24,7 +24,7 @@ cmd aunpack ${{
 }}
 
 cmd dragNdrop ${{
-    dragon $f
+    dragon -x $f
 }}
 
 #cmd apackZip ${{

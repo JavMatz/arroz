@@ -79,11 +79,6 @@ _G.packer_plugins = {
     path = "/home/erick/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  ["boo-colorscheme-nvim"] = {
-    loaded = true,
-    path = "/home/erick/.local/share/nvim/site/pack/packer/start/boo-colorscheme-nvim",
-    url = "https://github.com/rockerBOO/boo-colorscheme-nvim"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/erick/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -134,6 +129,11 @@ _G.packer_plugins = {
     path = "/home/erick/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["modus-theme-vim"] = {
+    loaded = true,
+    path = "/home/erick/.local/share/nvim/site/pack/packer/start/modus-theme-vim",
+    url = "https://github.com/ishan9299/modus-theme-vim"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/erick/.local/share/nvim/site/pack/packer/start/nvim-cmp",
@@ -168,6 +168,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/erick/.local/share/nvim/site/pack/packer/start/vim-commentary",
     url = "https://github.com/tpope/vim-commentary"
+  },
+  ["vim-css-color"] = {
+    loaded = true,
+    path = "/home/erick/.local/share/nvim/site/pack/packer/start/vim-css-color",
+    url = "https://github.com/ap/vim-css-color"
   }
 }
 

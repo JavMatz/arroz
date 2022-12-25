@@ -19,6 +19,10 @@ return require('packer').startup(function(use)
         requires = { { 'nvim-lua/plenary.nvim'} }
     }
 
+    -- CSS Color
+
+    use 'ap/vim-css-color'
+
     -- Tree Sitter
     use {
         'nvim-treesitter/nvim-treesitter',

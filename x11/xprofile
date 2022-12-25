@@ -4,9 +4,11 @@
 
 xrandr --output DP-1 --auto --output eDP-1 --off
 setxkbmap -model pc104 -layout es
-xwallpaper --zoom "/home/erick/Imágenes/Wallpapers/Space/astronaut.jpg"
+xinput set-prop 12 'libinput Accel Speed' -0.35
+xwallpaper --output DP-1 --zoom "$XDG_PICTURES_DIR/Wallpapers/Anime/eva_01.jpg"
+st -e nvim &
 
-xcompmgr -c -C &
+xcompmgr &
 sxhkd &
 unclutter &
 dunst &

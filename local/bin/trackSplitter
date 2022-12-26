@@ -1,0 +1,50 @@
+#!/bin/sh
+
+# Need ffmpeg and taffy
+
+# Splits a mp3 file in mp3 tracks using given time marks (and other optional info) in csv file and tags them accordingly.
+
+# For this script to work as intended you need:
+
+# -   An input file in mp3 format.
+# -   A csv file named `ProcList` with the following columns (see `exProcList` for an example)
+#     -   `Track Number`, `Start of track`, `End of track`, `Song name`, `Artist`
+
+# The input file and `ProcList` need to be in the same directory.
+
+# Run `trackSplitter input.mp3 album_of_tracks`.
+
+# Example csv file
+
+#	  1,00:05,05:37,Track Name,Artist
+#	  2,05:38,08:51,Track Name,Artist
+#	  3,08:53,11:23,Track Name,Artist
+#	  4,11:23,16:50,Track Name,Artist
+#	  5,16:50,20:08,Track Name,Artist
+
+INPUT=$1
+ALBUM=${2:-Album}
+
+[ -z "$INPUT" ] && echo "Please provide an input file" && exit
+
+if [ -e ./ProcList.csv ]
+then
+	[ ! -d ./Tracks ] && mkdir ./Tracks 
+	TOTALTRACKS=$(wc -l ./ProcList.csv | awk '{print $1}')
+	for TRACK in $(seq 1 $TOTALTRACKS)
+	do
+		TRACKSTART=$(awk -F, '$1 == '$TRACK' {print $2}' ./ProcList.csv)
+		TRACKEND=$(awk -F, '$1 == '$TRACK' {print $3}' ./ProcList.csv)
+
+		TRACKNUMBER=$(awk -F, '$1 == '$TRACK' {print $1}' ./ProcList.csv)
+		TRACKNAME=$(awk -F, '$1 == '$TRACK' {print $4}' ./ProcList.csv)
+		TRACKARTIST=$(awk -F, '$1 == '$TRACK' {print $5}' ./ProcList.csv)
+
+		ffmpeg -i "$INPUT" -ss $TRACKSTART -to $TRACKEND -c copy ./Tracks/output.mp3
+
+		taffy --track "$TRACKNUMBER" --album "$ALBUM" --artist "$TRACKARTIST" --title "$TRACKNAME" --rename-fs "%n - %R - %T" ./Tracks/output.mp3
+
+	done
+else
+	echo There\'s no \'ProcList\' file. Please create one.
+fi

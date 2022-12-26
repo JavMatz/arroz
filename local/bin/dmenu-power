@@ -1,0 +1,13 @@
+#!/bin/sh
+# Modified version from https://github.com/Stebalien/dmenu-menus
+# Instead of using the well known rofi-power-menu script, which implements a new
+# modi for rofi, use a simple script using rofi in dmenu mode.
+
+case "$(echo -e "Shutdown\nRestart\nLogout\nSuspend\nLock" | dmenu -i \
+    -p "Power" )" in
+        Shutdown) exec systemctl poweroff;;
+        Restart) exec systemctl reboot;;
+        Logout) exec pkill i3wm;;
+        Suspend) exec systemctl suspend;;
+        Lock) exec slock;;
+esac

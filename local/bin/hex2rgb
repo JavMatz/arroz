@@ -1,0 +1,17 @@
+#!/bin/sh
+
+ARGS=$1
+
+# Remove '#' character
+if test "${ARGS:0:1}" = "#"; then
+    HEX_COLOR=${ARGS:1}
+else
+    HEX_COLOR=$ARGS
+fi
+
+# 6 characters
+if test "${#HEX_COLOR}" -eq 6; then
+    printf "rgb(%d, %d, %d)\n" 0x${HEX_COLOR:0:2} 0x${HEX_COLOR:2:2} 0x${HEX_COLOR:4:2}
+else
+    echo "Please enter 6 characters"
+fi

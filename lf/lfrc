@@ -12,13 +12,16 @@ set cleaner ctpvclear
 &ctpvquit $id
 
 #· Keybindings ·#
-map DD delete
+map DD gio_trash
 map au aunpack
 map Drg dragNdrop
 #map apz apackZip
 
 #· Functions ·#
 
+cmd gio_trash ${{
+    gio trash $fx
+}}
 cmd aunpack ${{
     aunpack $(echo $f | awk -F\/ '{ print $(NF) }')
 }}

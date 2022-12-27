@@ -38,4 +38,5 @@ else
 	. "$HOME/.xprofile"
 fi
 
-ssh-agent i3
+exec startxfce4
+# ssh-agent i3

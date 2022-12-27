@@ -5,13 +5,13 @@
 *.font: monospace:size=10
 
 !!dwm (and i3)
-*.normfgcolor: #bbbbbb
-*.normbgcolor: #222222
-*.selfgcolor:  #eeeeee
-*.selbgcolor:  #005577
-*.normbordercolor: #444444
-*.selbordercolor:  #770000
-*.urgbordercolor: #ff0000
+*.normfgcolor: #deddda
+*.normbgcolor: #3d3846
+*.selfgcolor:  #f6f5f4
+*.selbgcolor:  #1a5fb4
+*.normbordercolor: #5e5c64
+*.selbordercolor:  #a51d2d
+*.urgbordercolor: #e01b24
 
 !!st
 /* name		dark	light */

@@ -20,7 +20,6 @@ return require('packer').startup(function(use)
     }
 
     -- CSS Color
-
     use 'ap/vim-css-color'
 
     -- Tree Sitter

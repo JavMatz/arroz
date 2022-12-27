@@ -16,6 +16,7 @@
 !i3/**
 !polybar/**
 !sxhkd/**
+!fontconfig/**
 !x11/**
 !zsh/**
 !shell/**

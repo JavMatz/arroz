@@ -9,59 +9,43 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod4
-
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-font pango:monospace 9
-
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
-
 # Autostart
 # Polybar
 exec_always $XDG_CONFIG_HOME/polybar/launch.sh
-# exec_always $TERMINAL -e btop -t "System resources"
 
-# Colors
-set_from_resource $normbordercolor i3wm.normbordercolor #282828
-set_from_resource $selbordercolor i3wm.selbordercolor #3168a0
-set_from_resource $urgbordercolor i3wm.urgbordercolor #ff0000
-set_from_resource $normfgcolor i3wm.normfgcolor #bbbbbb
-set_from_resource $normbgcolor i3wm.normbgcolor #222222
-set_from_resource $selfgcolor i3wm.selfgcolor #eeeeee
-set_from_resource $selbgcolor i3wm.selbgcolor #005577
-
-# class                 t.border        t.backgr.       text            indicator         child_border
-client.focused          $selbgcolor     $selbgcolor     $selfgcolor     $selbordercolor   $selbgcolor
-client.focused_inactive $normbgcolor    $normbgcolor    $normfgcolor    $selbordercolor   $normbgcolor
-client.unfocused        $normbgcolor    $normbgcolor    $normfgcolor    $selbordercolor   $normbgcolor
-client.urgent           $urgbordercolor $urgbordercolor $selbordercolor $selbordercolor   $urgbordercolor
-client.placeholder      #000000         #0c0c0c         #ffffff         #000000           #0c0c0c
-
-client.background       $normbgcolor
+# Font
+font pango:monospace SemiBold 9
 
 # Windows
-title_align center
-default_border normal
+title_align left
+default_border normal 1
+workspace_auto_back_and_forth yes
+
+# Colors
+# class                 t.border        t.backgr.       text            indicator         child_border
+client.focused          #1c71d8         #15549e         #f6f5f4         #99c1f1           #15549e
+client.focused_inactive #241f31         #5e5c64         #f6f5f4         #5e5c64           #5e5c64
+client.unfocused        #5e5c64         #3d3846         #9a9996         #3d3846           #3d3846
+client.urgent           #e01b24         #a51d2d         #f6f5f4         #a51d2d           #a51d2d
+client.placeholder      #000000         #241f31         #f6f5f4         #000000           #241f31
+client.background       #241f31
 
 # xprop(1):
 #  WM_CLASS(STRING) = instance, class
 #  WM_NAME(STRING) = title
 
 # Workspaces
-assign [class="firefox"] 1
-assign [class="Steam"] 8
-assign [class="Steam"] 8
+# assign [class="firefox"] 1
 assign [class="Steam"] 8
 
 # Rules
 for_window [instance="Places" class="firefox"] floating enable
-for_window [class="fzfTerm"] floating enable border pixel 0
 for_window [class="Dragon"] border pixel 1
 for_window [class="Steam"] floating enable
-for_window [title="System resources"] floating enable
+for_window [class="Pavucontrol"] floating enable border pixel 2
+
+# Keybindings
+set $mod Mod4
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -86,10 +70,10 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # split in horizontal orientation
-bindsym $mod+o split h
+bindsym $mod+o split horizontal
 
 # split in vertical orientation
-bindsym $mod+u split v
+bindsym $mod+u split vertical
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -149,15 +133,16 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # Move to previous workspace
-bindsym $mod+Tab workspace back_and_forth
+# bindsym $mod+Tab workspace back_and_forth
 
 # reload the configuration file
 bindsym $mod+Shift+q reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart # exit i3 (logs you out of your X session) bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+r restart # exit i3 (logs you out of your X session) 
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
-mode "resize" {
+mode "Resize" {
         # Pressing - will shrink the window’s width.
         # Pressing + will grow the window’s width.
         # Pressing Shift+- will shrink the window’s height.
@@ -173,4 +158,4 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
-bindsym $mod+r mode "resize"
+bindsym $mod+r mode "Resize"

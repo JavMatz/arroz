@@ -1,6 +1,7 @@
 #PATH
 export NPM_PACKAGES="$HOME/.local/bin/.npm-packages"
 export PATH="$PATH:/home/erick/.local/bin"
+export PATH="$PATH:/home/erick/.config/local/bin"
 export PATH="$PATH:$NPM_PACKAGES/bin"
 export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
 export JAVA_HOME="/usr/lib/jvm/java-8-openjdk"

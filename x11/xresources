@@ -4,14 +4,11 @@
 !! Set a default font and font size as below:
 *.font: monospace:size=10
 
-!!dwm (and i3)
+!!dmenu
 *.normfgcolor: #deddda
-*.normbgcolor: #3d3846
-*.selfgcolor:  #f6f5f4
-*.selbgcolor:  #1a5fb4
-*.normbordercolor: #5e5c64
-*.selbordercolor:  #a51d2d
-*.urgbordercolor: #e01b24
+*.normbgcolor: #000000
+*.selfgcolor:  #deddda
+*.selbgcolor:  #15549e
 
 !!st
 /* name		dark	light */

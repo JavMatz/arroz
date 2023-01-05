@@ -15,13 +15,16 @@ set cleaner ctpvclear
 map DD gio_trash
 map au aunpack
 map Drg dragNdrop
-#map apz apackZip
+map p paste && clear
+
+#· Bookmarks ·#
+map gc cd ~/.config/
 
 #· Functions ·#
-
 cmd gio_trash ${{
     gio trash $fx
 }}
+
 cmd aunpack ${{
     aunpack $(echo $f | awk -F\/ '{ print $(NF) }')
 }}
@@ -29,9 +32,3 @@ cmd aunpack ${{
 cmd dragNdrop ${{
     dragon -x $f
 }}
-
-#cmd apackZip ${{
-#    ARCHIVENAME=$(ls $fx | head -n 1 | awk -F\/ '{ print $(NF) }' | awk -F. '{ print $1 }')
-#    apack $ARCHIVENAME.zip $fx
-#}}
-

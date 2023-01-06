@@ -10,6 +10,8 @@ mod4 + p
 mod4 + ctrl + p
     dmenu-power
 
+mod4 + F5
+    pactl set-source-mute @DEFAULT_SOURCE@ toggle
 mod4 + F6
     pactl set-sink-mute @DEFAULT_SINK@ toggle
 mod4 + F7

@@ -17,6 +17,7 @@
 !polybar/**
 !sxhkd/**
 !fontconfig/**
+!flameshot/**
 !x11/**
 !zsh/**
 !shell/**

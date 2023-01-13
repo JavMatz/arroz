@@ -16,6 +16,7 @@
 !i3/**
 !polybar/**
 !sxhkd/**
+!dunst/**
 !fontconfig/**
 !flameshot/**
 !x11/**

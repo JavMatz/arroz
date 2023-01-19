@@ -22,5 +22,21 @@ mod4 + F7
 mod4 + F8
     pactl set-sink-volume @DEFAULT_SINK@ +5%
 
+/* Media control */
+mod4 + F9
+    playerctl previous
+mod4 + F10
+    playerctl play-pause
+mod4 + F11
+    playerctl next
+
+/* System monitor */
+mod4 + shift + F12
+    i3_scratchpad_show_or_create 'sysmon' 'st -e htop -t htop'
+
+/* Open file manager */
+mod4 + shift + f
+    i3_scratchpad_show_or_create 'fileManager' 'st -e lf'
+
 Print
     flameshot gui

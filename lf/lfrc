@@ -16,11 +16,16 @@ map DD gio_trash
 map au aunpack
 map Drg dragNdrop
 map p paste && clear
+map L openDirInTerminal
 
 #· Bookmarks ·#
 map gc cd ~/.config/
 
 #· Functions ·#
+cmd openDirInTerminal ${{
+    nohup st -d $f &
+}}
+
 cmd gio_trash ${{
     gio trash $fx
 }}

@@ -27,12 +27,10 @@ export XDG_VIDEOS_DIR="$HOME/Vídeos"
 export ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh"
 
 # Desktop portal
-export XDG_CURRENT_DESKTOP=XFCE
+# export XDG_CURRENT_DESKTOP=XFCE
 
 # Qt apps theme
 export QT_STYLE_OVERRIDE=adwaita-dark
-# export QT_QPA_PLATFORMTHEME=qt5ct
-# export QT_LOGGING_RULES="qt.svg*.warning=false"
 
 # Java aplications
 export _JAVA_AWT_WM_NONREPARENTING=1

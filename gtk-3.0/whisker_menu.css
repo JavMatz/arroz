@@ -1,0 +1,83 @@
+#whiskermenu-window {
+    background-color: rgb(47, 47, 47);
+    color: white;
+}
+
+#whiskermenu-window > frame > border {
+    border-radius: 0px;
+    border-color: rgb(47, 47, 47);
+}
+
+#whiskermenu-window entry {
+    border-width: 2px;
+    border-radius: 1px;
+    border-color: rgb(102, 102, 102);
+    box-shadow: none;
+}
+
+#whiskermenu-window button {
+    -gtk-icon-shadow: 0px 0px red;
+    -gtk-icon-effect: none;
+    outline-color: white;
+    outline-style: solid;
+    transition: none;
+    margin: 2px;
+    background-color: rgb(47,47,47);
+    box-shadow: none;
+    color: white;
+}
+
+#whiskermenu-window button:hover label {
+    text-shadow: none;
+}
+
+#whiskermenu-window button:hover,
+#whiskermenu-window button:hover:checked,
+#whiskermenu-window button:active,
+#whiskermenu-window button:checked {
+    outline-color: rgb(47,47,47);
+    outline-style: solid;
+    background: rgba(179, 179, 179, 1.00);
+    color: rgb(47,47,47);
+}
+
+#whiskermenu-window treeview {
+    outline-color: white;
+    outline-style: solid;
+    background-color: rgb(102, 102, 102);
+    color: white;
+}
+
+#whiskermenu-window treeview:hover {
+    background-color: rgba(255, 255, 255, 0.50);
+    color: white;
+}
+
+.xfce4-panel #whiskermenu-button label {
+    -gtk-icon-shadow: 1px 2px black;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 14px;
+    text-shadow: 1px 2px 2px black;
+    color: white;
+}
+
+.xfce4-panel #whiskermenu-button {
+    -gtk-icon-shadow: 0px 2px 2px black;
+    background: rgba(255, 161, 71, 0.50);
+    margin: -8px 0px;
+    padding: 0px 12px 0px 6px;
+    border-width: 0px;
+    border-radius: 0px 20px 20px 0px;
+    box-shadow: inset 1px 1px 2px black;
+}
+
+.xfce4-panel #whiskermenu-button:hover {
+    -gtk-icon-effect: none;
+}
+
+.xfce4-panel #whiskermenu-button:checked {
+    box-shadow: inset 1px 1px 2px black;
+    background: rgba(255, 110, 22, 0.40);
+}
+

@@ -1,0 +1,11 @@
+#clock-button label {
+    text-shadow: none;
+}
+
+#clock-button {
+    border-radius: 0px;
+    box-shadow: none;
+    border-width: 0px;
+    background: transparent;
+    color: white;
+}

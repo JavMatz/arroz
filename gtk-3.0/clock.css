@@ -1,5 +1,6 @@
 #clock-button label {
     text-shadow: none;
+    padding: 2px;
 }
 
 #clock-button {

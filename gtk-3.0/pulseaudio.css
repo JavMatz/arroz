@@ -1,7 +1,12 @@
 #pulseaudio-button {
+    -gtk-icon-shadow: none;
     border-radius: 0px;
     box-shadow: none;
     border-width: 0px;
     background: transparent;
     color: white;
+}
+
+#pulseaudio-button menu .linked button {
+    -gtk-icon-shadow: none;
 }

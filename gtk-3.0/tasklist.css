@@ -1,5 +1,6 @@
 .xfce4-panel .tasklist .toggle label {
     text-shadow: none;
+    color: white;
 }
 
 .xfce4-panel .tasklist .toggle {
@@ -12,7 +13,6 @@
     border-radius: 3px;
     box-shadow: 0px 1px 2px black;
     background: rgba(255, 255, 255, 0.15);
-    color: white;
 }
 
 .xfce4-panel .tasklist .toggle:hover {

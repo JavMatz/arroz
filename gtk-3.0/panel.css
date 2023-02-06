@@ -1,5 +1,6 @@
 .xfce4-panel {
     color: white;
+    background: transparent;
     background-image: linear-gradient(to bottom,
     #252525,
     #858585,
@@ -32,5 +33,3 @@
     #292929,
     #1b1b1b);
 }
-
-

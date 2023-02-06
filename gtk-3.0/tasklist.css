@@ -1,3 +1,19 @@
+.xfce4-panel .tasklist .toggle menu menuitem label {
+    color: #241f31;
+}
+
+.xfce4-panel .tasklist .toggle menu menuitem:hover label {
+    color: #fff;
+}
+
+.xfce4-panel .tasklist .toggle menuitem:hover menuitem label {
+    color: #241f31;
+}
+
+.xfce4-panel .tasklist .toggle menuitem:hover menuitem:hover label {
+    color: #fff;
+}
+
 .xfce4-panel .tasklist .toggle label {
     text-shadow: none;
     color: white;

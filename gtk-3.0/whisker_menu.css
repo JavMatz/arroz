@@ -131,13 +131,18 @@
 }
 
 #whiskermenu-window treeview {
-    outline-color: white;
-    outline-style: solid;
+    outline-style: none;
     background-color: #666;
     color: white;
 }
 
 #whiskermenu-window treeview:hover {
+    background-color: rgb(190, 190, 190);
+    color: black;
+}
+
+#whiskermenu-window treeview:selected,
+#whiskermenu-window treeview:selected:focus {
     background-color: rgb(190, 190, 190);
     color: black;
 }
@@ -179,8 +184,3 @@
 #whiskermenu-window scrolledwindow {
     border: none;
 }
-
-
-
-
-

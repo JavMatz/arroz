@@ -1,13 +1,3 @@
 #!/bin/sh
 
 [ -f ~/.config/zsh/zshenv ] && . ~/.config/zsh/zshenv
-
-xrandr --output DP-1 --auto --output eDP-1 --off
-setxkbmap -model pc104 -layout es
-xinput set-prop 12 'libinput Accel Speed' -0.35
-xwallpaper --output DP-1 --zoom "$XDG_PICTURES_DIR/Wallpapers/Photography/NabateanTomb.jpg"
-st -e nvim &
-
-sxhkd &
-unclutter &
-dunst &

@@ -1,8 +1,8 @@
 #!/bin/sh
 
 # vim shorter than nvim
-alias vim='nvim'
-alias vimdiff="nvim -d"
+# alias vim='nvim'
+# alias vimdiff="nvim -d"
 # Always human readable
 alias du='du -h'
 # Shorter form to remove a package
@@ -11,9 +11,11 @@ alias yeet='pacman -Rsn'
 alias ..='cd ..' 
 # Put current directory on clipboard
 alias ypwd='pwd | xclip -r'
+# Go to configuration folder
+alias goc='cd ~/.config/'
 
 # sudo not required for some system commands
-for command in mount umount pacman su nethogs; do
+for command in pacman su nethogs; do
 	alias $command="sudo $command"
 done; unset command
 
@@ -33,14 +35,6 @@ alias \
     gstat="git status" \
     glog="git log -p"
 
-# Mounting drives without sudo
-dmount () {
-    udisksctl mount -b "$1"
-}
-dunmount () {
-    udisksctl unmount -b "$1"
-}
-
 # borg backup 
 borgBackup () {
     borg create --exclude-from './.config/borg/excludeFile' --list /run/media/erick/ERICK1/erick_backup::archive-{hostname}-{now} .
@@ -54,11 +48,6 @@ toMP3 () {
 # Turn off and on the wifi
 restartWlan () {
     rfkill block wlan && sleep 3s && rfkill unblock wlan && print "Wifi reiniciado"
-}
-
-# Restart sxhkd
-restart_sxhkd () {
-    pkill -usr1 -x sxhkd; notify-send 'sxhkd' 'Reloaded config'
 }
 
 # Colorize commands when possible.
@@ -80,7 +69,12 @@ alias \
 	y="yay" \
     o='mimeopen -a'
 
-# Prettify stuff
+# Prettify JSON
 prettyJson () {
     python -m json.tool "$1"
+}
+
+# CSV to JSON
+csvToJson () {
+    cat "$1" | python -c 'import csv, json, sys; print(json.dumps([dict(r) for r in csv.DictReader(sys.stdin)]))'
 }

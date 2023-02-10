@@ -4,8 +4,6 @@ export PATH="$PATH:/home/erick/.local/bin"
 export PATH="$PATH:/home/erick/.config/local/bin"
 export PATH="$PATH:$NPM_PACKAGES/bin"
 export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
-export JAVA_HOME="/usr/lib/jvm/java-8-openjdk"
-export PATH="$JAVA_HOME/bin:$PATH"
 export ANDROID_SDK_ROOT='/opt/android-sdk'
 export PATH="$PATH:$ANDROID_SDK_ROOT/platform-tools/"
 export PATH="$PATH:$ANDROID_SDK_ROOT/tools/bin/"
@@ -27,17 +25,17 @@ export XDG_VIDEOS_DIR="$HOME/Vídeos"
 export ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh"
 
 # Desktop portal
-# export XDG_CURRENT_DESKTOP=XFCE
+export XDG_CURRENT_DESKTOP=XFCE
 
 # Qt apps theme
-export QT_STYLE_OVERRIDE=adwaita-dark
+export QT_STYLE_OVERRIDE=adwaita
 
 # Java aplications
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 # Tool
-export EDITOR="/usr/bin/nvim"
-export VISUAL="/usr/bin/nvim"
+export EDITOR="emacsclient -a \"\" -t"
+export VISUAL="emacsclient -a \"\" -t"
 export TERMINAL="/usr/local/bin/st"
 export BROWSER="/usr/bin/firefox"
 export CHROME_EXECUTABLE="/usr/bin/firefox"

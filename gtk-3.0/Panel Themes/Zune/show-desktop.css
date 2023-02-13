@@ -1,0 +1,8 @@
+.xfce4-panel #showdesktop-button image {
+    -gtk-icon-transform: scale(0);
+}
+
+.xfce4-panel #showdesktop-button {
+    margin: 0 10px;
+}
+

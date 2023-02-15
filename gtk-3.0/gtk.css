@@ -1,1 +1,19 @@
-@import url("./Panel Themes/Zune/zune.css");
+menu {
+    border-radius: 0px;
+}
+
+.xfce4-panel button {
+    margin: 1px 1px;
+    border-radius: 0px;
+    transition-property: none;
+}
+
+.xfce4-panel button:hover {
+    border: 1px solid black;
+    border-radius: 0px;
+}
+
+.xfce4-panel button:checked {
+     border: 1px solid black;
+    border-radius: 0px;
+}

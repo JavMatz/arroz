@@ -1,0 +1,5 @@
+#!/bin/sh
+
+notify-send --urgency normal --expire-time 5000 "Elija la ventana que desea redimensionar"
+
+wmctrl -r :SELECT: -e 0,250,100,1366,768 && notify-send --urgency low --expire-time 3000 "¡Ventana redimensionada exitosamente!" && exit

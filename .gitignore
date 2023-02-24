@@ -10,16 +10,9 @@
 !gtk-2.0/**
 !nvim/**
 !conky/**
-!lf/**
-!mpd/**
-!ncmpcpp/**
 !mpv/**
-!i3/**
-!polybar/**
-!sxhkd/**
-!dunst/**
-!fontconfig/**
 !flameshot/**
 !x11/**
+!xfce4/**
 !zsh/**
 !shell/**

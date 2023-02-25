@@ -28,14 +28,15 @@ export ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh"
 export XDG_CURRENT_DESKTOP=XFCE
 
 # Qt apps theme
-export QT_STYLE_OVERRIDE=highcontrast
+#export QT_STYLE_OVERRIDE=adwaita
+export QT_QPA_PLATFORMTHEME=qt5ct
 
 # Java aplications
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 # Tool
-export EDITOR="emacsclient -a \"\" -t"
-export VISUAL="emacsclient -a \"\" -t"
+export EDITOR="/usr/bin/nvim"
+export VISUAL="/usr/bin/nvim"
 export TERMINAL="/usr/local/bin/st"
 export BROWSER="/usr/bin/firefox"
 export CHROME_EXECUTABLE="/usr/bin/firefox"

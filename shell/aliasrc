@@ -35,7 +35,7 @@ alias \
 
 # borg backup 
 borgBackup () {
-    borg create --exclude-from './.config/borg/excludeFile' --list /run/media/erick/ERICK1/erick_backup::archive-{hostname}-{now} .
+    borg create --stats --exclude-from './.config/borg/excludeFile' --list /run/media/erick/ERICK1/erick_backup::archive-{hostname}-{now} .
 }
 
 # ffmpeg convertion
@@ -50,7 +50,7 @@ restartWlan () {
 
 # Colorize commands when possible.
 alias \
-	ls="lsd -h --color=auto --group-directories-first" \
+	ls="lsd -h --color=auto --icon=never --group-directories-first" \
 	grep="grep --color=auto" \
 	diff="diff --color=auto" \
 	cat="bat" \

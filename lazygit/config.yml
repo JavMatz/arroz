@@ -1,0 +1,8 @@
+gui:
+  theme:
+    selectedLineBgColor:
+      - "#7042A2"
+    selectedRangeBgColor:
+      - "#7042A2"
+
+  mouseEvents: false

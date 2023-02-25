@@ -7,7 +7,7 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
-    -- Theme 
+    -- Theme
     use 'ishan9299/modus-theme-vim'
 
     -- Toggle comments
@@ -18,6 +18,9 @@ return require('packer').startup(function(use)
         'ThePrimeagen/harpoon',
         requires = { { 'nvim-lua/plenary.nvim'} }
     }
+
+    -- Lazygit
+    use 'kdheepak/lazygit.nvim'
 
     -- CSS Color
     use 'ap/vim-css-color'

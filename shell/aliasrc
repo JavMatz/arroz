@@ -1,6 +1,8 @@
 #!/bin/sh
 
 # vim shorter than nvim
+# alias vim='nvim'
+# alias vimdiff="nvim -d"
 # Always human readable
 alias du='du -h'
 # Shorter form to remove a package

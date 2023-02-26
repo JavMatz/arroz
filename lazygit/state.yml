@@ -2,5 +2,6 @@ lastupdatecheck: 0
 recentrepos:
 - /home/erick/.config
 startuppopupversion: 5
-customcommandshistory: []
+customcommandshistory:
+- '!git rebase --abort'
 hidecommandlog: false

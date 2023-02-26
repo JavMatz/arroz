@@ -1,6 +1,6 @@
-local nnoremap = require('erick.keymap').nnoremap
-local inoremap = require('erick.keymap').inoremap
-local nmap = require('erick.keymap').nmap
+local nnoremap = require('config.keymap').nnoremap
+local inoremap = require('config.keymap').inoremap
+local nmap = require('config.keymap').nmap
 
 -- Open file manager
 nnoremap("<leader>xd", "<cmd>Ex<CR>")

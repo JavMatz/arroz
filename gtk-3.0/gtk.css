@@ -1,19 +1,48 @@
-menu {
-    border-radius: 0px;
-}
+/* menu { */
+/*     border-radius: 0px; */
+/* } */
 
-.xfce4-panel button {
-    margin: 1px 1px;
-    border-radius: 0px;
-    transition-property: none;
-}
+/* #pulseaudio-button menu .linked button { */
+/*     -gtk-icon-shadow: none; */
+/*     color: black; */
+/* } */
 
-.xfce4-panel button:hover {
-    border: 1px solid black;
-    border-radius: 0px;
-}
+/* .xfce4-panel { */
+/*     color: white; */
+/* } */
 
-.xfce4-panel button:checked {
-     border: 1px solid black;
-    border-radius: 0px;
-}
+/* .xfce4-panel label { */
+/*     text-shadow: none; */
+/* } */
+
+/* .xfce4-panel button { */
+/*     /1* -gtk-icon-shadow: none; *1/ */
+/*     /1* color: white; *1/ */
+/*     /1* border: none; *1/ */
+/*     border-radius: 0px; */
+/*     /1* transition-property: none; *1/ */
+/*     /1* box-shadow: none; *1/ */
+/* } */
+
+/* .xfce4-panel button:checked, */
+/* .xfce4-panel button:active, */
+/* .xfce4-panel button:hover { */
+/*     background: rgba(255,255,255, 0.15); */
+/* } */
+
+/* .xfce4-panel button:checked:hover { */
+/*        background: rgba(255,255,255, 0.20); */
+/* } */
+
+/* #applicationmenu-button label,  */
+/* #whiskermenu-button label { */
+/*     font-weight: bold; */
+/* } */
+
+/* #whiskermenu-window { */
+/*     border-radius: 0px 0px 10px 10px; */
+/* } */
+
+/* #whiskermenu-window frame border { */
+/*     border: none; */
+/* } */

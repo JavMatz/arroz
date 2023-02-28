@@ -1,14 +1,14 @@
 #!/bin/sh
 
 # vim shorter than nvim
-# alias vim='nvim'
-# alias vimdiff="nvim -d"
+alias vim='nvim'
+alias vimdiff="nvim -d"
 # Always human readable
 alias du='du -h'
 # Shorter form to remove a package
 alias yeet='pacman -Rsn'
 # Shorter form to move to previous directory
-alias ..='cd ..' 
+alias ..='cd ..'
 # Put current directory on clipboard
 alias ypwd='pwd | xclip -r'
 # Go to configuration folder
@@ -26,6 +26,7 @@ alias \
 	rm="rm -vI" \
 	bc="bc -ql" \
 	mkd="mkdir -pv" \
+    ywt="exec yt" \
 	yt="yt-dlp --embed-metadata -i" \
 	yta="yt -x -f bestaudio/best --write-thumbnail" \
 	ffmpeg="ffmpeg -hide_banner"
@@ -63,6 +64,7 @@ alias \
 	ka="killall" \
 	g="git" \
 	sdn="shutdown -h now" \
+    se="sudoedit" \
 	e="$EDITOR" \
 	v="$EDITOR" \
 	p="pacman" \

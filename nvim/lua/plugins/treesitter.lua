@@ -1,13 +1,13 @@
 return {
     {
         'nvim-treesitter/nvim-treesitter',
-        lazy = true,
+        lazy = false,
         build = function()
             require('nvim-treesitter.install').update({ with_sync = true })
         end,
         config = function()
-            require'nvim-treesitter.configs'.setup {
-                ensure_installed = {'lua','javascript', 'html', 'css', 'rust', 'python', 'bash'},
+            require 'nvim-treesitter.configs'.setup {
+                ensure_installed = { 'lua', 'javascript', 'html', 'css', 'rust', 'python', 'bash' },
                 sync_install = true,
                 auto_install = true,
                 highlight = {
@@ -25,10 +25,5 @@ return {
                 }
             }
         end,
-        keys = {
-            {'<CR>'},
-            {'<TAB>'},
-            {'<S-TAB>'}
-        }
     }
 }

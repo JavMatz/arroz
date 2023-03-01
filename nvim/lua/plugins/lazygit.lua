@@ -4,9 +4,9 @@ return {
     {
         'kdheepak/lazygit.nvim',
         lazy = true,
-	config = function()
-		nmap('<leader>gg', ":LazyGit<CR>",{})
-	end,
+	    config = function()
+	    	nmap('<leader>gg', ":LazyGit<CR>",{})
+	    end,
         keys = {
             { '<leader>gg' }
         }

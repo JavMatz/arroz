@@ -5,15 +5,16 @@
 !README.md
 !.gitignore
 
-!local/**
-!lazygit/**
+!conky/**
+!flameshot/**
 !gtk-3.0/**
 !gtk-2.0/**
-!nvim/**
-!conky/**
+!i3/**
+!local/**
+!lazygit/**
 !mpv/**
-!flameshot/**
-!x11/**
-!xfce4/**
-!zsh/**
+!nvim/**
 !shell/**
+!x11/**
+!xfce4/terminal/**
+!zsh/**

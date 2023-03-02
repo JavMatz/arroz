@@ -7,7 +7,7 @@ MiscCursorBlinks=FALSE
 MiscCursorShape=TERMINAL_CURSOR_SHAPE_BLOCK
 MiscDefaultGeometry=80x24
 MiscInheritGeometry=FALSE
-MiscMenubarDefault=TRUE
+MiscMenubarDefault=FALSE
 MiscMouseAutohide=FALSE
 MiscMouseWheelZoom=TRUE
 MiscToolbarDefault=FALSE
@@ -27,7 +27,7 @@ MiscNewTabAdjacent=FALSE
 MiscSearchDialogOpacity=100
 MiscShowUnsafePasteDialog=TRUE
 MiscRightClickAction=TERMINAL_RIGHT_CLICK_ACTION_CONTEXT_MENU
-ColorPalette=#000000;#ff8059;#44bc44;#d0bc00;#2fafff;#feacd0;#00d3d0;#bfbfbf;#595959;#ef8b50;#70b900;#c0c530;#79a8ff;#b6a0ff;#6ae4b9;#ffffff
 FontUseSystem=TRUE
+ColorPalette=#000000;#ff8059;#44bc44;#d0bc00;#2fafff;#feacd0;#00d3d0;#bfbfbf;#595959;#ef8b50;#70b900;#c0c530;#79a8ff;#b6a0ff;#6ae4b9;#ffffff
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
 

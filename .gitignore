@@ -5,6 +5,7 @@
 !README.md
 !.gitignore
 
+!alacritty/**
 !conky/**
 !flameshot/**
 !gtk-3.0/**
@@ -16,5 +17,4 @@
 !nvim/**
 !shell/**
 !x11/**
-!xfce4/terminal/**
 !zsh/**

@@ -10,13 +10,17 @@
 
 # Autostart
 # Polybar
-exec_always $XDG_CONFIG_HOME/polybar/launch.sh
+# exec_always $XDG_CONFIG_HOME/polybar/launch.sh
+# Polkit
+exec_always /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # X11 configuration
-exec $XDG_CONFIG_HOME/local/bin/x11_configuration
+# exec $XDG_CONFIG_HOME/local/bin/x11_configuration
 # Notifications
 exec dunst
-# Polkit
-exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+# Lockscreen
+exec xss-lock --transfer-sleep-lock -- i3lock --nofork
+# Redshift
+exec redshift
 
 # Font
 font pango:Inconsolata Bold 11
@@ -25,27 +29,13 @@ font pango:Inconsolata Bold 11
 title_align center
 default_border normal 1
 workspace_auto_back_and_forth yes
-
-# Colors
-# class                 t.border        t.backgr.       text            indicator         child_border
-# client.focused          #1c71d8         #15549e         #f6f5f4         #99c1f1           #15549e
-# client.focused_inactive #241f31         #5e5c64         #f6f5f4         #5e5c64           #5e5c64
-# client.unfocused        #5e5c64         #3d3846         #9a9996         #3d3846           #3d3846
-# client.urgent           #e01b24         #a51d2d         #f6f5f4         #a51d2d           #a51d2d
-# client.placeholder      #000000         #241f31         #f6f5f4         #000000           #241f31
-# client.background       #241f31
-
-# xprop(1):
-#  WM_CLASS(STRING) = instance, class
-#  WM_NAME(STRING) = title
+# gaps inner 4
 
 # Window and workspace rules
 include $XDG_CONFIG_HOME/i3/window_rules.conf
 
 # Keybindings
 set $mod Mod4
-
-include $XDG_CONFIG_HOME/i3/no_i3_keybindings.conf
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -145,6 +135,8 @@ bindsym $mod+Shift+q reload
 bindsym $mod+Shift+r restart # exit i3 (logs you out of your X session) 
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
+include $XDG_CONFIG_HOME/i3/no_i3_keybindings.conf
+
 # resize window (you can also use the mouse for that)
 mode "Resize" {
         # Pressing - will shrink the window’s width.
@@ -163,3 +155,7 @@ mode "Resize" {
 }
 
 bindsym $mod+r mode "Resize"
+
+bar {
+    status_command i3status
+}

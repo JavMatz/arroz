@@ -55,7 +55,7 @@ echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 precmd () { printf "\e]2;%s@%s:%s\a" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/~}" ;}
 
-bindkey -s '^p' '^uthunar &!\n'
+bindkey -s '^p' '^upcmanfm-qt &!\n'
 bindkey -s '^g' '^ulazygit\n'
 bindkey -s '^f' '^ucd "$(dirname "$(fzf)")"\n'
 

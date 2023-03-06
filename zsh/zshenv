@@ -37,6 +37,6 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 # Tool
 export EDITOR="/usr/bin/nvim"
 export VISUAL="/usr/bin/nvim"
-export TERMINAL="/usr/bin/xfce4-terminal"
+export TERMINAL="/usr/bin/alacritty"
 export BROWSER="/usr/bin/firefox"
 export CHROME_EXECUTABLE="/usr/bin/firefox"

@@ -19,14 +19,12 @@ return {
 
             local builtin = require('telescope.builtin')
             -- Keymaps
-            nmap('<leader>ff', builtin.find_files, {})
-            nmap('<leader>fg', builtin.live_grep, {})
+            -- nmap('<leader>ff', builtin.find_files, {})
+            -- nmap('<leader>fg', builtin.live_grep, {})
             nmap('<leader>fb', builtin.buffers, {})
             nmap('<leader>fh', builtin.help_tags, {})
         end,
         keys = {
-            {'<leader>ff'},
-            {'<leader>fg'},
             {'<leader>fb'},
             {'<leader>fh'}
         }

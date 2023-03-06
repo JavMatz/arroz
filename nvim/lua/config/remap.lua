@@ -11,4 +11,10 @@ inoremap("kj", "<ESC>")
 nmap("<leader>o", ":setlocal spell! spelllang=en_us<CR>", {})
 -- Spellcheck spanish
 nmap("<leader>ñ", ":setlocal spell! spelllang=es_mx<CR>", {})
+-- Find files using :find
+nmap("<leader>ff", ":find ", {})
+-- Shortcut for vimgrep
+nmap("<leader>fg", ":vimgrep/", {})
+-- Shortcut for buffers
+nmap("<leader>fb", ":buffer ", {})
 

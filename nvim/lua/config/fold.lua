@@ -1,5 +1,4 @@
-vim.opt.foldmethod = 'expr'
-vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+vim.opt.foldmethod = 'syntax'
 vim.opt.foldenable = false
 vim.opt.foldminlines = 5
 vim.opt.fillchars = {

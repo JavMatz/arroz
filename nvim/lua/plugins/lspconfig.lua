@@ -1,24 +1,27 @@
-local nnoremap = require('config.keymap').nnoremap
-
 return {
     {
         'neovim/nvim-lspconfig',
-        lazy = true,
+        lazy = false,
         config = function()
+            local nnoremap = require('config.keymap').nnoremap
+
+            -- require('mason').setup()
+            -- require('mason-lspconfig').setup()
+            local lsp = require('lspconfig')
+
+            -- local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
+
             nnoremap('gl', vim.diagnostic.open_float, {})
             nnoremap('[d', vim.diagnostic.goto_prev, {})
             nnoremap(']d', vim.diagnostic.goto_next, {})
-            -- nnoremap('gD', vim.diagnostic.open_float, {})
-
-            local on_attach = function(client , bufnr)
-
+            local lsp_attach = function(client, bufnr)
                 -- Enable completition trigerred by C-x C-o
                 vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
                 -- Mappings
                 nnoremap('gD', vim.lsp.buf.declaration, {})
                 nnoremap('gd', vim.lsp.buf.definition, {})
-                nnoremap('K', vim.lsp.buf.hover, {}) 
+                nnoremap('K', vim.lsp.buf.hover, {})
                 nnoremap('gi', vim.lsp.buf.implementation, {})
                 nnoremap('<C-k>', vim.lsp.buf.signature_help, {})
                 -- nnoremap('<space>wa', vim.lsp.buf.add_workspace_folder, {})
@@ -33,30 +36,78 @@ return {
                 nnoremap('<space>f', function() vim.lsp.buf.format { async = true } end, {})
             end
 
-            local lspconfig = require("lspconfig")
+            local lsp_flags = {
+                debounce_text_changes = 150
+            }
 
-            require("mason-lspconfig").setup_handlers({
-                function(server_name)
-                    lspconfig[server_name].setup({
-                        on_attach = on_attach
-                    })
-                end
-            })
+            -- Bash 
+            lsp.bashls.setup{
+                cmd = {
+                    "bash-language-server",
+                    "start"
+                },
+                cmd_env = {
+                     GLOB_PATTERN = "*@(.sh|.inc|.bash|.command)"
+                },
+                filetypes = {
+                    "sh"
+                }
+            }
+
+            -- Lua
+            lsp.lua_ls.setup{
+                on_attack = lsp_attach,
+                flags = lsp_flags,
+                settings = {
+                    Lua = {
+                        runtime = {
+                            version = 'LuaJIT'
+                        },
+                        diagnostics = {
+                            globals = {'vim'}
+                        },
+                        workspace = {
+                            library = vim.api.nvim_get_runtime_file("", true),
+                        },
+                        telemetry = {
+                            enable = false
+                        }
+                    }
+                }
+            }
+
+            -- Rust
+            lsp.rust_analyzer.setup{
+                cmd = {
+                    "rust-analyzer"
+                },
+                filetypes = {
+                    "rust"
+                },
+                settings = {
+                    ["rust-analyzer"] = {
+                        checkOnSave = {
+                            command = "clippy"
+                        }
+                    }
+                }
+            }
+
         end,
         keys = {
-            {"gl"},
-            {"[d"},
-            {"]d"},
-            {"gD"},
-            {"gd"},
-            {"K"},
-            {"gi"},
-            {"<C-k>"},
-            {"go"},
-            {"<F2>"},
-            {"<F4>"},
-            {"gr"},
-            {"<space>f"},
+            { "gl" },
+            { "[d" },
+            { "]d" },
+            { "gD" },
+            { "gd" },
+            { "K" },
+            { "gi" },
+            { "<C-k>" },
+            { "go" },
+            { "<F2>" },
+            { "<F4>" },
+            { "gr" },
+            { "<space>f" },
         }
     }
 }

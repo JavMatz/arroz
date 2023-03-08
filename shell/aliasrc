@@ -36,21 +36,6 @@ alias \
     gstat="git status" \
     glog="git log -p"
 
-# borg backup 
-borgBackup () {
-    borg create --stats --exclude-from './.config/borg/excludeFile' --list /run/media/erick/ERICK1/erick_backup::archive-{hostname}-{now} .
-}
-
-# ffmpeg convertion
-toMP3 () {
-    ffmpeg -i "$1" -acodec mp3 "$1.mp3"
-}
-
-# Turn off and on the wifi
-restartWlan () {
-    rfkill block wlan && sleep 3s && rfkill unblock wlan && print "Wifi reiniciado"
-}
-
 # Colorize commands when possible.
 alias \
 	ls="lsd -h --color=auto --icon=never --group-directories-first" \
@@ -70,6 +55,46 @@ alias \
 	p="pacman" \
 	y="yay" \
     o='mimeopen -a'
+
+# pomodoro
+declare -A pomo_options
+pomo_options["work"]="25"
+pomo_options["break"]="5"
+
+pomodoro () {
+    if [ -n "$1" -a -n "${pomo_options["$1"]}" ]
+    then
+        val=$1
+        printf "Now on: '$val'" | bat # Break pomodoro with <CR>
+        sleep ${pomo_options["$1"]}m && notify-send 'Pomodoro' "'$val' session done"
+    fi
+}
+
+alias wo="pomodoro 'work'"
+alias br="pomodoro 'break'"
+
+# cycle_work_break() {
+#     for i in $(seq $1)
+#     do
+#         pomodoro 'work'
+#         pomodoro 'break'
+#     done
+# }
+
+# borg backup
+borgBackup () {
+    borg create --stats --exclude-from './.config/borg/excludeFile' --list /run/media/erick/ERICK1/erick_backup::archive-{hostname}-{now} .
+}
+
+# ffmpeg convertion
+toMP3 () {
+    ffmpeg -i "$1" -acodec mp3 "$1.mp3"
+}
+
+# Turn off and on the wifi
+restartWlan () {
+    rfkill block wlan && sleep 3s && rfkill unblock wlan && print "Wifi reiniciado"
+}
 
 # Prettify JSON
 prettyJson () {

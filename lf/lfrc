@@ -1,0 +1,39 @@
+#· Basic vars ·#
+set ifs "\n"
+set drawbox
+set scrolloff 10
+set period 1
+# set icons
+set promptfmt "\033[01;35m[ \033[01;33m %d\033[01;36m%f\033[0m \033[01;35m]"
+
+set previewer ctpv
+set cleaner ctpvclear
+# &ctpv -s $id
+# &ctpvquit $id
+
+#· Keybindings ·#
+map DD gio_trash
+# map au aunpack
+map Drg dragNdrop
+map p paste && clear
+map L openDirInTerminal
+
+#· Bookmarks ·#
+map gc cd ~/.config/
+
+#· Functions ·#
+cmd openDirInTerminal ${{
+    alacritty -d $f &
+}}
+
+cmd gio_trash ${{
+    gio trash $fx
+}}
+
+cmd aunpack ${{
+    aunpack $(echo $f | awk -F\/ '{ print $(NF) }')
+}}
+
+cmd dragNdrop ${{
+    dragon-drop -x $f
+}}

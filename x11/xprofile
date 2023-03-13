@@ -2,8 +2,8 @@
 
 [ -f ~/.config/zsh/zshenv ] && . ~/.config/zsh/zshenv
 
+unclutter -b
 xrandr --output DP-1 --auto --output eDP-1 --off
-setxkbmap -model pc104 -layout es
 xinput set-prop 12 'libinput Accel Speed' -0.35
-xwallpaper --output DP-1 --zoom "$XDG_PICTURES_DIR/Wallpapers/Cars/mazda-rx7.jpg"
-# xsetroot -fg "#222222" -bg "#005577" -bitmap ~/Imágenes/Wallpapers/Bitmaps/bw-bgnd/bricks.xbm
+xwallpaper --output DP-1 --zoom "/home/erick/Imágenes/Wallpapers/Draw/Anime/lain.jpg"
+setxkbmap -model pc104 -layout es

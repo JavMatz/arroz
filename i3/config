@@ -9,12 +9,8 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 # Autostart
-# Polybar
-# exec_always $XDG_CONFIG_HOME/polybar/launch.sh
 # Polkit
 exec_always /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-# X11 configuration
-# exec $XDG_CONFIG_HOME/local/bin/x11_configuration
 # Notifications
 exec dunst
 # Lockscreen
@@ -23,13 +19,12 @@ exec xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec redshift
 
 # Font
-font pango:Inconsolata Bold 11
+font pango:Monospace 9
 
 # Windows
-title_align center
+title_align left
 default_border normal 1
 workspace_auto_back_and_forth yes
-# gaps inner 4
 
 # Window and workspace rules
 include $XDG_CONFIG_HOME/i3/window_rules.conf
@@ -70,7 +65,7 @@ bindsym $mod+f fullscreen toggle
 
 # Send window to scratchpad
 bindsym $mod+Shift+minus move scratchpad
-bindsym $mod+Shift+plus scratchpad show
+bindsym $mod+Shift+plus exec get-from-scratchpad
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -158,4 +153,11 @@ bindsym $mod+r mode "Resize"
 
 bar {
     status_command i3status
+
+    colors {
+        active_workspace   #222222 #222222 #FFFFFF
+        inactive_workspace #222222 #222222 #888888
+        urgent_workspace   #900000 #900000 #FFFFFF
+        binding_mode       #900000 #900000 #FFFFFF
+    }
 }

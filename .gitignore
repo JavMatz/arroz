@@ -11,7 +11,7 @@
 !gtk-3.0/**
 !gtk-2.0/**
 !i3/**
-!lazygit/**
+# !lazygit/**
 !lf/**
 !local/**
 !mpv/**

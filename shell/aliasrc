@@ -15,7 +15,7 @@ alias ypwd='pwd | xclip -r'
 alias goc='cd ~/.config/'
 
 # sudo not required for some system commands
-for command in pacman su nethogs; do
+for command in su nethogs; do
 	alias $command="sudo $command"
 done; unset command
 
@@ -38,15 +38,15 @@ alias \
 
 # Colorize commands when possible.
 alias \
-	ls="lsd -h --color=auto --icon=never --group-directories-first" \
+	ls="lsd -h --color=auto --group-directories-first --icon=never" \
 	grep="grep --color=auto" \
 	diff="diff --color=auto" \
-	cat="bat" \
 	ip="ip -color=auto"
 
 # These common commands are just too long! Abbreviate them.
 alias \
 	ka="killall" \
+	lf="lfcd" \
 	g="git" \
 	sdn="shutdown -h now" \
     se="sudoedit" \
@@ -73,16 +73,9 @@ pomodoro () {
 alias wo="pomodoro 'work'"
 alias br="pomodoro 'break'"
 
-# cycle_work_break() {
-#     for i in $(seq $1)
-#     do
-#         pomodoro 'work'
-#         pomodoro 'break'
-#     done
-# }
-
 # borg backup
 borgBackup () {
+    cp -r ~/.minecraft/saves/  ~/Software/Juegos/Minecraft/
     borg create --stats --exclude-from './.config/borg/excludeFile' --list /run/media/erick/ERICK1/erick_backup::archive-{hostname}-{now} .
 }
 

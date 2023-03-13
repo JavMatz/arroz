@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+
+i3-scratch-list | dmenu -i -p "On scratchpad" | awk '{print $1}' | xargs -i{} i3-msg "[id=\""{}"\"] scratchpad show"

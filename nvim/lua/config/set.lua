@@ -3,7 +3,7 @@ vim.opt.compatible = false
 vim.opt.title = true
 
 vim.cmd("filetype plugin on")
--- vim.cmd("syntax on")
+vim.cmd("syntax on")
 
 -- " Disables automatic commenting on newline:
 vim.cmd("autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o")
@@ -20,6 +20,9 @@ vim.opt.lazyredraw = true
 
 vim.opt.splitbelow = true
 vim.opt.splitright = true
+
+vim.opt.completeopt = "menuone,noinsert,noselect"
+vim.opt.shortmess = vim.opt.shortmess + "c"
 
 vim.opt.report = 2
 vim.opt.synmaxcol = 200

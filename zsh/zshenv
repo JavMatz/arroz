@@ -24,9 +24,6 @@ export XDG_PICTURES_DIR="$HOME/Imágenes"
 export XDG_VIDEOS_DIR="$HOME/Vídeos"
 export ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh"
 
-# Desktop portal
-export XDG_CURRENT_DESKTOP=XFCE
-
 # Qt apps theme
 #export QT_STYLE_OVERRIDE=adwaita
 export QT_QPA_PLATFORMTHEME=qt5ct

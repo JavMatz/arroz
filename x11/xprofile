@@ -1,7 +1,5 @@
 #!/bin/sh
 
-[ -f ~/.config/zsh/zshenv ] && . ~/.config/zsh/zshenv
-
 unclutter -b
 xrandr --output DP-1 --auto --output eDP-1 --off
 xinput set-prop 12 'libinput Accel Speed' -0.35

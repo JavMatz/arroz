@@ -1,0 +1,65 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+# Source aliases
+if [ -f "$XDG_CONFIG_HOME/bash/aliases" ]
+then
+    . "$XDG_CONFIG_HOME/bash/aliases"
+fi
+
+PS1='[\w]\$ '
+
+# Autocd
+shopt -s autocd
+# Disable Ctrl-s to freeze terminal
+stty -ixon
+
+# Readline
+bind -f ~/.config/bash/inputrc
+
+# Change working dir in shell to last dir in lf on exit (adapted from ranger).
+#
+# You need to either copy the content of this file to your shell rc file
+# (e.g. ~/.bashrc) or source this file directly:
+#
+#     LFCD="/path/to/lfcd.sh"
+#     if [ -f "$LFCD" ]; then
+#         source "$LFCD"
+#     fi
+#
+# You may also like to assign a key (Ctrl-O) to this command:
+#
+#     bind '"\C-o":"lfcd\C-m"'  # bash
+#     bindkey -s '^o' 'lfcd\n'  # zsh
+#
+
+lfcd () {
+    tmp="$(mktemp)"
+    # `command` is needed in case `lfcd` is aliased to `lf`
+    command lf -last-dir-path="$tmp" "$@"
+    if [ -f "$tmp" ]; then
+        dir="$(cat "$tmp")"
+        rm -f "$tmp" 1>/dev/null
+        if [ -d "$dir" ]; then
+            if [ "$dir" != "$(pwd)" ]; then
+                cd "$dir"
+            fi
+        fi
+    fi
+}
+
+_edit_wo_executing() {
+    local editor="${EDITOR:-nano}"
+    tmpf="$(mktemp)"
+    printf '%s\n' "$READLINE_LINE" > "$tmpf"
+    "$editor" "$tmpf"
+    READLINE_LINE="$(<"$tmpf")"
+    READLINE_POINT="${#READLINE_LINE}"
+    rm -f "$tmpf" 1>/dev/null  # -f for those who have alias rm='rm -i'
+}
+
+bind -x '"\C-e":_edit_wo_executing'

@@ -6,16 +6,13 @@
 !.gitignore
 
 !alacritty/**
-!conky/**
+!bash/**
 !flameshot/**
 !gtk-3.0/**
 !gtk-2.0/**
 !i3/**
-# !lazygit/**
 !lf/**
 !local/**
 !mpv/**
 !nvim/**
-!shell/**
 !x11/**
-!zsh/**

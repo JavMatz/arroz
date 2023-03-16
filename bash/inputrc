@@ -1,0 +1,22 @@
+$include /etc/inputrc
+
+# Vi mode
+set editing-mode vi
+set show-mode-in-prompt on
+set vi-cmd-mode-string "\1\e[2 q\2"
+set vi-ins-mode-string "\1\e[6 q\2"
+set keyseq-timeout 0
+
+# Human readable ?
+set colored-stats On
+set completion-ignore-case On
+set completion-prefix-display-length 3
+set mark-symlinked-directories On
+set show-all-if-ambiguous On
+set show-all-if-unmodified On
+set visible-stats On
+
+# Bindings
+"\C-l" clear-screen
+"\C-o":"lfcd\C-m"
+# "\C-p":"pcmanfm-qt 1>/dev/null \C-m"

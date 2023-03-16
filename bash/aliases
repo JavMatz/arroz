@@ -1,0 +1,100 @@
+#!/bin/sh
+
+# vim shorter than nvim
+alias vim='nvim'
+alias vimdiff="nvim -d"
+# Always human readable
+alias du='du -h'
+# Shorter form to remove a package
+alias yeet='pacman -Rsn'
+# Shorter form to move to previous directory
+alias ..='cd ..'
+# Put current directory on clipboard
+alias ypwd='pwd | xclip -r'
+# Go to configuration folder
+alias goc='cd ~/.config/'
+
+# sudo not required for some system commands
+for command in pacman su nethogs; do
+	alias $command="sudo $command"
+done; unset command
+
+# Verbosity and settings that you pretty much just always are going to want.
+alias \
+	cp="cp -iv" \
+	mv="mv -iv" \
+	rm="rm -vI" \
+	bc="bc -ql" \
+	mkd="mkdir -pv" \
+    ywt="exec yt" \
+	yt="yt-dlp --embed-metadata -i" \
+	yta="yt -x -f bestaudio/best --write-thumbnail" \
+	ffmpeg="ffmpeg -hide_banner"
+
+# git commands 
+alias \
+    gstat="git status" \
+    glog="git log -p"
+
+# Colorize commands when possible.
+alias \
+	ls="ls -h --color=auto --group-directories-first" \
+	grep="grep --color=auto" \
+	diff="diff --color=auto" \
+	ip="ip -color=auto"
+
+# These common commands are just too long! Abbreviate them.
+alias \
+	ka="killall" \
+	g="git" \
+	sdn="shutdown -h now" \
+    se="sudoedit" \
+	e="$EDITOR" \
+	v="$EDITOR" \
+	p="pacman" \
+	y="yay" \
+    # o='mimeopen -a'
+	# lf="lfcd" \
+
+# pomodoro
+declare -A pomo_options
+pomo_options["work"]="25"
+pomo_options["break"]="5"
+
+pomodoro () {
+    if [ -n "$1" -a -n "${pomo_options["$1"]}" ]
+    then
+        val=$1
+        printf "Now on: '$val'" | bat # Break pomodoro with <CR>
+        sleep ${pomo_options["$1"]}m && notify-send 'Pomodoro' "'$val' session done"
+    fi
+}
+
+alias wo="pomodoro 'work'"
+alias br="pomodoro 'break'"
+
+# borg backup
+borgBackup () {
+    cp -r ~/.minecraft/saves/  ~/Software/Juegos/Minecraft/
+    borg create --stats --exclude-from './.config/borg/excludeFile' --list /run/media/erick/ERICK1/erick_backup::archive-{hostname}-{now} .
+}
+
+# ffmpeg convertion
+toMP3 () {
+    ffmpeg -i "$1" -acodec mp3 "$1.mp3"
+}
+
+# Turn off and on the wifi
+restartWlan () {
+    rfkill block wlan && sleep 3s && rfkill unblock wlan && print "Wifi reiniciado"
+}
+
+# Prettify JSON
+prettyJson () {
+    python -m json.tool "$1"
+}
+
+# CSV to JSON
+csvToJson () {
+    cat "$1" | python -c 'import csv, json, sys; print(json.dumps([dict(r) for r in csv.DictReader(sys.stdin)]))'
+}

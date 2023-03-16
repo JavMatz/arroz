@@ -1,16 +1,11 @@
-#PATH
-export NPM_PACKAGES="$HOME/.local/bin/.npm-packages"
+#
+# ~/.bash_profile
+#
+
+[[ -f ~/.bashrc ]] && . ~/.bashrc
+
 export PATH="$PATH:/home/erick/.local/bin"
 export PATH="$PATH:/home/erick/.config/local/bin"
-export PATH="$PATH:$NPM_PACKAGES/bin"
-export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
-export ANDROID_SDK_ROOT='/opt/android-sdk'
-export PATH="$PATH:$ANDROID_SDK_ROOT/platform-tools/"
-export PATH="$PATH:$ANDROID_SDK_ROOT/tools/bin/"
-export PATH="$PATH:$ANDROID_ROOT/emulator"
-export PATH="$PATH:$ANDROID_SDK_ROOT/tools/"
-
-#XDG_DIRS
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
@@ -22,18 +17,16 @@ export XDG_DOCUMENTS_DIR="$HOME/Documentos"
 export XDG_MUSIC_DIR="$HOME/Música"
 export XDG_PICTURES_DIR="$HOME/Imágenes"
 export XDG_VIDEOS_DIR="$HOME/Vídeos"
-export ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh"
 
-# Qt apps theme
-#export QT_STYLE_OVERRIDE=adwaita
-export QT_QPA_PLATFORMTHEME=qt5ct
-
-# Java aplications
-export _JAVA_AWT_WM_NONREPARENTING=1
-
-# Tool
 export EDITOR="/usr/bin/nvim"
 export VISUAL="/usr/bin/nvim"
 export TERMINAL="/usr/bin/alacritty"
 export BROWSER="/usr/bin/firefox"
-export CHROME_EXECUTABLE="/usr/bin/firefox"
+
+export QT_QPA_PLATFORMTHEME=qt5ct
+export INPUTRC="/home/erick/.config/bash/inputrc"
+
+if [[ -z "$DISPLAY" ]] && [[ "$XDG_VTNR" -eq 1 ]]
+then
+    exec startx
+fi

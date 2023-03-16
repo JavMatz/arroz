@@ -19,7 +19,7 @@ exec xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec redshift
 
 # Font
-font pango:Monospace 9
+font pango:Monospace 8
 
 # Windows
 title_align left

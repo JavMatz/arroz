@@ -11,8 +11,10 @@
 !gtk-3.0/**
 !gtk-2.0/**
 !i3/**
+!i3status/**
 !lf/**
 !local/**
 !mpv/**
 !nvim/**
+!redshift/**
 !x11/**

@@ -1,0 +1,15 @@
+" General Settings
+set configversion 2.0
+set update.lastchecktime 1678925567611
+set theme auto
+
+" Binds
+bind x tabclose
+bind d stop
+bind gd tabdetach
+bind gD composite tabduplicate; tabdetach
+" bind --mode=insert <C-j> !s xdotool key Down
+" bind --mode=insert <C-k> !s xdotool key Up
+
+" For syntax highlighting see https://github.com/tridactyl/vim-tridactyl
+" vim: set filetype=tridactyl

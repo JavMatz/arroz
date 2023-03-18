@@ -2,6 +2,4 @@
 
 unclutter -b
 xrandr --output DP-1 --auto --output eDP-1 --off
-xinput set-prop 12 'libinput Accel Speed' -0.35
-xwallpaper --output DP-1 --zoom "/home/erick/Imágenes/Wallpapers/Draw/Anime/lain.jpg"
-setxkbmap -model pc104 -layout es
+xwallpaper --output DP-1 --zoom "/home/erick/Imágenes/Wallpapers/Photography/Cars/mazda-rx7.jpg"

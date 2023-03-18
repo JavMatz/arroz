@@ -16,7 +16,7 @@ exec dunst
 # Lockscreen
 exec xss-lock --transfer-sleep-lock -- i3lock --nofork
 # Redshift
-exec redshift
+exec start_redshift
 
 # Font
 font pango:Monospace 8

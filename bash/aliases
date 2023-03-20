@@ -98,3 +98,13 @@ prettyJson () {
 csvToJson () {
     cat "$1" | python -c 'import csv, json, sys; print(json.dumps([dict(r) for r in csv.DictReader(sys.stdin)]))'
 }
+
+# Mimetypes
+queryMime () {
+    xdg-mime query "$1"
+}
+
+# Calculator
+= () {
+    echo "$*" | bc -l
+}

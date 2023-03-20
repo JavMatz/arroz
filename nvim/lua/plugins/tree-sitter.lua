@@ -5,10 +5,11 @@ return {
         config = function ()
             require'nvim-treesitter.configs'.setup {
                 ensure_installed = { 'lua', 'rust', 'bash' },
-                sync_install = true,
+                sync_install = false,
                 auto_install = true,
                 highlight = {
                     enable = true,
+                    disable = { "gitcommit", "help" },
                     additional_vim_regex_highlighting = false
                 },
                 incremental_selection = {

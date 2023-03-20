@@ -1,12 +1,13 @@
 {
   "harpoon": { "branch": "master", "commit": "f7040fd0c44e7a4010369136547de5604b9c22a1" },
-  "lazy.nvim": { "branch": "main", "commit": "5b4444f0d7e556deba3f7ca949a2ba0e2c3369fb" },
+  "lazy.nvim": { "branch": "main", "commit": "8456a867f79e3fb3b5390659c5d11a1e35793372" },
   "lazygit.nvim": { "branch": "main", "commit": "32bffdebe273e571588f25c8a708ca7297928617" },
   "modus-theme-vim": { "branch": "master", "commit": "4d827fbf1aad55f4d62225f7b999efc5023864a3" },
   "nvim-autopairs": { "branch": "master", "commit": "e755f366721bc9e189ddecd39554559045ac0a18" },
-  "nvim-lspconfig": { "branch": "master", "commit": "4bb0f1845c5cc6465aecedc773fc2d619fcd8faf" },
+  "nvim-lspconfig": { "branch": "master", "commit": "5a871409199d585b52b69952532e3fb435e64566" },
+  "nvim-treesitter": { "branch": "master", "commit": "dcb9a89ab4f0091bf87aed4e6801423d3667f76a" },
   "plenary.nvim": { "branch": "master", "commit": "253d34830709d690f013daf2853a9d21ad7accab" },
   "vim-commentary": { "branch": "master", "commit": "e87cd90dc09c2a203e13af9704bd0ef79303d755" },
   "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" },
-  "vimwiki": { "branch": "dev", "commit": "34ceee8aaa760d2afc2b220916c8844575fd8d17" }
+  "vimwiki": { "branch": "dev", "commit": "72d02207b021b968a185ed68b949c7a15f82c3d4" }
 }

@@ -8,7 +8,6 @@ vim.cmd("syntax on")
 -- " Disables automatic commenting on newline:
 vim.cmd("autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o")
 
-vim.opt.autoindent = true
 vim.opt.expandtab = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
@@ -33,7 +32,6 @@ vim.opt.signcolumn = "number"
 vim.opt.list = true
 vim.opt.nu = true
 vim.opt.relativenumber = true
-vim.opt.ruler = true
 
 vim.opt.cmdheight = 2
 vim.opt.scrolloff = 8

@@ -14,15 +14,15 @@ fi
 last_command_exit_code() {
     if [[ $? -eq 0 ]]
     then
-        echo -e '\001\e[1;32m\002(✓)'
+        echo -e '\001\e[1;32m\002 ✓'
     else
-        echo -e '\001\e[1;31m\002(✘)'
+        echo -e '\001\e[1;31m\002 ✘'
     fi
 }
 
 PROMPT_COLOR=$(tput setaf 170)
 RESET_COLOR=$(tput sgr0)
-PS1='\[\e[1m\]$(last_command_exit_code)\[$PROMPT_COLOR\][ \w ]\[$RESET_COLOR\]\$ '
+PS1='\[\e[1m\]$(last_command_exit_code)\[$PROMPT_COLOR\] \w \[$RESET_COLOR\]\$ '
 
 # Autocd
 shopt -s autocd

@@ -65,7 +65,7 @@ pomodoro () {
     if [ -n "$1" -a -n "${pomo_options["$1"]}" ]
     then
         val=$1
-        printf "Now on: '$val'" | bat # Break pomodoro with <CR>
+        printf "Now on: '$val'" | cat # Break pomodoro with <CR>
         sleep ${pomo_options["$1"]}m && notify-send 'Pomodoro' "'$val' session done"
     fi
 }

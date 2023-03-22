@@ -11,6 +11,7 @@ then
     . "$XDG_CONFIG_HOME/bash/aliases"
 fi
 
+# Get the exit code of last command, return ✓ if 0, ✘ otherwise
 last_command_exit_code() {
     if [[ $? -eq 0 ]]
     then
@@ -30,6 +31,7 @@ shopt -s autocd
 stty -ixon
 
 # Readline
+# Source inputrc file
 bind -f ~/.config/bash/inputrc
 
 # Change working dir in shell to last dir in lf on exit (adapted from ranger).

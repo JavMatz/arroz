@@ -65,6 +65,16 @@ lfcd () {
     fi
 }
 
+bind -x '"\C-o":"lfcd"'
+
+dmenu-history-search () {
+    COMMAND="$(cat "${XDG_CACHE_HOME}/bash/history" | sort | uniq | dmenu -nb "#000000" -nf "#ffffff" -sb "#354fcf" -sf "#ffffff" -l 10 -i -w "$WINDOWID")"
+    READLINE_LINE="$COMMAND"
+    READLINE_POINT="${#READLINE_LINE}"
+}
+
+bind -x '"\C-r":"dmenu-history-search"'
+
 _edit_wo_executing() {
     local editor="${EDITOR:-nano}"
     tmpf="$(mktemp)"
@@ -72,7 +82,7 @@ _edit_wo_executing() {
     "$editor" "$tmpf"
     READLINE_LINE="$(<"$tmpf")"
     READLINE_POINT="${#READLINE_LINE}"
-    rm -f "$tmpf" 1>/dev/null  # -f for those who have alias rm='rm -i'
+    /usr/bin/rm -f "$tmpf" # -f for those who have alias rm='rm -i', full path because I have -verbose flag
 }
 
 bind -x '"\C-e":_edit_wo_executing'

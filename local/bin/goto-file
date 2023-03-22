@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+
+FILE=$(find -L $HOME -type f | dmenu -i -b -l 25 -nb "#000000" -nf "#ffffff" -sb "#354fcf" -sf "#ffffff" -w "$WINDOWID")
+DIRNAME=$(dirname "$FILE")
+cd "$DIRNAME"

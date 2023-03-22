@@ -21,5 +21,14 @@ set visible-stats On
 
 # Bindings
 "\C-l" clear-screen
-"\C-o":"lfcd\C-m"
-# "\C-p":"pcmanfm-qt 1>/dev/null \C-m"
+"\C-f":"source goto-file\C-m"
+
+# Commands for vi command mode
+set keymap vi-command
+# Disable visual selection on vi command mode because it enters the actual
+# "edit command on editor" mode, which is dangerouse because it automatically
+# executes the command on exit
+"v":""
+
+# Return to vi-insert so bindings on bashrc work
+set keymap vi-insert

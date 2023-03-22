@@ -7,6 +7,9 @@ set vi-cmd-mode-string "\1\e[2 q\2"
 set vi-ins-mode-string "\1\e[6 q\2"
 set keyseq-timeout 0
 
+# History
+set history-size 2000
+
 # Human readable ?
 set colored-stats On
 set completion-ignore-case Off

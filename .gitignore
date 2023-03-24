@@ -15,6 +15,7 @@
 !lf/**
 !local/**
 !mpv/**
+!npm/**
 !nvim/**
 !redshift/**
 !tridactyl/**

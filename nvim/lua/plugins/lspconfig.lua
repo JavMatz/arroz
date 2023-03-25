@@ -95,15 +95,38 @@ return {
                 }
             }
 
+            -- Javascript
+            lsp.tsserver.setup{
+            }
+
+            -- HTML
+            lsp.html.setup{
+            }
+
+            -- CSS
+            lsp.cssls.setup{
+            }
         end,
         event = {
             'BufEnter *.lua',
-            'BufEnter *.rs'
+            'BufEnter *.rs',
+            'BufEnter *.js',
+            'BufEnter *.jsx',
+            'BufEnter *.html',
+            'BufEnter *.css',
+            'BufEnter *.scss',
         },
         ft = {
             "rust",
             "lua",
-            "sh"
+            "sh",
+            "javascript",
+            "javascriptreact",
+            "javascript.txs",
+            "html",
+            "css",
+            "scss",
+            "less",
         },
         keys = {
             { "gl" },

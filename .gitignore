@@ -17,6 +17,7 @@
 !mpv/**
 !npm/**
 !nvim/**
+!rofi/**
 !redshift/**
 !tridactyl/**
 !x11/**

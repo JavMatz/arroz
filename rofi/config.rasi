@@ -1,0 +1,6 @@
+configuration {
+    modi: "window,drun,combi";
+    font: "Monospace 10";
+    combi-modi: "window,drun";
+}
+@theme "android_notification"

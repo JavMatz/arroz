@@ -11,5 +11,8 @@ bind gD composite tabduplicate; tabdetach
 " bind --mode=insert <C-j> !s xdotool key Down
 " bind --mode=insert <C-k> !s xdotool key Up
 
-" For syntax highlighting see https://github.com/tridactyl/vim-tridactyl
-" vim: set filetype=tridactyl
+" Goto to the good reddit
+autocmd DocStart ^http(s?)://www.reddit.com js tri.excmds.urlmodify("-t","www","old")
+
+" Skip twitter, go to nitter
+autocmd DocStart twitter.com js tri.excmds.urlmodify("-t","twitter.com", "twitter.owacon.moe")

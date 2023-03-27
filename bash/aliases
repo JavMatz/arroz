@@ -86,7 +86,7 @@ toMP3 () {
 
 # Turn off and on the wifi
 restartWlan () {
-    rfkill block wlan && sleep 3s && rfkill unblock wlan && print "Wifi reiniciado"
+    rfkill block wlan && sleep 3s && rfkill unblock wlan && echo "Wifi reiniciado"
 }
 
 # Prettify JSON

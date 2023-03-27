@@ -5,34 +5,76 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# History
+bind "set history-size 5000"
+
 # Source aliases
-if [ -f "$XDG_CONFIG_HOME/bash/aliases" ]
+if [ -f ~/.config/bash/aliases ]
 then
-    . "$XDG_CONFIG_HOME/bash/aliases"
+    source ~/.config/bash/aliases
 fi
+
+# Source fzf keybindings
+if [ -f /usr/share/fzf/key-bindings.bash ]
+then
+    source /usr/share/fzf/key-bindings.bash
+fi
+
+if [ -f /usr/share/fzf/completion.bash ]
+then
+    source /usr/share/fzf/completion.bash
+fi
+
+# Human readable
+bind "set colored-stats On"
+bind "set completion-ignore-case Off"
+bind "set completion-prefix-display-length 3"
+bind "set mark-symlinked-directories On"
+bind "set show-all-if-ambiguous On"
+bind "set show-all-if-unmodified On"
+bind "set visible-stats On"
+
+# Vi mode
+bind "set editing-mode vi"
+bind "set show-mode-in-prompt on"
+bind "set vi-cmd-mode-string \1\e[2 q\2"
+bind "set vi-ins-mode-string \1\e[6 q\2"
+bind "set keyseq-timeout 0"
+
+_edit_wo_executing() {
+    local editor="${EDITOR:-nano}"
+    tmpf="$(mktemp)"
+    printf '%s\n' "$READLINE_LINE" > "$tmpf"
+    "$editor" "$tmpf"
+    READLINE_LINE="$(<"$tmpf")"
+    READLINE_POINT="${#READLINE_LINE}"
+    /usr/bin/rm -f "$tmpf" # -f for those who have alias rm='rm -i', full path because I have -verbose flag
+}
+
+bind -m vi-command -x '"\C-e":_edit_wo_executing'
+bind -m vi-command -x '"v":_edit_wo_executing'
+bind -m vi-insert -x '"\C-e":_edit_wo_executing'
 
 # Get the exit code of last command, return ✓ if 0, ✘ otherwise
 last_command_exit_code() {
     if [[ $? -eq 0 ]]
     then
-        echo -e '\001\e[1;32m\002 ✓'
+        echo -e '\001\e[1;42m\e[1;30m\002 ✓ \001\e[1;32m\e[1;40m\002'
     else
-        echo -e '\001\e[1;31m\002 ✘'
+        echo -e '\001\e[1;41m\e[1;30m\002 ✘ \001\e[1;31m\e[1;40m\002'
     fi
 }
 
-PROMPT_COLOR=$(tput setaf 170)
-RESET_COLOR=$(tput sgr0)
-PS1='\[\e[1m\]$(last_command_exit_code)\[$PROMPT_COLOR\] \w \[$RESET_COLOR\]\$ '
+# PROMPT_COLOR=$(tput setab 124)
+RESET_PROMPT_ATTR=$(tput sgr0)
+PS1='\[\e[1m\]$(last_command_exit_code)\[\e[3m\e[1;34m\] \w \[$RESET_PROMPT_ATTR\]\$ '
 
 # Autocd
 shopt -s autocd
 # Disable Ctrl-s to freeze terminal
 stty -ixon
-
-# Readline
-# Source inputrc file
-bind -f ~/.config/bash/inputrc
+# Clear screen
+bind -m vi-insert '"\C-l":clear-screen'
 
 # Change working dir in shell to last dir in lf on exit (adapted from ranger).
 #
@@ -65,24 +107,6 @@ lfcd () {
     fi
 }
 
-bind -x '"\C-o":"lfcd"'
-
-dmenu-history-search () {
-    COMMAND="$(cat "${XDG_CACHE_HOME}/bash/history" | sort | uniq | dmenu -nb "#000000" -nf "#ffffff" -sb "#354fcf" -sf "#ffffff" -l 10 -i -w "$WINDOWID")"
-    READLINE_LINE="$COMMAND"
-    READLINE_POINT="${#READLINE_LINE}"
-}
-
-bind -x '"\C-r":"dmenu-history-search"'
-
-_edit_wo_executing() {
-    local editor="${EDITOR:-nano}"
-    tmpf="$(mktemp)"
-    printf '%s\n' "$READLINE_LINE" > "$tmpf"
-    "$editor" "$tmpf"
-    READLINE_LINE="$(<"$tmpf")"
-    READLINE_POINT="${#READLINE_LINE}"
-    /usr/bin/rm -f "$tmpf" # -f for those who have alias rm='rm -i', full path because I have -verbose flag
-}
-
-bind -x '"\C-e":_edit_wo_executing'
+# bind -x '"\C-o":"lfcd"'
+bind '"\C-o":"lfcd\C-m"'
+bind '"\C-p":"lnch pcmanfm-qt\C-m"'

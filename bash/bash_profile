@@ -23,6 +23,15 @@ export VISUAL="/usr/bin/nvim"
 export TERMINAL="/usr/bin/alacritty"
 export BROWSER="/usr/bin/firefox"
 
+export JAVA_HOME="/usr/lib/jvm/default/"
+export PATH=$JAVA_HOME/bin:$PATH
+
+export ANDROID_HOME='/opt/android-sdk'
+export PATH=$PATH:$ANDROID_HOME/platform-tools/
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/bin/
+export PATH=$PATH:$ANDROID_HOME/emulator
+
 export QT_QPA_PLATFORMTHEME=qt5ct
 export INPUTRC="/home/erick/.config/bash/inputrc"
 export HISTFILE="/home/erick/.cache/bash/history"

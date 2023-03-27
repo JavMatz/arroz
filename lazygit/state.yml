@@ -1,7 +1,0 @@
-lastupdatecheck: 0
-recentrepos:
-- /home/erick/.config
-startuppopupversion: 5
-customcommandshistory:
-- '!git rebase --abort'
-hidecommandlog: false

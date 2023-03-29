@@ -1,19 +1,19 @@
 #!/bin/bash
 
 function powermenu {
-	options="🗙 Cancel\n⏻ Shutdown\n⚿ Lock\n🢱 Logout\n🗘 Reboot\n⏾ Hibernate"
-	selected=$(echo -e $options | rofi -dmenu -i -p "Power options" -l 6)
-	if [[ $selected =  "⏻ Shutdown" ]]; then
+	options="cancel\nshutdown\nlock\nlogout\nreboot\nhibernate"
+	selected=$(echo -e $options | dmenu)
+	if [[ $selected =  "shutdown" ]]; then
 		poweroff
-	elif [[ $selected = "⚿ Lock" ]]; then
+	elif [[ $selected =  "lock" ]]; then
 		i3lock
-	elif [[ $selected = "🢱 Logout" ]]; then
+	elif [[ $selected =  "logout" ]]; then
 		i3-msg exit
-	elif [[ $selected = "🗘 Reboot" ]]; then
+	elif [[ $selected = "reboot" ]]; then
 		reboot
-	elif [[ $selected = "⏾ Hibernate" ]]; then
+	elif [[ $selected = "hibernate" ]]; then
 		systemctl suspend
-	elif [[ $selected = "🗙 Cancel" ]]; then
+	elif [[ $selected = "cancel" ]]; then
 		return
 	fi
 }

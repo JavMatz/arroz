@@ -65,7 +65,7 @@ bindsym $mod+f fullscreen toggle
 
 # Send window to scratchpad
 bindsym $mod+Shift+minus move scratchpad
-bindsym $mod+Shift+plus exec rofi -show window
+bindsym $mod+Shift+plus exec get-from-scratchpad
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking

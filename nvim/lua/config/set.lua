@@ -30,7 +30,7 @@ vim.opt.cursorline = true
 vim.opt.colorcolumn = "80"
 vim.opt.signcolumn = "number"
 vim.opt.list = true
-vim.opt.nu = true
+vim.opt.number = true
 vim.opt.relativenumber = true
 
 vim.opt.cmdheight = 2

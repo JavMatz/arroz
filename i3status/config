@@ -20,8 +20,8 @@ order += "volume master"
 order += "tztime local"
 
 wireless _first_ {
-        format_up = "🛜 %quality"
-        format_down = "🛜 down"
+        format_up = "WIFI %quality"
+        format_down = "WIFI down"
 }
 
 ethernet _first_ {
@@ -38,29 +38,29 @@ disk "/" {
 }
 
 load {
-        format = "💻 %1min %5min %15min"
+        format = "LOAD %1min %5min %15min"
 }
 
 cpu_temperature 0 {
-    format = "🌡 %degrees C"
+    format = "CPU TEMP %degrees ºC"
 }
 
 cpu_usage {
-    format = "🧮 %usage"
+    format = "CPU %usage"
 }
 
 memory {
-        format = "💽 %percentage_used (%used)"
-        threshold_degraded = "1G"
-        format_degraded = "MEMORY < %available"
+        format = "MEM %used used (%available available)"
+        threshold_degraded = "500M"
+        format_degraded = "Only %available"
 }
 
 volume master {
-        format = "🔈 %volume"
-        format_muted = "🔇 %volume"
+        format = "VOL %volume"
+        format_muted = "VOL MUTED (%volume)"
         device = "default"
 }
 
 tztime local {
-        format = "📅 %B %d, %H:%M "
+        format = "%A %d de %B, %H:%M "
 }

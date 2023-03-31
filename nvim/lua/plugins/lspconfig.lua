@@ -12,12 +12,12 @@ return {
                     "bash-language-server",
                     "start"
                 },
-                cmd_env = {
-                     GLOB_PATTERN = "*@(.sh|.inc|.bash|.command)"
+                settings = {
+                    bashIde = {
+                        globPattern = "*@(.sh|.inc|.bash|.command)"
+                    }
                 },
-                -- root_dir = {
-                --     util.find_git_ancestor
-                -- },
+                root_dir = util.find_git_ancestor,
                 filetypes = {
                     "sh"
                 }
@@ -62,16 +62,13 @@ return {
             }
 
             -- Javascript
-            lsp.tsserver.setup{
-            }
+            lsp.tsserver.setup{}
 
             -- HTML
-            lsp.html.setup{
-            }
+            lsp.html.setup{}
 
             -- CSS
-            lsp.cssls.setup{
-            }
+            lsp.cssls.setup{}
 
             -- Global mappings
             vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)

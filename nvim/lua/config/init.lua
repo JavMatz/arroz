@@ -1,6 +1,3 @@
 require('config.lazy')
-require('config.set')
-require('config.fold')
 require('config.remap')
-require('config.netrw')
 require('config.statusline')

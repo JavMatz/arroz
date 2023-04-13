@@ -25,8 +25,8 @@ return {
                         package_uninstalled = "✗"
                     }
                 }
-            }
-            )
+            })
+
             masonLsp.setup()
 
             -- Bash

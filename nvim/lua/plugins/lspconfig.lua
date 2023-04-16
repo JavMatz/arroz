@@ -2,32 +2,9 @@ return {
     {
         'neovim/nvim-lspconfig',
         lazy = true,
-        dependencies = {
-            {
-                'williamboman/mason.nvim',
-                build = ":MasonUpdate"
-            },
-            {
-                'williamboman/mason-lspconfig.nvim'
-            },
-        },
         config = function()
             local lsp = require('lspconfig')
             local util = require('lspconfig.util')
-            local mason = require('mason')
-            local masonLsp = require('mason-lspconfig')
-
-            mason.setup({
-                ui = {
-                    icons = {
-                        package_installed = "✓",
-                        package_pending = "➜",
-                        package_uninstalled = "✗"
-                    }
-                }
-            })
-
-            masonLsp.setup()
 
             -- Bash
             lsp.bashls.setup{

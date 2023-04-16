@@ -7,7 +7,6 @@ vim.cmd("filetype plugin on")
 vim.cmd("syntax on")
 
 -- DISABLES AUTOMATIC COMMENTING ON NEWLINE
--- vim.cmd("autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o")
 vim.api.nvim_create_autocmd({"FileType"}, {
     pattern = {"*"},
     callback = function()

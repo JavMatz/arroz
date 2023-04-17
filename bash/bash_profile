@@ -33,6 +33,9 @@ export PATH=$PATH:$ANDROID_HOME/cmdline-tools/bin/
 export PATH=$PATH:$ANDROID_HOME/emulator
 
 export QT_QPA_PLATFORMTHEME=qt5ct
+export QT_AUTO_SCREEN_SCALE_FACTOR=0
+export QT_SCALE_FACTOR=1
+
 export INPUTRC="/home/erick/.config/bash/inputrc"
 export HISTFILE="/home/erick/.cache/bash/history"
 export HISTCONTROL="ignoredups:ignorespace"

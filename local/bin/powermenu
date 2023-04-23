@@ -8,7 +8,8 @@ function powermenu {
 	elif [[ $selected =  "lock" ]]; then
 		i3lock
 	elif [[ $selected =  "logout" ]]; then
-		pkill -x dwm
+        # i3-msg exit
+        pkill -x dwm
 	elif [[ $selected = "reboot" ]]; then
 		reboot
 	elif [[ $selected = "hibernate" ]]; then

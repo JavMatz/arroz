@@ -1,0 +1,8 @@
+#!/bin/sh
+while true; do
+    VOL=$(pamixer --get-volume)
+    DATE=$(date +"%A %e de %B, %H:%M")
+    LOADAVG=$(cat /proc/loadavg | cut -d" " -f 1-3)
+    xsetroot -name " LOAD: $LOADAVG | VOL: $VOL% | $DATE"
+    sleep 0.5
+done

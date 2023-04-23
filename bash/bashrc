@@ -65,9 +65,13 @@ last_command_exit_code() {
     fi
 }
 
-# PROMPT_COLOR=$(tput setab 124)
-RESET_PROMPT_ATTR=$(tput sgr0)
-PS1='\[\e[1m\]$(last_command_exit_code)\[\e[3m\e[1;34m\] \w \[$RESET_PROMPT_ATTR\]\$ '
+if tty | grep -F pts 1>/dev/null
+then
+    RESET_PROMPT_ATTR=$(tput sgr0)
+    PS1='\[\e[1m\]$(last_command_exit_code)\[\e[3m\e[1;34m\] \w \[$RESET_PROMPT_ATTR\]\$ '
+else
+    PS1='\[\e[1m\]\[\e[3m\e[1;34m\] \w \[$RESET_PROMPT_ATTR\]\$ '
+fi
 
 # Autocd
 shopt -s autocd

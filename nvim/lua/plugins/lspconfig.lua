@@ -2,12 +2,20 @@ return {
     {
         'neovim/nvim-lspconfig',
         lazy = true,
+        dependencies = {
+            {
+                'williamboman/mason-lspconfig.nvim',
+            }
+        },
         config = function()
+            local mason_lsp = require("mason-lspconfig")
             local lsp = require('lspconfig')
             local util = require('lspconfig.util')
 
+            mason_lsp.setup()
+
             -- Bash
-            lsp.bashls.setup{
+            lsp.bashls.setup {
                 cmd = {
                     "bash-language-server",
                     "start"
@@ -24,14 +32,14 @@ return {
             }
 
             -- Lua
-            lsp.lua_ls.setup{
+            lsp.lua_ls.setup {
                 settings = {
                     Lua = {
                         runtime = {
                             version = 'LuaJIT'
                         },
                         diagnostics = {
-                            globals = {'vim'}
+                            globals = { 'vim' }
                         },
                         workspace = {
                             library = vim.api.nvim_get_runtime_file("", true),
@@ -43,32 +51,14 @@ return {
                 }
             }
 
-            -- Rust
-            lsp.rust_analyzer.setup{
-                cmd = {
-                    "rust-analyzer"
-                },
-                filetypes = {
-                    "rust"
-                },
-                root_dir = util.root_pattern("Cargo.toml", "rust-project.json"),
-                settings = {
-                    ["rust-analyzer"] = {
-                        checkOnSave = {
-                            command = "clippy"
-                        }
-                    }
-                }
-            }
-
             -- Javascript
-            lsp.tsserver.setup{}
+            lsp.tsserver.setup {}
 
             -- HTML
-            lsp.html.setup{}
+            lsp.html.setup {}
 
             -- CSS
-            lsp.cssls.setup{}
+            lsp.cssls.setup {}
 
             -- Global mappings
             vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
@@ -85,7 +75,7 @@ return {
                     vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
                     -- Buffer local mappings
-                    local opts = { buffer = ev.buf}
+                    local opts = { buffer = ev.buf }
                     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
                     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
                     vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
@@ -94,14 +84,14 @@ return {
                     vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
                     vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
                     vim.keymap.set('n', '<space>wl', function()
-                    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+                        print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
                     end, opts)
                     vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
                     vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
                     vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, opts)
                     vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
                     vim.keymap.set('n', '<space>f', function()
-                    vim.lsp.buf.format { async = true }
+                        vim.lsp.buf.format { async = true }
                     end, opts)
                 end
             })
@@ -136,9 +126,9 @@ return {
             { "K" },
             { "gi" },
             { "<C-k>" },
-            { "go" },
-            { "<F2>" },
-            { "<F4>" },
+            { "<space>D" },
+            { "<space>rn" },
+            { "<space>ca" },
             { "gr" },
             { "<space>f" },
         }

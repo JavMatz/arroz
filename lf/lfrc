@@ -17,6 +17,7 @@ map DD gio_trash
 map Dnd dragNdrop
 map p paste && clear
 map L openDirInTerminal
+map WW setAsWallpaper
 
 #· Bookmarks ·#
 map gc cd ~/.config/
@@ -24,6 +25,10 @@ map gc cd ~/.config/
 #· Functions ·#
 cmd openDirInTerminal ${{
     alacritty -d $f &
+}}
+
+cmd setAsWallpaper ${{
+    feh --bg-fill $f
 }}
 
 cmd gio_trash ${{

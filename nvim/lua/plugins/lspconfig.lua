@@ -14,6 +14,9 @@ return {
 
             mason_lsp.setup()
 
+            -- Dart
+            lsp.dartls.setup{}
+
             -- Bash
             lsp.bashls.setup {
                 cmd = {
@@ -97,6 +100,7 @@ return {
             })
         end,
         event = {
+            'BufEnter *.dart',
             'BufEnter *.lua',
             'BufEnter *.rs',
             'BufEnter *.js',
@@ -106,6 +110,7 @@ return {
             'BufEnter *.scss',
         },
         ft = {
+            "dart",
             "rust",
             "lua",
             "sh",

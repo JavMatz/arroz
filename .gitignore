@@ -12,6 +12,7 @@
 !gtk-2.0/**
 !i3/**
 !i3status/**
+!kitty/**
 !lf/**
 !local/**
 !newsboat/**

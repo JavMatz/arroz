@@ -17,6 +17,8 @@
 !local/**
 !newsboat/**
 !mpv/**
+!mpd/**
+!ncmpcpp/**
 !npm/**
 !nvim/**
 !redshift/**

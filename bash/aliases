@@ -5,8 +5,6 @@ alias vim='nvim'
 alias vimdiff="nvim -d"
 # Always human readable
 alias du='du -h'
-# Shorter form to remove a package
-alias yeet='pacman -Rsn'
 # Shorter form to move to previous directory
 alias ..='cd ..'
 # Put current directory on clipboard
@@ -34,11 +32,12 @@ alias \
 # git commands 
 alias \
     gstat="git status" \
-    glog="git log -p"
+    glog="git log -p" \
+    gdiff="git difftool --no-symlinks --dir-diff $1"
 
 # Colorize commands when possible.
 alias \
-	ls="ls -h --color=auto --group-directories-first" \
+	ls="ls -h -F -T 0 -N -A --color=auto --group-directories-first" \
 	grep="grep --color=auto" \
 	diff="diff --color=auto" \
 	ip="ip -color=auto"
@@ -65,7 +64,7 @@ pomodoro () {
     if [ -n "$1" -a -n "${pomo_options["$1"]}" ]
     then
         val=$1
-        printf "Now on: '$val'" | cat # Break pomodoro with <CR>
+        printf "Now on: '$val'\n" | cat # Break pomodoro with <CR>
         sleep ${pomo_options["$1"]}m && notify-send 'Pomodoro' "'$val' session done"
     fi
 }
@@ -73,14 +72,17 @@ pomodoro () {
 alias wo="pomodoro 'work'"
 alias br="pomodoro 'break'"
 
-# borg backup
-borgBackup () {
-    cp -r ~/.minecraft/saves/  ~/Software/Juegos/Minecraft/
-    borg create --stats --exclude-from './.config/borg/excludeFile' --list /run/media/erick/ERICK1/erick_backup::archive-{hostname}-{now} .
+# Mount and unmount disks
+dmount () {
+    udisksctl mount -b "$1"
+}
+
+dunmount () {
+    udisksctl unmount -b "$1"
 }
 
 # ffmpeg convertion
-toMP3 () {
+audioToMP3 () {
     ffmpeg -i "$1" -acodec mp3 "$1.mp3"
 }
 

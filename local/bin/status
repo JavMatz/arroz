@@ -1,8 +1,29 @@
 #!/bin/sh
+# Display a simple status for dwm
+
+display_vol() {
+    if [ $(pamixer --get-mute) == "true" ]
+    then
+        printf "🔇 MUTE"
+    else
+        VOL=$(pamixer --get-volume)
+        printf "🔊 $VOL%%"
+        # if [ $VOL -gt 70 ]
+        # then
+        #     printf "[###]"
+        # elif [ $VOL -gt 30 ]
+        # then
+        #     printf "[##-]"
+        # elif [ $VOL -gt 0 ] || [ $VOL -eq 0 ]
+        # then
+        #     printf "[---]"
+        # fi
+    fi
+}
+
 while true; do
-    VOL=$(pamixer --get-volume)
     DATE=$(date +"%A %e de %B, %H:%M")
-    LOADAVG=$(cat /proc/loadavg | cut -d" " -f 1-3)
-    xsetroot -name " LOAD: $LOADAVG | VOL: $VOL% | $DATE"
+    LOADAVG=$(cat /proc/loadavg | cut -d" " -f 1)
+    xsetroot -name " $(display_vol) ︙ 💻 $LOADAVG ︙ 📅 $DATE "
     sleep 0.5
 done

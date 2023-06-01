@@ -5,9 +5,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# History
-bind "set history-size 5000"
-
 # Source aliases
 if [ -f ~/.config/bash/aliases ]
 then
@@ -19,11 +16,8 @@ if [ -f /usr/share/fzf/key-bindings.bash ]
 then
     source /usr/share/fzf/key-bindings.bash
 fi
-
-if [ -f /usr/share/fzf/completion.bash ]
-then
-    source /usr/share/fzf/completion.bash
-fi
+# History
+bind "set history-size 10000"
 
 # Human readable
 bind "set colored-stats On"
@@ -55,23 +49,8 @@ bind -m vi-command -x '"\C-e":_edit_wo_executing'
 bind -m vi-command -x '"v":_edit_wo_executing'
 bind -m vi-insert -x '"\C-e":_edit_wo_executing'
 
-# Get the exit code of last command, return ✓ if 0, ✘ otherwise
-last_command_exit_code() {
-    if [[ $? -eq 0 ]]
-    then
-        echo -e '\001\e[7;32m\002 ✓ \001\e[0m\e[1;32m\002'
-    else
-        echo -e '\001\e[7;31m\002 ✘ \001\e[0m\e[1;31m\002'
-    fi
-}
-
-if tty | grep -F pts 1>/dev/null
-then
-    RESET_PROMPT_ATTR=$(tput sgr0)
-    PS1='\[\e[1m\]$(last_command_exit_code)\[\e[3m\e[1;34m\] \w \[$RESET_PROMPT_ATTR\]\$ '
-else
-    PS1='\[\e[1m\]\[\e[3m\e[1;34m\] \w \[$RESET_PROMPT_ATTR\]\$ '
-fi
+RESET_PROMPT_ATTR=$(tput sgr0)
+PS1='\[\e[01;31m\][\[\e[33m\]\u\[\e[33m\]@\[\e[34m\]\h \[\e[35m\]\w\[\e[31m\]]$RESET_PROMPT_ATTR\n\$ '
 
 # Autocd
 shopt -s autocd
@@ -111,6 +90,4 @@ lfcd () {
     fi
 }
 
-# bind -x '"\C-o":"lfcd"'
 bind '"\C-o":"lfcd\C-m"'
-# bind '"\C-p":"lnch pcmanfm-qt\C-m"'

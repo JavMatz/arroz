@@ -20,9 +20,10 @@ export XDG_VIDEOS_DIR="$HOME/Vídeos"
 
 export EDITOR="/usr/bin/nvim"
 export VISUAL="/usr/bin/nvim"
-export TERMINAL="/usr/bin/alacritty"
+export TERMINAL="/usr/bin/kitty"
 export BROWSER="/usr/bin/firefox"
 
+export _JAVA_AWT_WM_NONREPARENTING=1
 export JAVA_HOME="/usr/lib/jvm/default/"
 export PATH=$JAVA_HOME/bin:$PATH
 
@@ -38,6 +39,8 @@ export QT_SCALE_FACTOR=1
 
 export INPUTRC="/home/erick/.config/bash/inputrc"
 export HISTFILE="/home/erick/.cache/bash/history"
+export HISTFILESIZE=20000
+export HISTSIZE=20000
 export HISTCONTROL="ignoredups:ignorespace"
 
 if [[ -z "$DISPLAY" ]] && [[ "$XDG_VTNR" -eq 1 ]]

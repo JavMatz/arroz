@@ -1,33 +1,32 @@
 return {
-    {
-        'rebelot/kanagawa.nvim',
-        lazy = false,
-        priority = 1000,
-        config = function()
-            if vim.fn.has("termguicolors") then
-                vim.opt.termguicolors = true
-            end
-            require("kanagawa").setup({
-                undercurl = false,
-                dimInactive = true,
-            })
-            vim.cmd("colorscheme kanagawa-wave")
-        end,
-    },
-    {
-        'rose-pine/neovim',
-        name = "rose-pine",
-        lazy = false,
-        priority = 1000,
-        config = function()
-            if vim.fn.has("termguicolors") then
-                vim.opt.termguicolors = true
-            end
-            require("rose-pine").setup({
-                variant = 'moon',
-                dim_nc_background = true
-            })
-            -- vim.cmd("colorscheme rose-pine")
-        end,
-    },
+	{
+		'ishan9299/modus-theme-vim',
+		lazy = false,
+		priority = 1000,
+		config = function()
+			if vim.fn.has("termguicolors") then
+				vim.opt.termguicolors = true
+			end
+			vim.g.modus_yellow_comments = 1
+			vim.g.green_strings = 1
+			vim.g.modus_cursorline_intense = 1
+			vim.g.modus_termntrans_enable = 1
+			-- vim.cmd("colorscheme modus-vivendi")
+		end,
+	},
+	{
+		'rebelot/kanagawa.nvim',
+		lazy = false,
+		priority = 1000,
+		config = function()
+			if vim.fn.has("termguicolors") then
+				vim.opt.termguicolors = true
+			end
+			require("kanagawa").setup({
+				transparent = true,
+				dimInactive = true,
+			})
+			vim.cmd("colorscheme kanagawa")
+		end,
+	},
 }

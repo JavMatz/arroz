@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 # Display a simple status for dwm
 
 display_vol() {
@@ -22,7 +22,7 @@ display_vol() {
 }
 
 while true; do
-    DATE=$(date +"%A %e de %B, %H:%M")
+    DATE=$(date +"%A %B %e, %H:%M")
     LOADAVG=$(cat /proc/loadavg | cut -d" " -f 1)
     xsetroot -name " $(display_vol) ︙ 💻 $LOADAVG ︙ 📅 $DATE "
     sleep 0.5

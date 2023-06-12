@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+function workTimer() {
+	for minute in {25..1}; do
+		sleep 1m &
+		printf "Work $minute \r" > /tmp/workTimer
+		wait
+	done
+	return 0
+}
+
+function restTimer() {
+	for minute in {5..1}; do
+		sleep 1m &
+		printf "Rest $minute \r" > /tmp/restTimer
+		wait
+	done
+	return 0
+}
+
+function dmodoro () {
+	options="Work\nRest\nCancel"
+	selected=$(echo -e $options | dmenu -i -p "What to do?" -sb "#007755")
+	if [[ $selected =  "Work" ]]; then
+		rm /tmp/restTimer
+		notify-send 'Start of work session'
+		workTimer && notify-send 'End of work session' && dmodoro 
+	elif [[ $selected =  "Rest" ]]; then
+		rm /tmp/workTimer
+		notify-send 'Start of rest'
+		restTimer && notify-send 'End of rest' && dmodoro
+	elif [[ $selected = "Cancel" ]]; then
+		rm /tmp/restTimer
+		rm /tmp/workTimer
+		return
+	fi
+}
+
+dmodoro

@@ -31,5 +31,16 @@ abbr --add g git
 abbr --add sdn "shutdown -h now" 
 abbr --add se sudoedit 
 
+# dir shortcuts
 abbr --add conf "cd ~/.config/"
-abbr --add bin  "cd ~/.config/local/bin/"
+abbr --add bin "cd ~/.config/local/bin/"
+abbr --add dev "cd /hdd0/Dev"
+abbr --add aur "cd /hdd0/Dev/AUR/"
+abbr --add dwn "cd /hdd0/Descargas/"
+abbr --add doc "cd /hdd0/Documentos/"
+abbr --add img "cd /hdd0/Imágenes/"
+abbr --add mom "cd /hdd0/Mamá/"
+
+# newsboat shortcuts
+abbr --add ytfeed "newsboat --config-file=~/.config/newsboat/yt_config --url-file=~/.config/newsboat/yt_urls --cache-file=~/.local/share/newsboat/yt_cache.db"
+abbr --add twfeed "newsboat --url-file=~/.config/newsboat/tw_urls --cache-file=~/.local/share/newsboat/tw_cache.db"

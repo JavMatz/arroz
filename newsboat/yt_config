@@ -1,4 +1,6 @@
-max-items 50
+# include /usr/share/doc/newsboat/contrib/colorschemes/inkpot
+
+max-items 20
 
 bind-key j down
 bind-key k up
@@ -26,7 +28,7 @@ color listfocus_unread yellow default bold
 color info red black bold
 color article white default bold
 
-browser linkhandler
+browser browserWrap
 macro , open-in-browser
 
 highlight all "---.*---" yellow

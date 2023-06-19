@@ -9,7 +9,9 @@ abbr --add !! --position anywhere --function last_history_item
 abbr --add g git 
 abbr --add gs "git status"
 abbr --add gl "git log"
-abbr --add gdiff "git difftool --no-symlinks --dir-diff $1"
+abbr --add gd "git difftool --no-symlinks --dir-diff $1"
+abbr --add gc "git commit -v"
+abbr --add ga "git add"
 
 # auto sudo
 abbr --add pacman "sudo pacman"

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 function powermenu {
 	options="Cancel\nShutdown\nLock\nLogout\nReboot\nHibernate"
@@ -6,7 +6,7 @@ function powermenu {
 	if [[ $selected =  "Shutdown" ]]; then
 		poweroff
 	elif [[ $selected =  "Lock" ]]; then
-		i3lock
+		i3lock --nofork --image /hdd0/Imágenes/Wallpapers/Draw/Anime/lain2.png 
 	elif [[ $selected =  "Logout" ]]; then
         i3-msg exit
 	elif [[ $selected = "Reboot" ]]; then

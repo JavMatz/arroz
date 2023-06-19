@@ -32,6 +32,7 @@ function dmodoro () {
 	elif [[ $selected = "Cancel" ]]; then
 		rm /tmp/restTimer
 		rm /tmp/workTimer
+		pkill -f "^bash\s.+dmodoro\$"
 		return
 	fi
 }

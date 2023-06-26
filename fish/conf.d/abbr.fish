@@ -42,9 +42,9 @@ abbr --add conf "cd ~/.config/"
 abbr --add bin "cd ~/.config/local/bin/"
 abbr --add dev "cd /hdd0/Dev"
 abbr --add aur "cd /hdd0/Dev/AUR/"
-abbr --add dwn "cd /hdd0/Descargas/"
-abbr --add doc "cd /hdd0/Documentos/"
-abbr --add img "cd /hdd0/Imágenes/"
+abbr --add dwn "cd /hdd0/Downloads/"
+abbr --add doc "cd /hdd0/Documents/"
+abbr --add img "cd /hdd0/Pictures/"
 abbr --add mom "cd /hdd0/Mamá/"
 
 # newsboat shortcuts

@@ -8,19 +8,12 @@ vim.cmd("syntax on")
 
 -- DISABLES AUTOMATIC COMMENTING ON NEWLINE
 vim.api.nvim_create_autocmd({ "FileType" }, {
-    pattern = { "*" },
-    callback = function()
-        vim.opt.formatoptions = vim.opt.formatoptions:remove('c')
-        vim.opt.formatoptions = vim.opt.formatoptions:remove('r')
-        vim.opt.formatoptions = vim.opt.formatoptions:remove('o')
-    end
-})
-
-vim.api.nvim_create_autocmd({ "BufEnter" }, {
-    pattern = { "*.wiki" },
-    callback = function()
-        vim.opt.textwidth = 80
-    end
+	pattern = { "*" },
+	callback = function()
+		vim.opt.formatoptions = vim.opt.formatoptions:remove('c')
+		vim.opt.formatoptions = vim.opt.formatoptions:remove('r')
+		vim.opt.formatoptions = vim.opt.formatoptions:remove('o')
+	end
 })
 
 vim.opt.expandtab = false
@@ -31,7 +24,6 @@ vim.opt.shiftround = true
 vim.opt.hlsearch = false
 
 vim.opt.lazyredraw = true
-
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
@@ -43,7 +35,7 @@ vim.opt.synmaxcol = 200
 vim.opt.cursorline = true
 vim.opt.colorcolumn = "80"
 vim.opt.signcolumn = "number"
-vim.opt.listchars="tab:| "
+vim.opt.listchars = "tab:| "
 vim.opt.list = true
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -66,6 +58,6 @@ vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldenable = false
 vim.opt.foldminlines = 5
 vim.opt.fillchars = {
-    fold = " "
+	fold = " "
 }
 vim.opt.foldlevel = 5

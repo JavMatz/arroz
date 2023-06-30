@@ -5,7 +5,12 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
-			vim.cmd("colorscheme rose-pine")
+			require("rose-pine").setup({
+				dim_nc_backgorund = true,
+				disable_background = true,
+				disable_italics = true
+			})
+			-- vim.cmd("colorscheme rose-pine")
 		end,
 	},
 	{
@@ -19,7 +24,7 @@ return {
 			require("kanagawa").setup({
 				dimInactive = true,
 			})
-			-- vim.cmd("colorscheme kanagawa-dragon")
+			vim.cmd("colorscheme kanagawa-wave")
 		end,
 	},
 }

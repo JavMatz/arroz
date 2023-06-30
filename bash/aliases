@@ -7,10 +7,15 @@ alias vimdiff="nvim -d"
 alias du='du -h'
 # Shorter form to move to previous directory
 alias ..='cd ..'
-# Put current directory on clipboard
-alias ypwd='pwd | xclip -r'
 # Go to configuration folder
-alias goc='cd ~/.config/'
+alias conf='cd ~/.config/'
+alias bin="cd ~/.config/local/bin/"
+alias dev="cd ~/Media/Dev"
+alias aur="cd ~/Media/Dev/AUR/"
+alias dwn="cd ~/Media/Downloads/"
+alias doc="cd ~/Media/Documents/"
+alias pic="cd ~/Media/Pictures/"
+alias mom="cd ~/Media/Mamá/"
 
 # sudo not required for some system commands
 for command in pacman su nethogs; do
@@ -31,9 +36,11 @@ alias \
 
 # git commands 
 alias \
-    gstat="git status" \
-    glog="git log -p" \
-    gdiff="git difftool --no-symlinks --dir-diff $1"
+    gs="git status" \
+    gl="git log" \
+    gc="git commit -v" \
+    ga="git add" \
+    gd="git difftool --no-symlinks --dir-diff $1"
 
 # Colorize commands when possible.
 alias \

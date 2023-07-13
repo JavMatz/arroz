@@ -1,16 +1,44 @@
 return {
 	{
-		'rose-pine/neovim',
-		name = "rose-pine",
+		"Mofiqul/adwaita.nvim",
 		lazy = false,
 		priority = 1000,
 		config = function()
-			require("rose-pine").setup({
-				dim_nc_backgorund = true,
-				disable_background = true,
-				disable_italics = true
+			vim.g.adwaita_transparent = true
+			vim.cmd("colorscheme adwaita")
+		end,
+	},
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			if vim.fn.has("termguicolors") then
+				vim.opt.termguicolors = true
+			end
+			require("tokyonight").setup({
+				style = "moon",
 			})
-			-- vim.cmd("colorscheme rose-pine")
+			-- vim.cmd("colorscheme tokyonight ")
+		end,
+	},
+	{
+		'rockerBOO/boo-colorscheme-nvim',
+		lazy = false,
+		priority = 1000,
+		config = function()
+			if vim.fn.has("termguicolors") then
+				vim.opt.termguicolors = true
+			end
+			-- require("boo-colorscheme").use({
+			-- 	italic = true,
+			-- 	theme = "radioactive_waste"
+			-- })
+			-- vim.cmd("colorscheme boo")
+			-- vim.api.nvim_set_hl(0, 'Visual', {
+			-- fg = "#ffffff",
+			-- bg = "#654a96"
+			-- })
 		end,
 	},
 	{
@@ -24,7 +52,7 @@ return {
 			require("kanagawa").setup({
 				dimInactive = true,
 			})
-			vim.cmd("colorscheme kanagawa-wave")
+			-- vim.cmd("colorscheme kanagawa-wave")
 		end,
 	},
 }

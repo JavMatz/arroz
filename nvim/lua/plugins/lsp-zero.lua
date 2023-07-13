@@ -5,7 +5,7 @@ return {
 		dependencies = {
 			-- LSP Support
 			{ 'neovim/nvim-lspconfig' }, -- Required
-			{                   -- Optional
+			{
 				'williamboman/mason.nvim',
 				build = ":MasonUpdate",
 			},
@@ -15,6 +15,8 @@ return {
 			{ 'hrsh7th/nvim-cmp' }, -- Required
 			{ 'hrsh7th/cmp-nvim-lsp' }, -- Required
 			{ 'hrsh7th/cmp-path' },
+			{ 'hrsh7th/cmp-buffer' },
+			{ 'hrsh7th/cmp-cmdline' },
 			{ 'L3MON4D3/LuaSnip' }, -- Required
 		},
 		config = function()
@@ -31,11 +33,34 @@ return {
 			cmp.setup({
 				sources = {
 					{ name = 'path' },
+					{ name = 'nvim_lsp' },
+					{ name = 'buffer',  keyword_length = 3 },
+					{ name = 'cmdline' },
+					{ name = 'luasnip', keyword_length = 2 },
 				}
 			})
+			-- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
+			cmp.setup.cmdline({ '/', '?' }, {
+				mapping = cmp.mapping.preset.cmdline(),
+				sources = {
+					{ name = 'buffer' }
+				}
+			})
+
+			-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+			cmp.setup.cmdline(':', {
+				mapping = cmp.mapping.preset.cmdline(),
+				sources = cmp.config.sources({
+					{ name = 'path' }
+				}, {
+					{ name = 'cmdline' }
+				})
+			})
 		end,
+
 		event = {
 			'BufEnter *.dart',
+			'BufEnter *.py',
 			'BufEnter *.lua',
 			'BufEnter *.rs',
 			'BufEnter *.js',
@@ -46,6 +71,7 @@ return {
 		},
 		ft = {
 			"dart",
+			"python",
 			"rust",
 			"lua",
 			"sh",

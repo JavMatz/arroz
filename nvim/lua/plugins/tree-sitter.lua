@@ -4,11 +4,11 @@ return {
 		build = ":TSUpdate",
 		config = function()
 			require 'nvim-treesitter.configs'.setup {
-				ensure_installed = { 'lua', 'bash', 'fish' },
+				ensure_installed = { 'lua', 'bash' },
 				sync_install = false,
 				auto_install = true,
 				highlight = {
-					enable = true,
+					enable = false,
 					disable = { "gitcommit" },
 					additional_vim_regex_highlighting = false
 				},

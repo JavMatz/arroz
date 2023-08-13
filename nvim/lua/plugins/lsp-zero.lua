@@ -32,11 +32,11 @@ return {
 
 			cmp.setup({
 				sources = {
-					{ name = 'path' },
 					{ name = 'nvim_lsp' },
-					{ name = 'buffer',  keyword_length = 3 },
-					{ name = 'cmdline' },
 					{ name = 'luasnip', keyword_length = 2 },
+					{ name = 'buffer',  keyword_length = 3 },
+					{ name = 'path' },
+					-- { name = 'cmdline' },
 				}
 			})
 			-- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).

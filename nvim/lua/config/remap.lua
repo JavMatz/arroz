@@ -14,5 +14,5 @@ vim.keymap.set('n', "<c-w>t", ":tabnew<CR>", {})
 
 -- Kitty
 vim.keymap.set('n', "<leader>gd",
-	":!kitty @ launch --type=tab --title=diff --cwd current --no-response git difftool --no-symlinks --dir-diff<CR><CR>",
+	":!kitty @ launch --type=tab --title=diff --cwd current --no-response git difftool --no-symlinks --dir-diff %:p <CR><CR>",
 	{ silent = true })

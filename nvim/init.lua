@@ -50,7 +50,7 @@ vim.opt.wildmode = "full"
 vim.opt.updatetime = 50
 
 -- NETRW
-vim.cmd("let g:netrw_banner = 0")
+-- vim.cmd("let g:netrw_banner = 0")
 
 -- FOLDING
 vim.opt.foldmethod = "expr"

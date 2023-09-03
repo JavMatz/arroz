@@ -26,6 +26,7 @@ return {
 				lsp.default_keymaps({ buffer = bufnr })
 			end)
 			require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+
 			lsp.setup()
 
 			local cmp = require("cmp")
@@ -37,6 +38,11 @@ return {
 					{ name = 'buffer',  keyword_length = 3 },
 					{ name = 'path' },
 					-- { name = 'cmdline' },
+				},
+				snippet = {
+					expand = function(args)
+						require('luasnip').lsp_expand(args.body)
+					end
 				}
 			})
 			-- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).

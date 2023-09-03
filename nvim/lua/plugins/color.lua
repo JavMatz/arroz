@@ -1,16 +1,16 @@
 return {
 	{
-		'rebelot/kanagawa.nvim',
+		'rose-pine/nvim',
+		name="rose-pine",
 		lazy = false,
 		priority = 1000,
 		config = function()
-			if vim.fn.has("termguicolors") then
-				vim.opt.termguicolors = true
-			end
-			require("kanagawa").setup({
-				dimInactive = true,
+			require("rose-pine").setup({
+				dark_variant = "main",
+				disable_background = true,
+				disable_float_background = true
 			})
-			vim.cmd("colorscheme kanagawa-wave")
+			vim.cmd("colorscheme rose-pine")
 		end,
-	},
+	}
 }

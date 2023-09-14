@@ -1,6 +1,0 @@
-#!/bin/sh
-
-unclutter -b
-xcompmgr -c &
-xrandr --output DP-1 --auto --output eDP-1 --off
-xwallpaper --output DP-1 --zoom "/home/erick/Imágenes/Wallpapers/Photography/Historical buildings/NabateanTomb.jpg"

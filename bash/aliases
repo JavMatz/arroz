@@ -10,15 +10,15 @@ alias ..='cd ..'
 # Go to configuration folder
 alias conf='cd ~/.config/'
 alias bin="cd ~/.config/local/bin/"
-alias dev="cd ~/Media/Dev"
-alias aur="cd ~/Media/Dev/AUR/"
-alias dwn="cd ~/Media/Downloads/"
-alias doc="cd ~/Media/Documents/"
-alias pic="cd ~/Media/Pictures/"
-alias mom="cd ~/Media/Mamá/"
+alias dev="cd /hdd0/Dev"
+alias aur="cd /hdd0/Dev/AUR/"
+alias dwn="cd /hdd0/Downloads/"
+alias doc="cd /hdd0/Documents/"
+alias pic="cd /hdd0/Pictures/"
+alias mom="cd /hdd0/Mamá/"
 
 # sudo not required for some system commands
-for command in pacman su nethogs; do
+for command in dnf su nethogs; do
 	alias $command="sudo $command"
 done; unset command
 
@@ -57,27 +57,8 @@ alias \
     se="sudoedit" \
 	e="$EDITOR" \
 	v="$EDITOR" \
-	p="pacman" \
-	y="yay" \
-    # o='mimeopen -a'
+    o='xdg-open'
 	# lf="lfcd" \
-
-# pomodoro
-declare -A pomo_options
-pomo_options["work"]="25"
-pomo_options["break"]="5"
-
-pomodoro () {
-    if [ -n "$1" -a -n "${pomo_options["$1"]}" ]
-    then
-        val=$1
-        printf "Now on: '$val'\n" | cat # Break pomodoro with <CR>
-        sleep ${pomo_options["$1"]}m && notify-send 'Pomodoro' "'$val' session done"
-    fi
-}
-
-alias wo="pomodoro 'work'"
-alias br="pomodoro 'break'"
 
 # Mount and unmount disks
 dmount () {
@@ -90,7 +71,7 @@ dunmount () {
 
 # ffmpeg convertion
 audioToMP3 () {
-    ffmpeg -i "$1" -acodec mp3 "$1.mp3"
+    ffmpeg -i "$1" -acodec libmp3lame "$1.mp3"
 }
 
 # Turn off and on the wifi
@@ -108,12 +89,17 @@ csvToJson () {
     cat "$1" | python -c 'import csv, json, sys; print(json.dumps([dict(r) for r in csv.DictReader(sys.stdin)]))'
 }
 
-# Mimetypes
-queryMime () {
-    xdg-mime query "$1"
-}
-
-# Calculator
-= () {
-    echo "$*" | bc -l
+function gbll(){
+    local tags branches target
+    branches=$(
+      git --no-pager branch --sort=-committerdate \
+        --format="%(if)%(HEAD)%(then)%(else)%(if:equals=HEAD)%(refname:strip=3)%(then)%(else)%1B[0;34;1mbranch%09%1B[m%(refname:short)%(end)%(end)" \
+      | sed '/^$/d') || return
+    tags=$(
+      git --no-pager tag | awk '{print "\x1b[35;1mtag\x1b[m\t" $1}') || return
+    target=$(
+      (echo "$branches"; echo "$tags") |
+      fzf --no-hscroll --no-multi -n 2 \
+          --ansi --preview="git --no-pager log -150 --pretty=format:%s '..{2}'") || return
+    git checkout $(awk '{print $2}' <<<"$target" )
 }

@@ -9,31 +9,28 @@ export PATH="$PATH:/home/erick/.config/local/bin"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
-export XDG_DESKTOP_DIR="$HOME/Escritorio/"
-export XDG_DOWNLOAD_DIR="$HOME/Descargas"
-export XDG_TEMPLATES_DIR="$HOME/Plantillas"
-export XDG_PUBLICSHARE_DIR="$HOME/Público"
-export XDG_DOCUMENTS_DIR="$HOME/Documentos"
-export XDG_MUSIC_DIR="$HOME/Música"
-export XDG_PICTURES_DIR="$HOME/Imágenes"
-export XDG_VIDEOS_DIR="$HOME/Vídeos"
+export XDG_DESKTOP_DIR="/hdd0/Escritorio/"
+export XDG_DOWNLOAD_DIR="/hdd0/Descargas"
+export XDG_TEMPLATES_DIR="/hdd0/Plantillas"
+export XDG_PUBLICSHARE_DIR="/hdd0/Público"
+export XDG_DOCUMENTS_DIR="/hdd0/Documentos"
+export XDG_MUSIC_DIR="/hdd0/Música"
+export XDG_PICTURES_DIR="/hdd0/Imágenes"
+export XDG_VIDEOS_DIR="/hdd0/Vídeos"
 
 export EDITOR="/usr/bin/nvim"
 export VISUAL="/usr/bin/nvim"
 export TERMINAL="/usr/bin/kitty"
 export BROWSER="/usr/bin/firefox"
 
-export _JAVA_AWT_WM_NONREPARENTING=1
-export JAVA_HOME="/usr/lib/jvm/default/"
-export PATH=$JAVA_HOME/bin:$PATH
-
-export ANDROID_HOME='/opt/android-sdk'
+export PATH="$PATH:/opt/android-studio/bin"
+export PATH="$PATH:/opt/flutter/bin"
+export ANDROID_HOME='~/Android/Sdk/'
 export PATH=$PATH:$ANDROID_HOME/platform-tools/
 export PATH=$PATH:$ANDROID_HOME/cmdline-tools/
 export PATH=$PATH:$ANDROID_HOME/cmdline-tools/bin/
 export PATH=$PATH:$ANDROID_HOME/emulator
 
-export QT_QPA_PLATFORMTHEME=qt5ct
 export QT_AUTO_SCREEN_SCALE_FACTOR=0
 export QT_SCALE_FACTOR=1
 

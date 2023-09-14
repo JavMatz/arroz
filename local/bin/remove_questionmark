@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+FILES=$(find . | grep '¿\|?')
+
+for FILE in "$FILES"
+do
+	mv "$FILE" "$(echo $FILE | sed -e 's/\?/_/g' -e 's/\¿/_/g')"
+done

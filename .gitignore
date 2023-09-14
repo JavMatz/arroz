@@ -6,10 +6,7 @@
 !.gitignore
 
 !bash/**
-!fish/**
 !flameshot/**
-!gtk-3.0/**
-!gtk-2.0/**
 !i3/**
 !i3status/**
 !kitty/**
@@ -17,11 +14,7 @@
 !local/**
 !newsboat/**
 !mpv/**
-!mpd/**
-!ncmpcpp/**
 !npm/**
 !nvim/**
-!picom/**
 !redshift/**
-!tridactyl/**
 !x11/**

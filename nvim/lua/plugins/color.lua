@@ -1,16 +1,13 @@
 return {
 	{
-		'rose-pine/nvim',
-		name="rose-pine",
+		'Mofiqul/adwaita.nvim',
 		lazy = false,
 		priority = 1000,
 		config = function()
-			require("rose-pine").setup({
-				dark_variant = "main",
-				disable_background = true,
-				disable_float_background = true
-			})
-			vim.cmd("colorscheme rose-pine")
+			vim.g.adwaita_darker = true
+			vim.g.adwaita_disable_cursorline = false
+			vim.g.adwaita_transparent = true
+			vim.cmd("colorscheme adwaita")
 		end,
 	}
 }

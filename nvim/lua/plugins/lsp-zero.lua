@@ -17,7 +17,17 @@ return {
 			{ 'hrsh7th/cmp-path' },
 			{ 'hrsh7th/cmp-buffer' },
 			{ 'hrsh7th/cmp-cmdline' },
-			{ 'L3MON4D3/LuaSnip' }, -- Required
+			{
+				'L3MON4D3/LuaSnip',
+				version = "2.*",
+				build = "make install_jsregexp",
+				config = function()
+					require('luasnip').filetype_extend("javascript", { "javascriptreact" })
+					require('luasnip').filetype_extend("javascript", { "html" })
+				end
+			}, -- Required
+			{ "saadparwaiz1/cmp_luasnip" },
+			{ "rafamadriz/friendly-snippets" }
 		},
 		config = function()
 			local lsp = require("lsp-zero").preset({})
@@ -30,6 +40,9 @@ return {
 			lsp.setup()
 
 			local cmp = require("cmp")
+			local cmp_action = require("lsp-zero").cmp_action()
+
+			require("luasnip.loaders.from_vscode").lazy_load()
 
 			cmp.setup({
 				sources = {
@@ -43,6 +56,13 @@ return {
 					expand = function(args)
 						require('luasnip').lsp_expand(args.body)
 					end
+				},
+				mapping = {
+					['<Tab>'] = cmp_action.tab_complete(),
+					['<S-Tab>'] = cmp_action.select_prev_or_fallback(),
+					['<CR>'] = cmp.mapping.confirm({ select = false }),
+					['<C-f>'] = cmp_action.luasnip_jump_forward(),
+					['<C-b>'] = cmp_action.luasnip_jump_backward(),
 				}
 			})
 			-- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).

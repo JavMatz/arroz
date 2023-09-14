@@ -12,6 +12,9 @@ vim.keymap.set('n', "<leader>ñ", ":setlocal spell! spelllang=es_mx<CR>", {})
 -- Tabs
 vim.keymap.set('n', "<c-w>t", ":tabnew<CR>", {})
 
+-- Find line
+vim.keymap.set('n', "<leader>*", ":exec '/' . getline('.')", {})
+
 -- Kitty
 vim.keymap.set('n', "<leader>gd",
 	":!kitty @ launch --type=tab --title=diff --cwd current --no-response git difftool --no-symlinks --dir-diff %:p <CR><CR>",

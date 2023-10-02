@@ -2,7 +2,6 @@
 
 # vim shorter than nvim
 alias vim='nvim'
-alias vimdiff="nvim -d"
 # Always human readable
 alias du='du -h'
 # Shorter form to move to previous directory
@@ -24,15 +23,14 @@ done; unset command
 
 # Verbosity and settings that you pretty much just always are going to want.
 alias \
-	cp="cp -iv" \
-	mv="mv -iv" \
-	rm="rm -vI" \
-	bc="bc -ql" \
-	mkd="mkdir -pv" \
-    ywt="exec yt" \
-	yt="yt-dlp --embed-metadata -i" \
-	yta="yt -x -f bestaudio/best --write-thumbnail" \
-	ffmpeg="ffmpeg -hide_banner"
+    cp="cp -iv" \
+    mv="mv -iv" \
+    rm="rm -vI" \
+    bc="bc -ql" \
+    mkd="mkdir -pv" \
+    yt="yt-dlp --embed-metadata -i" \
+    yta="yt -x -f bestaudio/best --write-thumbnail" \
+    ffmpeg="ffmpeg -hide_banner"
 
 # git commands 
 alias \
@@ -44,21 +42,21 @@ alias \
 
 # Colorize commands when possible.
 alias \
-	ls="ls -h -F -T 0 -N -A --color=auto --group-directories-first" \
-	grep="grep --color=auto" \
-	diff="diff --color=auto" \
-	ip="ip -color=auto"
+    ls="ls -h -F -T 0 -N -A --color=auto --group-directories-first" \
+    grep="grep --color=auto" \
+    diff="diff --color=auto" \
+    ip="ip -color=auto"
 
 # These common commands are just too long! Abbreviate them.
 alias \
-	ka="killall" \
-	g="git" \
-	sdn="shutdown -h now" \
+    ka="killall" \
+    g="git" \
+    sdn="shutdown -h now" \
     se="sudoedit" \
-	e="$EDITOR" \
-	v="$EDITOR" \
-    o='xdg-open'
-	# lf="lfcd" \
+    e="$EDITOR" \
+    v="$EDITOR" \
+    o='xdg-open' \
+    lf='lfcd'
 
 # Mount and unmount disks
 dmount () {

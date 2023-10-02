@@ -17,6 +17,8 @@ export XDG_DOCUMENTS_DIR="/hdd0/Documentos"
 export XDG_MUSIC_DIR="/hdd0/Música"
 export XDG_PICTURES_DIR="/hdd0/Imágenes"
 export XDG_VIDEOS_DIR="/hdd0/Vídeos"
+NPM_PACKAGES="$XDG_DATA_HOME/bin/.npm-packages"
+export PATH="$PATH:$NPM_PACKAGES/bin"
 
 export EDITOR="/usr/bin/nvim"
 export VISUAL="/usr/bin/nvim"
@@ -33,14 +35,10 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 
 export QT_AUTO_SCREEN_SCALE_FACTOR=0
 export QT_SCALE_FACTOR=1
+export QT_QPA_PLATFORMTHEME=qt5ct
 
 export INPUTRC="/home/erick/.config/bash/inputrc"
 export HISTFILE="/home/erick/.cache/bash/history"
 export HISTFILESIZE=20000
 export HISTSIZE=20000
 export HISTCONTROL="ignoredups:ignorespace"
-
-if [[ -z "$DISPLAY" ]] && [[ "$XDG_VTNR" -eq 1 ]]
-then
-    exec startx
-fi

@@ -7,18 +7,18 @@ vim.cmd("filetype plugin on")
 vim.cmd("syntax on")
 
 -- DISABLES AUTOMATIC COMMENTING ON NEWLINE
-vim.api.nvim_create_autocmd({ "FileType" }, {
-	pattern = { "*" },
-	callback = function()
-		vim.opt.formatoptions = vim.opt.formatoptions:remove('c')
-		vim.opt.formatoptions = vim.opt.formatoptions:remove('r')
-		vim.opt.formatoptions = vim.opt.formatoptions:remove('o')
-	end
+vim.api.nvim_create_autocmd({"FileType"}, {
+    pattern = {"*"},
+    callback = function()
+        vim.opt.formatoptions = vim.opt.formatoptions:remove('c')
+        vim.opt.formatoptions = vim.opt.formatoptions:remove('r')
+        vim.opt.formatoptions = vim.opt.formatoptions:remove('o')
+    end
 })
 
-vim.opt.expandtab = false
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
 vim.opt.shiftround = true
 
 vim.opt.hlsearch = false
@@ -57,7 +57,5 @@ vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldenable = false
 vim.opt.foldminlines = 5
-vim.opt.fillchars = {
-	fold = " "
-}
+vim.opt.fillchars = {fold = " "}
 vim.opt.foldlevel = 5

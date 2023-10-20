@@ -56,7 +56,7 @@ bind -m vi-command -x '"v":_edit_wo_executing'
 bind -m vi-insert -x '"\C-e":_edit_wo_executing'
 
 RESET_PROMPT_ATTR=$(tput sgr0)
-PS1='\[\e[01;31m\][\[\e[33m\]\u\[\e[32m\]@\[\e[34m\]\h \[\e[35m\]\w\[\e[31m\]]$RESET_PROMPT_ATTR\$ '
+PS1='\[\e[01;31m\][\[\e[33m\]\u\[\e[32m\]@\[\e[34m\]\h \[\e[35m\]\w\[\e[31m\]]$RESET_PROMPT_ATTR\n\$ '
 
 # Autocd
 shopt -s autocd

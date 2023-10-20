@@ -16,6 +16,9 @@ map WW setAsWallpaper
 
 #· Bookmarks ·#
 map gc cd ~/.config/
+map gdwn cd /hdd0/Downloads/
+map gtlw cd /hdd0/Dev/Trabajo/talent/talentweb/
+map gtla cd /hdd0/Dev/Trabajo/talent/talentapp/
 
 #· Functions ·#
 cmd openDirInTerminal ${{

@@ -1,15 +1,27 @@
 return {
     {
+        'rose-pine/neovim',
+        name = "rose-pine",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            require("rose-pine").setup({
+              variant = 'moon',
+              dark_variant = 'moon',
+disable_background = true,
+	disable_float_background = true,
+            })
+            vim.cmd("colorscheme rose-pine")
+        end
+    },
+    {
         'catppuccin/nvim',
         name = "catppuccin",
         lazy = false,
         priority = 1000,
         config = function()
-            require("catppuccin").setup({
-                flavour = "mocha",
-                background = "mocha"
-            })
-            vim.cmd("colorscheme catppuccin")
+            require("catppuccin").setup({ })
+            -- vim.cmd("colorscheme catppuccin")
         end
     }, {
         'Mofiqul/vscode.nvim',
@@ -18,16 +30,6 @@ return {
         config = function()
             require("vscode").setup({transparent = false})
             -- require("vscode").load()
-        end
-    }, {
-        'Mofiqul/adwaita.nvim',
-        lazy = false,
-        priority = 1000,
-        config = function()
-            vim.g.adwaita_darker = true
-            vim.g.adwaita_disable_cursorline = false
-            vim.g.adwaita_transparent = true
-            -- vim.cmd("colorscheme adwaita")
         end
     }
 }

@@ -39,6 +39,6 @@ include keybindings.conf
 
 
 # BEGIN_KITTY_THEME
-# Modus Vivendi Tinted
+# Default
 include current-theme.conf
 # END_KITTY_THEME

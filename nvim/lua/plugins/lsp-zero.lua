@@ -23,6 +23,7 @@ return {
         build = "make install_jsregexp",
         config = function()
           require('luasnip').filetype_extend("javascript", { "javascriptreact" })
+          require('luasnip').filetype_extend("javascriptreact", { "html" })
           require('luasnip').filetype_extend("javascript", { "html" })
         end
       }, -- Required

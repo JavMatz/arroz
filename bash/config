@@ -1,27 +1,4 @@
-#
-# ~/.bashrc
-#
-
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
-
-# Source aliases
-if [ -e /etc/profile.d/vte.sh ]
-then
-    source /etc/profile.d/vte.sh
-fi
-
-# Source aliases
-if [ -f ~/.config/bash/aliases ]
-then
-    source ~/.config/bash/aliases
-fi
-
-# Source fzf keybindings
-if [ -f /usr/share/fzf/shell/key-bindings.bash ]
-then
-    source /usr/share/fzf/shell/key-bindings.bash
-fi
+#!/bin/sh
 
 # History
 bind "set history-size 10000"
@@ -42,6 +19,10 @@ bind "set vi-cmd-mode-string \1\e[2 q\2"
 bind "set vi-ins-mode-string \1\e[6 q\2"
 bind "set keyseq-timeout 0"
 
+# My prompt
+RESET_PROMPT_ATTR=$(tput sgr0)
+PS1='\[\e[01;31m\][\[\e[33m\]\u\[\e[33m\] in \[\e[34m\]\h at \[\e[35m\]\w\[\e[31m\]]$RESET_PROMPT_ATTR\n\$ '
+
 _edit_wo_executing() {
     local editor="${EDITOR:-nano}"
     tmpf="$(mktemp)"
@@ -55,9 +36,6 @@ _edit_wo_executing() {
 bind -m vi-command -x '"\C-e":_edit_wo_executing'
 bind -m vi-command -x '"v":_edit_wo_executing'
 bind -m vi-insert -x '"\C-e":_edit_wo_executing'
-
-RESET_PROMPT_ATTR=$(tput sgr0)
-PS1='\[\e[01;31m\][\[\e[33m\]\u\[\e[32m\]@\[\e[34m\]\h \[\e[35m\]\w\[\e[31m\]]$RESET_PROMPT_ATTR\n\$ '
 
 # Autocd
 shopt -s autocd

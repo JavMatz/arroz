@@ -1,44 +1,41 @@
 #!/bin/sh
 
-# vim shorter than nvim
-alias vim='nvim'
-# Always human readable
-alias du='du -h'
 # Shorter form to move to previous directory
 alias ..='cd ..'
-# Go to configuration folder
+# Shortcuts to folders	
 alias conf='cd ~/.config/'
 alias bin="cd ~/.config/local/bin/"
-alias dev="cd /hdd0/Dev"
-alias aur="cd /hdd0/Dev/AUR/"
-alias dwn="cd /hdd0/Downloads/"
-alias doc="cd /hdd0/Documents/"
-alias pic="cd /hdd0/Pictures/"
-alias mom="cd /hdd0/Mamá/"
+alias dev="cd ~/Media/Dev"
+alias dwn="cd ~/Media/Downloads/"
+alias doc="cd ~/Media/Documents/"
+alias pic="cd ~/Media/Pictures/"
+alias mom="cd ~/Media/Mamá/"
 
 # sudo not required for some system commands
-for command in dnf su nethogs; do
+for command in apt su nethogs; do
 	alias $command="sudo $command"
 done; unset command
 
 # Verbosity and settings that you pretty much just always are going to want.
 alias \
-    cp="cp -iv" \
-    mv="mv -iv" \
-    rm="rm -vI" \
-    bc="bc -ql" \
-    mkd="mkdir -pv" \
-    yt="yt-dlp --embed-metadata -i" \
-    yta="yt -x -f bestaudio/best --write-thumbnail" \
-    ffmpeg="ffmpeg -hide_banner"
+	cp="cp -iv" \
+	mv="mv -iv" \
+	rm="rm -vI" \
+	bc="bc -ql" \
+	mkd="mkdir -pv" \
+	ywt="exec yt" \
+	yt="yt-dlp --embed-metadata -i" \
+	yta="yt -x -f bestaudio/best --write-thumbnail" \
+	du="du -h" \
+	ffmpeg="ffmpeg -hide_banner"
 
 # git commands 
 alias \
-    gs="git status" \
-    gl="git log" \
-    gc="git commit -v" \
-    ga="git add" \
-    gd="git difftool --no-symlinks --dir-diff $1"
+	gs="git status" \
+	gl="git log" \
+	gc="git commit -v" \
+	ga="git add" \
+	gd="git difftool --no-symlinks --dir-diff $1"
 
 # Colorize commands when possible.
 alias \
@@ -49,14 +46,14 @@ alias \
 
 # These common commands are just too long! Abbreviate them.
 alias \
-    ka="killall" \
-    g="git" \
-    sdn="shutdown -h now" \
-    se="sudoedit" \
-    e="$EDITOR" \
-    v="$EDITOR" \
-    o='xdg-open' \
-    lf='lfcd'
+	ka="killall" \
+	g="git" \
+	sdn="shutdown -h now" \
+	se="sudoedit" \
+	e="$EDITOR" \
+	v="$EDITOR" \
+	a="apt" \
+	o='xdg-open' \
 
 # Mount and unmount disks
 dmount () {
@@ -87,17 +84,7 @@ csvToJson () {
     cat "$1" | python -c 'import csv, json, sys; print(json.dumps([dict(r) for r in csv.DictReader(sys.stdin)]))'
 }
 
-function gbll(){
-    local tags branches target
-    branches=$(
-      git --no-pager branch --sort=-committerdate \
-        --format="%(if)%(HEAD)%(then)%(else)%(if:equals=HEAD)%(refname:strip=3)%(then)%(else)%1B[0;34;1mbranch%09%1B[m%(refname:short)%(end)%(end)" \
-      | sed '/^$/d') || return
-    tags=$(
-      git --no-pager tag | awk '{print "\x1b[35;1mtag\x1b[m\t" $1}') || return
-    target=$(
-      (echo "$branches"; echo "$tags") |
-      fzf --no-hscroll --no-multi -n 2 \
-          --ansi --preview="git --no-pager log -150 --pretty=format:%s '..{2}'") || return
-    git checkout $(awk '{print $2}' <<<"$target" )
+# Calculator
+= () {
+    echo "$*" | bc -l
 }

@@ -12,9 +12,6 @@
 !kitty/**
 !lf/**
 !local/**
-!newsboat/**
-!mpv/**
 !npm/**
 !nvim/**
 !redshift/**
-!x11/**

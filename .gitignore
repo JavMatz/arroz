@@ -15,3 +15,6 @@
 !npm/**
 !nvim/**
 !redshift/**
+kitty/current-theme.conf
+kitty/kitty.conf.bak
+nvim/lazy-lock.json

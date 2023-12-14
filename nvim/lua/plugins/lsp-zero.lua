@@ -59,7 +59,7 @@ return {
           { name = 'luasnip', keyword_length = 2 },
           { name = 'buffer',  keyword_length = 3 },
           { name = 'path' },
-          -- { name = 'cmdline' },
+          { name = 'cmdline' },
         },
         snippet = {
           expand = function(args)
@@ -92,33 +92,5 @@ return {
         })
       })
     end,
-
-    event = {
-      'BufEnter *.dart',
-      'BufEnter *.py',
-      'BufEnter *.lua',
-      'BufEnter *.rs',
-      'BufEnter *.js',
-      'BufEnter *.jsx',
-      'BufEnter *.html',
-      'BufEnter *.css',
-      'BufEnter *.scss',
-      'BufEnter *.md',
-    },
-    ft = {
-      "dart",
-      "python",
-      "rust",
-      "lua",
-      "sh",
-      "javascript",
-      "javascriptreact",
-      "javascript.txs",
-      "html",
-      "css",
-      "scss",
-      "less",
-      "markdown"
-    },
   }
 }

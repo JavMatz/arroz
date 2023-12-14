@@ -16,7 +16,7 @@ export XDG_PICTURES_DIR="/media/erick/MEDIA/Pictures"
 export XDG_VIDEOS_DIR="/media/erick/MEDIA/Videos"
 
 # TOOLS
-export EDITOR="$(which nvim)"
-export VISUAL="$(which nvim)"
-export TERMINAL="$(which kitty)"
+export EDITOR="/home/erick/.local/bin/nvim"
+export VISUAL="/home/erick/.local/bin/nvim"
+export TERMINAL="/home/erick/.local/bin/kitty"
 export BROWSER="/usr/bin/firefox"

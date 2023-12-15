@@ -5,11 +5,11 @@ alias ..='cd ..'
 # Shortcuts to folders	
 alias conf='cd ~/.config/'
 alias bin="cd ~/.config/local/bin/"
-alias dev="cd ~/Media/Dev"
-alias dwn="cd ~/Media/Downloads/"
-alias doc="cd ~/Media/Documents/"
-alias pic="cd ~/Media/Pictures/"
-alias mom="cd ~/Media/Mamá/"
+alias dev="cd ~/Dev"
+alias dwn="cd ~/Downloads/"
+alias doc="cd ~/Documents/"
+alias pic="cd ~/Pictures/"
+alias mom="cd ~/Mamá/"
 
 # sudo not required for some system commands
 for command in apt su nethogs; do

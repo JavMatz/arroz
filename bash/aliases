@@ -1,90 +1,91 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # Shorter form to move to previous directory
 alias ..='cd ..'
-# Shortcuts to folders	
+# Shortcuts to folders
 alias conf='cd ~/.config/'
+alias nconf='cd ~/.config/nvim/'
 alias bin="cd ~/.config/local/bin/"
 alias dev="cd ~/Dev"
 alias dwn="cd ~/Downloads/"
 alias doc="cd ~/Documents/"
 alias pic="cd ~/Pictures/"
 alias mom="cd ~/Mamá/"
+alias protontricks='flatpak run com.github.Matoking.protontricks'
+alias protontricks-launch='flatpak run --command=protontricks-launch com.github.Matoking.protontricks'
 
 # sudo not required for some system commands
-for command in apt su nethogs; do
-	alias $command="sudo $command"
+for command in dnf su nethogs ; do
+  alias $command="sudo $command"
 done; unset command
 
 # Verbosity and settings that you pretty much just always are going to want.
 alias \
-	cp="cp -iv" \
-	mv="mv -iv" \
-	rm="rm -vI" \
-	bc="bc -ql" \
-	mkd="mkdir -pv" \
-	ywt="exec yt" \
-	yt="yt-dlp --embed-metadata -i" \
-	yta="yt -x -f bestaudio/best --write-thumbnail" \
-	du="du -h" \
-	ffmpeg="ffmpeg -hide_banner"
+  cp="cp --interactive --verbose" \
+  mv="mv --interactive --verbose" \
+  rm="rm -I --verbose" \
+  bc="bc --mathlib --quiet" \
+  mkd="mkdir --parents --verbose" \
+  yt="yt-dlp --embed-metadata --ignore-errors" \
+  yta="yt -x -f bestaudio/best" \
+  du="du -h" \
+  ffmpeg="ffmpeg -hide_banner"
 
 # git commands 
 alias \
-	gs="git status" \
-	gl="git log" \
-	gc="git commit -v" \
-	ga="git add" \
-	gd="git difftool --no-symlinks --dir-diff $1"
+  gs="git status" \
+  gl="git log" \
+  gc="git commit -v" \
+  ga="git add" \
+  gd="git difftool --no-symlinks --dir-diff $1"
 
 # Colorize commands when possible.
 alias \
-    ls="ls -h -F -T 0 -N -A --color=auto --group-directories-first" \
-    grep="grep --color=auto" \
-    diff="diff --color=auto" \
-    ip="ip -color=auto"
+  ls="ls -h -F -T 0 -N -A --color=auto --group-directories-first" \
+  grep="grep --color=auto" \
+  diff="diff --color=auto" \
+  ip="ip -color=auto"
 
 # These common commands are just too long! Abbreviate them.
 alias \
-	ka="killall" \
-	g="git" \
-	sdn="shutdown -h now" \
-	se="sudoedit" \
-	e="$EDITOR" \
-	v="$EDITOR" \
-	a="apt" \
-	o='xdg-open' \
+  ka="killall" \
+  g="git" \
+  sdn="shutdown -h now" \
+  se="sudoedit" \
+  e="$EDITOR" \
+  v="$EDITOR" \
+  o='xdg-open' \
 
 # Mount and unmount disks
 dmount () {
-    udisksctl mount -b "$1"
+  udisksctl mount -b "$1"
 }
 
 dunmount () {
-    udisksctl unmount -b "$1"
+  udisksctl unmount -b "$1"
 }
 
 # ffmpeg convertion
 audioToMP3 () {
-    ffmpeg -i "$1" -acodec libmp3lame "$1.mp3"
+  ffmpeg -i "$1" -acodec libmp3lame "$1.mp3"
 }
 
 # Turn off and on the wifi
 restartWlan () {
-    rfkill block wlan && sleep 3s && rfkill unblock wlan && echo "Wifi reiniciado"
+  rfkill block wlan && sleep 3s && rfkill unblock wlan && echo "Wifi reiniciado"
 }
 
 # Prettify JSON
 prettyJson () {
-    python -m json.tool "$1"
+  python -m json.tool "$1"
 }
 
 # CSV to JSON
 csvToJson () {
-    cat "$1" | python -c 'import csv, json, sys; print(json.dumps([dict(r) for r in csv.DictReader(sys.stdin)]))'
+  cat "$1" | python -c 'import csv, json, sys; print(json.dumps([dict(r) for r in csv.DictReader(sys.stdin)]))'
 }
 
 # Calculator
 = () {
-    echo "$*" | bc -l
+echo "$*" | bc -l
 }

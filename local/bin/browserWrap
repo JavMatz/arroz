@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-setsid -f /usr/bin/firefox -profile "/home/erick/.mozilla/firefox/p50ck22s.YT_Viewer/" "$1" >/dev/null 2>&1

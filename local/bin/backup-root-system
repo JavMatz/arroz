@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+USERID=$(id -u)
+
+if [ "$USERID" -gt 0 ]
+then
+    echo "Run this script as root!"
+    exit
+else
+    rsync -aAXxHv --delete --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found","/home/*","/hdd0/*","/hdd1/*","/var/tmp/*","/var/log/*","/var/cache/*"} / /hdd1/rootBckp
+fi

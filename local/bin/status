@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+# Display a simple status for dwm
+
+pomodoro () {
+	if [ -e /tmp/workTimer ]
+	then
+		CYCLE=$(cat /tmp/workTimer | cut -d" " -f 1)
+		TIME=$(cat /tmp/workTimer | cut -d" " -f 2)
+		printf "🍅 $CYCLE: $TIME min remaining"
+	elif [ -e /tmp/restTimer ]
+	then
+		CYCLE=$(cat /tmp/restTimer | cut -d" " -f 1)
+		TIME=$(cat /tmp/restTimer | cut -d" " -f 2)
+		printf "🍅 $CYCLE: $TIME min remaining"
+	else
+		printf ""
+	fi
+
+}
+
+display_vol() {
+    if [ $(pamixer --get-mute) == "true" ]
+    then
+        printf "🔇 MUTE"
+    else
+        VOL=$(pamixer --get-volume)
+        printf "🔊 $VOL%%"
+    fi
+}
+
+while true; do
+    DATE=$(date +"%A %B %e, %H:%M")
+    LOADAVG=$(cat /proc/loadavg | cut -d" " -f 1)
+
+	xsetroot -name " $(pomodoro) ︙ $(display_vol) ︙ 💻 $LOADAVG ︙ 📅 $DATE "
+
+    sleep 0.5
+done

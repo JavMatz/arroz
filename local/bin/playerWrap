@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+setsid -f /usr/bin/mpv "$1" >/dev/null 2>&1

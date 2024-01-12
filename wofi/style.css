@@ -1,0 +1,44 @@
+/* Palette:
+  #DCF2F1
+  #7FC7D9
+  #365486
+  #0F1035 */
+
+window {
+  margin: 5px;
+  font-family: Geist;
+  border: 2px solid red;
+  background-color: red;
+}
+
+#input {
+  margin: 0.5em;
+  color: #0F1035;
+  border: 0px solid #DCF2F1;
+  border-radius: 0.5em;
+  background: linear-gradient(60deg, #33ccff, #00ff99);
+}
+
+#inner-box {
+  margin: 5px;
+  border: 2px solid yellow;
+  background-color: yellow;
+}
+
+#outer-box {
+  margin: 5px;
+  border: 2px solid green;
+  background-color: green;
+}
+
+#scroll {
+  margin: 5px;
+  border: 2px solid orange;
+  background-color: orange;
+}
+
+#text {
+  margin: 5px;
+  border: 2px solid cyan;
+  background-color: cyan;
+}

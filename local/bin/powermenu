@@ -1,21 +1,17 @@
 #!/usr/bin/env bash
 
 function powermenu {
-	options="Cancel\nShutdown\nLock\nLogout\nReboot\nHibernate"
-	selected=$(echo -e $options | dmenu -i -p "Power")
-	if [[ $selected =  "Shutdown" ]]; then
-		poweroff
-	elif [[ $selected =  "Lock" ]]; then
-		i3lock --nofork --image /hdd0/Imágenes/Wallpapers/Draw/Anime/lain2.png 
-	elif [[ $selected =  "Logout" ]]; then
-        i3-msg exit
-	elif [[ $selected = "Reboot" ]]; then
-		reboot
-	elif [[ $selected = "Hibernate" ]]; then
-		systemctl suspend
-	elif [[ $selected = "Cancel" ]]; then
-		return
-	fi
+  options="Performance\nBalanced\nPower Saver"
+  selected=$(echo -e $options | wofi --dmenu --conf="$XDG_CONFIG_HOME/wofi/sessionmenu_config" --style="$XDG_CONFIG_HOME/wofi/sessionmenu_style.css")
+  if [[ $selected =  "Performance" ]]; then
+    powerprofilesctl set performance
+  elif [[ $selected =  "Balanced" ]]; then
+    powerprofilesctl set balanced
+  elif [[ $selected =  "Power Saver" ]]; then
+    powerprofilesctl set power-saver
+  else
+    return
+  fi
 }
 
 powermenu

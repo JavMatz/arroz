@@ -10,7 +10,7 @@ window {
   margin-right: 0.75em;
   color: #FAFAFA;
   border: 1px solid #212121;
-  box-shadow: 1px 1px 4px #212121;
+  box-shadow: 2px 2px 4px #212121;
   border-radius: 0.5em;
   background: #757575;
 }
@@ -39,10 +39,12 @@ window {
   border: 1px solid transparent;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 #entry:selected{
-  border-radius: 0.75em;
+  border-radius: 0.5em;
   border: 1px solid transparent;
   background: rgba(238, 238, 238, 0.35);
 }

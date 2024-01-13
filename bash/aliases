@@ -52,8 +52,8 @@ alias \
   g="git" \
   sdn="shutdown -h now" \
   se="sudoedit" \
-  e="$EDITOR" \
-  v="$EDITOR" \
+  e="/usr/bin/nvim" \
+  v="/usr/bin/nvim" \
   o='xdg-open' \
 
 # Mount and unmount disks

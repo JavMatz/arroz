@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # History
 bind "set history-size 10000"
@@ -20,8 +20,10 @@ bind "set vi-ins-mode-string \1\e[6 q\2"
 bind "set keyseq-timeout 0"
 
 # My prompt
-RESET_PROMPT_ATTR=$(tput sgr0)
-PS1='\[\e[01;31m\][\[\e[33m\]\u\[\e[33m\] in \[\e[34m\]\h at \[\e[35m\]\w\[\e[31m\]]$RESET_PROMPT_ATTR\n\$ '
+# PS1='\[\e[01;31m\][\[\e[33m\]\u\[\e[33m\] in \[\e[34m\]\h at \[\e[35m\]\w\[\e[31m\]]\n\[\e[00;37m\]\$ '
+# PS1='\[\e[92;1m\]\u \[\e[0;33m\]at \[\e[94;1m\]\h \[\e[0;33m\]in \[\e[95;1m\]\w \[\e[0m\]\\$ '
+# PS1='\[\e[92m\]\u \[\e[97m\]at \[\e[92m\]\h \[\e[97m\]in \[\e[92m\]\w \[\e[0m\] \n\$ '
+# PS1='\u at \h in \w > '
 
 _edit_wo_executing() {
     local editor="${EDITOR:-nano}"

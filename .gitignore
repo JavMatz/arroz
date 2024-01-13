@@ -6,6 +6,7 @@
 !.gitignore
 
 !bash/**
+!git/**
 !hypr/**
 !kitty/**
 !lf/**

@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# See if there is an existing rclone configuration
+if [[ -f "$XDG_CONFIG_HOME/rclone/rclone.conf" ]]; then
+  # First backup Documents folder
+  printf '%b' "\t Documents\n"
+  rclone sync --progress --exclude "Dibujo/" "$HOME/Documents/" GDRIVEPERS:Documents || printf '%b' "\n\tCould'nt sync Documents folder on Google Drive!\n"
+  printf '%b' "\t Drawing books\n"
+  rclone sync --progress "$HOME/Documents/Libros/Dibujo/" MEGA:Documents/Libros/Dibujo || printf '%b' "\n\tCould'nt sync Dibujo folder on MEGA!\n"
+  printf '%b' "\t Passwords\n"
+  rclone sync --progress "$HOME/Documents/Passwords/" MEGA:Documents/Passwords || printf '%b' "\n\tCould'nt sync Passwords folder on MEGA!\n"
+
+  # Backup Pictures
+  printf '%b' "\t Pictures\n"
+  rclone sync --progress --exclude "Screenshots/" "$HOME/Pictures/" MEGA:Pictures || printf '%b' "\n\tCould'nt sync Pictures folder on MEGA!\n"
+else
+  printf '%b' "\n\tThere is no rlcone configuration!\n\n"
+fi

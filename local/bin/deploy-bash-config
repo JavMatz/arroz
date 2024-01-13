@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+if [[ -f ~/.bashrc ]]; then
+  printf "%b" "#Load main configuration\nif [ -f ~/.config/bash/config ]; then\n\t. ~/.config/bash/config\nfi\n\n#Load aliases\nif [ -f ~/.config/bash/aliases ]; then\n\t. ~/.config/bash/aliases\nfi\n\n#Load enviroment variables\nif [ -f ~/.config/bash/envvars ]; then\n\t. ~/.config/bash/envvars\nfi " >> ~/.bashrc
+fi

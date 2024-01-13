@@ -3,7 +3,6 @@ set ifs "\n"
 set drawbox
 set scrolloff 10
 set period 1
-# set icons
 set promptfmt "\033[01;35m[\033[01;33m %d\033[01;36m%f\033[0m \033[01;35m]"
 
 #· Keybindings ·#
@@ -17,8 +16,6 @@ map WW setAsWallpaper
 #· Bookmarks ·#
 map gc cd ~/.config/
 map gdwn cd /hdd0/Downloads/
-map gtlw cd /hdd0/Dev/Trabajo/talent/talentweb/
-map gtla cd /hdd0/Dev/Trabajo/talent/talentapp/
 
 #· Functions ·#
 cmd openDirInTerminal ${{

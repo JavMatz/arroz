@@ -2,25 +2,20 @@
 allow_remote_control socket-only
 listen_on unix:/tmp/kitty
 
+term tmux-256color
+
 # Fonts 
 include fonts.conf
-
-# Cursor 
-cursor_beam_thickness 2.0
 
 # Scrollback 
 include scrollback.conf
 
 # Mouse 
-url_style dotted
-# mouse_hide_wait -1
 copy_on_select yes
 strip_trailing_spaces smart
 
-# Terminal bell 
+# Terminal bell
 enable_audio_bell no
-visual_bell_duration 0.2
-# visual_bell_color #241F31
 
 # Windows
 include windows.conf
@@ -37,8 +32,7 @@ background_opacity 0.97
 # Keybindings
 include keybindings.conf
 
-
 # BEGIN_KITTY_THEME
-# Default
+# Rosé Pine Moon
 include current-theme.conf
 # END_KITTY_THEME

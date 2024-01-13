@@ -1,7 +1,7 @@
 return {
   {
     'VonHeikemen/lsp-zero.nvim',
-    branch = 'v2.x',
+    branch = 'v3.x',
     dependencies = {
       -- LSP Support
       { 'neovim/nvim-lspconfig' }, -- Required
@@ -31,22 +31,28 @@ return {
       { "rafamadriz/friendly-snippets" }
     },
     config = function()
-      local lsp_zero = require("lsp-zero").preset({})
+      local lsp_zero = require("lsp-zero")
 
       lsp_zero.on_attach(function(_, bufnr)
         lsp_zero.default_keymaps({
           buffer = bufnr,
-          exclude = {"<F3>"}
+          -- exclude = {"<F3>"}
         })
       end)
 
-      require('lspconfig').lua_ls.setup(lsp_zero.nvim_lua_ls())
+      -- require('lspconfig').lua_ls.setup(lsp_zero.nvim_lua_ls())
 
-      require 'lspconfig'.dartls.setup {
-        cmd = { "dart", "language-server", "--protocol=lsp" },
-      }
+      -- require 'lspconfig'.dartls.setup {
+      --   cmd = { "dart", "language-server", "--protocol=lsp" },
+      -- }
 
-      lsp_zero.setup()
+      require('mason').setup({})
+      require('mason-lspconfig').setup({
+        ensure_installed = {},
+        handlers = {
+          lsp_zero.default_setup,
+        },
+      })
 
       local cmp = require("cmp")
       local cmp_action = require("lsp-zero").cmp_action()
@@ -59,7 +65,7 @@ return {
           { name = 'luasnip', keyword_length = 2 },
           { name = 'buffer',  keyword_length = 3 },
           { name = 'path' },
-          { name = 'cmdline' },
+          -- { name = 'cmdline' },
         },
         snippet = {
           expand = function(args)
@@ -75,21 +81,23 @@ return {
         }
       })
       -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
-      cmp.setup.cmdline({ '/', '?' }, {
-        mapping = cmp.mapping.preset.cmdline(),
-        sources = {
-          { name = 'buffer' }
-        }
-      })
+      -- cmp.setup.cmdline({ '/', '?' }, {
+      --   mapping = cmp.mapping.preset.cmdline(),
+      --   sources = {
+      --     { name = 'buffer' }
+      --   }
+      -- })
 
       -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
       cmp.setup.cmdline(':', {
         mapping = cmp.mapping.preset.cmdline(),
         sources = cmp.config.sources({
           { name = 'path' }
-        }, {
-          { name = 'cmdline' }
-        })
+        }
+        -- {
+        --   { name = 'cmdline' }
+        -- }
+        )
       })
     end,
   }

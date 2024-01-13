@@ -4,3 +4,4 @@ location=2
 term=kitty
 width=25%
 yoffset=3px
+prompt=Search

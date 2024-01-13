@@ -1,7 +1,7 @@
 window {
   font-family: Geist;
   border-radius: 1em;
-  background-color: #424242;
+  background-color: #282828;
 }
 
 #input {
@@ -10,14 +10,17 @@ window {
   margin-right: 0.75em;
   color: #FAFAFA;
   border: 1px solid #212121;
-  box-shadow: 1px 1px 4px #212121;
   border-radius: 0.5em;
-  background: #757575;
+  background: #464646;
 }
 
-#input:focus {
-  border: 1px solid #212121;
-}
+/* #input:focus { */
+/*   border: 1px solid #212121; */
+/* } */
+/**/
+/* #input:active { */
+/*   border: 1px solid red; */
+/* } */
 
 #inner-box {
   margin-left: 0.75em;

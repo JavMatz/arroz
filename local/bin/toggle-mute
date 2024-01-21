@@ -1,8 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-pactl set-sink-mute @DEFAULT_SINK@ toggle
+pamixer --toggle-mute
 
-volume="$(pamixer --get-volume)"
+VOLUME="$(pamixer --get-volume)"
 MUTE=$(pamixer --get-mute)
 
 if [[ "$MUTE" == "true" ]]
@@ -10,5 +10,5 @@ then
     notify-send -t 900 -a "changeVolume" -u low -i audio-volume-muted -h string:x-dunst-stack-tag:$msgTag "Muted"
 else
     notify-send -t 900 -a "changeVolume" -u low -i audio-volume-high -h string:x-dunst-stack-tag:$msgTag \
-    -h int:value:"$volume" "Volume: ${volume}%"
+    -h int:value:"$VOLUME" "Volume: ${VOLUME}%"
 fi

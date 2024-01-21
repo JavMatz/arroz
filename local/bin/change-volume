@@ -1,21 +1,31 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # changeVolume
 
 # Arbitrary but unique message tag
 msgTag="myvolume"
 
-# Change the volume using alsa(might differ if you use pulseaudio)
-pactl set-sink-volume @DEFAULT_SINK@ "$@"
-# amixer -c 0 set Master "$@" > /dev/null
+# Change the volume using pamixer
+case "$( echo "$@" | cut -c 1 )" in
+  "+")
+    pamixer --increase "$( echo "$@" | cut -c 2 )"
+    ;;
+  "-")
+    pamixer --decrease "$( echo "$@" | cut -c 2 )"
+    ;;
+  *)
+    notify-send "Bad parameter" "Bar parameter for change-volume script"
+    exit
+    ;;
+esac
 
 # Query amixer for the current volume and whether or not the speaker is muted
-volume="$(pamixer --get-volume)"
-mute="$(pamixer --get-mute)"
-if [[ $volume == 0 || "$mute" == "true" ]]; then
+VOLUME="$(pamixer --get-volume)"
+MUTE="$(pamixer --get-mute)"
+if [[ $VOLUME == 0 || "$MUTE" == "true" ]]; then
     # Show the sound muted notification
     notify-send -t 750 -a "changeVolume" -u low -i audio-volume-muted -h string:x-dunst-stack-tag:$msgTag "Volume muted" 
 else
     # Show the volume notification
     notify-send -t 750 -a "changeVolume" -u low -i audio-volume-high -h string:x-dunst-stack-tag:$msgTag \
-    -h int:value:"$volume" "Volume: ${volume}%"
+    -h int:value:"$VOLUME" "Volume: ${VOLUME}%"
 fi

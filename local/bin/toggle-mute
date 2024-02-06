@@ -7,8 +7,8 @@ MUTE=$(pamixer --get-mute)
 
 if [[ "$MUTE" == "true" ]]
 then
-    notify-send -t 900 -a "changeVolume" -u low -i audio-volume-muted -h string:x-dunst-stack-tag:$msgTag "Muted"
+    notify-send -t 900 -a "Mute audio" -u low -i audio-volume-muted -h string:x-dunst-stack-tag:$msgTag "Muted"
 else
-    notify-send -t 900 -a "changeVolume" -u low -i audio-volume-high -h string:x-dunst-stack-tag:$msgTag \
+    notify-send -t 900 -a "Unmute" -u low -i audio-volume-high -h string:x-dunst-stack-tag:$msgTag \
     -h int:value:"$VOLUME" "Volume: ${VOLUME}%"
 fi

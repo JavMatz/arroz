@@ -16,9 +16,10 @@ foreach my $SINK (split(/\n/, $RAW_SINKS)) {
 }
 
 my ($DMENU_OUT, $DMENU_IN);
+my $DMENU_CMD = "wofi --dmenu -i --conf=$ENV{XDG_CONFIG_HOME}/wofi/audio-sinks";
 
 my $PID = eval {
-  open2($DMENU_OUT, $DMENU_IN, "bemenu -i");
+  open2($DMENU_OUT, $DMENU_IN, $DMENU_CMD);
 } or do {
   print STDERR "$@";
   say STDERR "Error";

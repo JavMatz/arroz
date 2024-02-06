@@ -2,7 +2,7 @@
 
 function powermenu {
   options="Performance\nBalanced\nPower Saver"
-  selected=$(echo -e $options | wofi --dmenu --conf="$XDG_CONFIG_HOME/wofi/sessionmenu_config" --style="$XDG_CONFIG_HOME/wofi/sessionmenu_style.css")
+  selected=$(echo -e $options | wofi --dmenu -L 5 --conf="$XDG_CONFIG_HOME/wofi/sessionmenu_config" --style="$XDG_CONFIG_HOME/wofi/sessionmenu_style.css")
   if [[ $selected =  "Performance" ]]; then
     powerprofilesctl set performance
   elif [[ $selected =  "Balanced" ]]; then
@@ -15,3 +15,5 @@ function powermenu {
 }
 
 powermenu
+
+pkill -RTMIN+10 waybar

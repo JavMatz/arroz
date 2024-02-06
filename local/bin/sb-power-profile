@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+PROFILE="$(powerprofilesctl get)"
+
+case "$PROFILE" in
+  "performance")
+    printf "%s" "󰓅  Performance"
+    ;;
+  "balanced")
+    printf "%s" "󰾅  Balanced"
+    ;;
+  "power-saver")
+    printf "%s" "󰾆  Power Saver"
+    ;;
+  *)
+    printf "%s" "?? Invalid power profile"
+    ;;
+esac

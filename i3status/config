@@ -17,8 +17,8 @@ general {
 
 order += "load"
 # order += "cpu_temperature 0"
-# order += "cpu_usage"
-# order += "memory"
+order += "cpu_usage"
+order += "memory"
 # order += "wireless _first_"
 order += "volume master"
 order += "tztime local"

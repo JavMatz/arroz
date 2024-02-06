@@ -1,4 +1,0 @@
-fetch-retry-maxtimeout=6000000000
-fetch-retry-mintimeout=1000000000
-fetch-retries=10
-prefix=/home/erick/.local/share/bin/.npm-packages

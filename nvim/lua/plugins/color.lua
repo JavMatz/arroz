@@ -1,15 +1,15 @@
 return {
     {
-        'rose-pine/neovim',
-        name = 'rose-pine',
+        'folke/tokyonight.nvim',
         lazy = false,
         priority = 1000,
         config = function()
-          require('rose-pine').setup({
-            disable_background = true,
-            disable_float_background = true
+          require("tokyonight").setup({
+            style = "night",
+            light_style = "day",
+            transparent = true
           })
-          vim.cmd("colorscheme rose-pine")
+          vim.cmd[[ colorscheme tokyonight ]]
         end
     },
     {

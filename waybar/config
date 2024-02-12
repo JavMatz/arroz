@@ -1,51 +1,36 @@
 {
     "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 20, // Waybar height (to be removed for auto height)
+    "height": 24, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     "spacing": 8, // Gaps between modules (4px)
     // Choose the order of the modules
-    "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["hyprland/window"],
-    "modules-right":
-              [
-              "idle_inhibitor",
-              "pulseaudio",
-              "network",
-              "cpu",
-              "memory",
-              "clock",
-              "tray",
-              ],
+    "modules-left": [
+      "hyprland/workspaces",
+    ],
+    "modules-center": [
+      "hyprland/window"
+    ],
+    "modules-right": [
+      "idle_inhibitor",
+      "network",
+      "cpu",
+      "memory",
+      "custom/powerprofile",
+      "pulseaudio",
+      "clock",
+      "tray",
+    ],
+
     // Modules configuration
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
         "warp-on-scroll": false,
         "format": "{name}",
-        "format-icons": {
-            "1": "",
-            "2": "",
-            "3": "",
-            "4": "",
-            "5": "",
-            "urgent": "",
-            "focused": "",
-            "default": ""
-        }
     },
     "hyprland/window": {
-    "format": "-> {}"
-
-    },
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
+      "format": "{}"
     },
     "idle_inhibitor": {
         "format": "{icon}",
@@ -61,7 +46,8 @@
     "clock": {
         // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format": "{:%b %d %H:%M}",
+        "on-click": "gnome-calendar"
     },
     "cpu": {
         "format": "{usage}% ",
@@ -103,6 +89,12 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
+    },
+    "custom/powerprofile": {
+      "format": "<b>{}</b>",
+      "exec": "$XDG_CONFIG_HOME/local/bin/sb-power-profile",
+      "interval" :"once",
+      "signal": 10 ,
     },
 }
 

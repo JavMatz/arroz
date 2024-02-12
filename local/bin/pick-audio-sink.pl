@@ -16,7 +16,7 @@ foreach my $SINK (split(/\n/, $RAW_SINKS)) {
 }
 
 my ($DMENU_OUT, $DMENU_IN);
-my $DMENU_CMD = "wofi --dmenu -i --conf=$ENV{XDG_CONFIG_HOME}/wofi/audio-sinks";
+my $DMENU_CMD = "bemenu -i";
 
 my $PID = eval {
   open2($DMENU_OUT, $DMENU_IN, $DMENU_CMD);

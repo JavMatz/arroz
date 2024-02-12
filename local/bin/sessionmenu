@@ -2,7 +2,8 @@
 
 function sessionmenu {
   options="Cancel\nShutdown\nLock\nLogout\nReboot\nSuspend"
-  selected=$(echo -e $options | wofi --dmenu --conf="$XDG_CONFIG_HOME/wofi/sessionmenu_config" --style="$XDG_CONFIG_HOME/wofi/sessionmenu_style.css")
+  # selected=$(echo -e $options | wofi --dmenu --conf="$XDG_CONFIG_HOME/wofi/sessionmenu_config" --style="$XDG_CONFIG_HOME/wofi/sessionmenu_style.css")
+  selected=$(echo -e $options | bemenu -i -p "Session")
   if [[ $selected =  "Shutdown" ]]; then
     systemctl poweroff
   elif [[ $selected =  "Lock" ]]; then

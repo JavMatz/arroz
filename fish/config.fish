@@ -5,7 +5,6 @@ end
 # Config
 set -U fish_greeting
 fish_vi_key_bindings
-fish_ssh_agent
 
 # Path
 fish_add_path -p ~/.local/bin ~/.config/local/bin ~/.cargo/bin

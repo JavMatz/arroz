@@ -1,0 +1,9 @@
+allow_images=false
+hide-scroll=true
+insensitive=true
+location=0
+lines=4
+prompt=Audio Sinks
+width=30%
+xoffset=3px
+yoffset=3px

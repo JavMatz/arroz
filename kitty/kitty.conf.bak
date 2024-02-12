@@ -2,6 +2,8 @@
 allow_remote_control socket-only
 listen_on unix:/tmp/kitty
 
+shell fish
+
 term tmux-256color
 
 # Fonts 
@@ -33,6 +35,6 @@ background_opacity 0.97
 include keybindings.conf
 
 # BEGIN_KITTY_THEME
-# Rosé Pine Moon
+# Tokyo Night
 include current-theme.conf
 # END_KITTY_THEME

@@ -29,3 +29,7 @@ end
 function prettyJSON 
 	python -m json.tool $argv
 end
+
+function gbll
+  git branch $argv && git checkout $argv
+end
